@@ -1,0 +1,203 @@
+{
+  "description": "Selected real UI captures. SimReview interviews are synthetic and AI voiced. Gameplay replays recorded outcomes. Silent exports; waiting time omitted.",
+  "exports": [
+    {
+      "output": "sim-record.mp4",
+      "duration": 11.833333,
+      "bytes": 136443,
+      "silent": true,
+      "cuts": [
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-recording.mp4",
+          "start": 0,
+          "end": 11.8,
+          "sourceDuration": 38.4,
+          "crop": null
+        }
+      ]
+    },
+    {
+      "output": "sim-feedback.mp4",
+      "duration": 2.625,
+      "bytes": 108412,
+      "silent": true,
+      "cuts": [
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
+          "start": 1.34,
+          "end": 4,
+          "sourceDuration": 27.066667,
+          "crop": null
+        }
+      ]
+    },
+    {
+      "output": "sim-moment.mp4",
+      "duration": 10.5,
+      "bytes": 307100,
+      "silent": true,
+      "cuts": [
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
+          "start": 4,
+          "end": 14.5,
+          "sourceDuration": 27.066667,
+          "crop": null
+        }
+      ]
+    },
+    {
+      "output": "sim-focus.mp4",
+      "duration": 1.125,
+      "bytes": 62297,
+      "silent": true,
+      "cuts": [
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
+          "start": 22.0,
+          "end": 23.1,
+          "sourceDuration": 27.066667,
+          "crop": null
+        }
+      ]
+    },
+    {
+      "output": "sim-hebrew.mp4",
+      "duration": 8.875,
+      "bytes": 270402,
+      "silent": true,
+      "cuts": [
+        {
+          "source": "simreview/promo/public/clips/he-100-ectopic-flow.mp4",
+          "start": 0.959,
+          "end": 9.8,
+          "sourceDuration": 19.266667,
+          "crop": null
+        }
+      ]
+    },
+    {
+      "output": "city-need.mp4",
+      "duration": 3.625,
+      "bytes": 119301,
+      "silent": true,
+      "cuts": [
+        {
+          "source": "the-city-beyond/promo/public/clips/c_need.mp4",
+          "start": 10.6,
+          "end": 14.2,
+          "sourceDuration": 19.5,
+          "crop": "1280:720:230:360"
+        }
+      ]
+    },
+    {
+      "output": "city-bronze.mp4",
+      "duration": 4.833008,
+      "bytes": 399008,
+      "silent": true,
+      "cuts": [
+        {
+          "source": "the-city-beyond/promo/public/clips/c_bronze.mp4",
+          "start": 0,
+          "end": 4.8,
+          "sourceDuration": 21.2,
+          "crop": "1280:720:300:360"
+        }
+      ]
+    },
+    {
+      "output": "city-failure.mp4",
+      "duration": 2.208333,
+      "bytes": 114353,
+      "silent": true,
+      "cuts": [
+        {
+          "source": "the-city-beyond/promo/public/clips/c_bronze.mp4",
+          "start": 12,
+          "end": 14.2,
+          "sourceDuration": 21.2,
+          "crop": "1280:720:230:360"
+        }
+      ]
+    },
+    {
+      "output": "city-iron.mp4",
+      "duration": 9.875,
+      "bytes": 508665,
+      "silent": true,
+      "cuts": [
+        {
+          "source": "the-city-beyond/promo/public/clips/c_iron.mp4",
+          "start": 17.6,
+          "end": 20.8,
+          "sourceDuration": 26.9,
+          "crop": "1280:720:230:360"
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/c_assembly.mp4",
+          "start": 0,
+          "end": 1.3,
+          "sourceDuration": 27.9,
+          "crop": "1280:720:300:360"
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/c_assembly.mp4",
+          "start": 16.9,
+          "end": 22.2,
+          "sourceDuration": 27.9,
+          "crop": "1152:648:390:50"
+        }
+      ]
+    },
+    {
+      "output": "city-proof.mp4",
+      "duration": 8.0,
+      "bytes": 500690,
+      "silent": true,
+      "cuts": [
+        {
+          "source": "the-city-beyond/promo/public/clips/p_oren.mp4",
+          "start": 8,
+          "end": 12,
+          "sourceDuration": 12.066667,
+          "crop": "1280:720:400:0"
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/c_test.mp4",
+          "start": 25.6,
+          "end": 29.6,
+          "sourceDuration": 39.1,
+          "crop": "1280:720:230:360"
+        }
+      ]
+    },
+    {
+      "output": "city-enter.mp4",
+      "duration": 12.416667,
+      "bytes": 1658561,
+      "silent": true,
+      "cuts": [
+        {
+          "source": "the-city-beyond/promo/public/clips/p_admit.mp4",
+          "start": 1.8,
+          "end": 7.2,
+          "sourceDuration": 12.066667,
+          "crop": "1280:720:400:0"
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/p_gate.mp4",
+          "start": 0.5,
+          "end": 7.5,
+          "sourceDuration": 20.066667,
+          "crop": "1920:1080:0:0"
+        }
+      ]
+    },
+    {
+      "output": "sim-case.webp",
+      "source": "simreview/promo/public/shots/phone-case.png",
+      "bytes": 46920
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 # Baruch Weinstein — portfolio
 
-A static portfolio for AI product building, prototyping, and product management. Includes the SimReview and The City Beyond case studies, current promo videos, responsive layouts, dark mode, accessible video dialogs, keyboard project navigation, scroll reveals, and reduced-motion support.
+A static portfolio for AI product building, prototyping, and product management. Includes guided product demos, the SimReview and The City Beyond case studies, full promo videos, responsive layouts, dark mode, keyboard controls, and reduced-motion support.
 
 ## Run
 
-Requires Node 24 and Python 3. No npm dependencies or install step.
+Requires Node 24. No npm dependencies or install step for building and publishing.
 
 ```powershell
 npm run build
@@ -12,7 +12,7 @@ npm run check
 npm run preview
 ```
 
-Open http://localhost:4173. Output is generated into `dist/`; edit source, not generated files.
+Open http://127.0.0.1:4174. The local server supports video range requests. Output is generated into `dist/`; edit source, not generated files.
 
 ## Edit and expand
 
@@ -20,6 +20,9 @@ Open http://localhost:4173. Output is generated into `dist/`; edit source, not g
 - `scripts/build.mjs`: page templates and HTML generation.
 - `public/styles.css`: design, responsive layout, themes, and motion.
 - `public/app.js`: project deck, theme preferences, navigation, and promo dialogs.
+- `src/demos.mjs`: shared demo sequences, explanations, recorded dialogue, actions, timings, and normalized hotspots. Project data opts into a demo.
+- `public/demos.js` and `demo.css`: one reusable player for inline demos and the homepage dialog.
+- `public/demos/`: silent MP4 segments, before/after WebP frames, and source timestamp provenance.
 - `public/assets/`: approved synthetic UI screenshots, gameplay screenshots, posters, and self-hosted fonts.
 - `public/videos/simreview.mp4` and `city-beyond.mp4`: current browser-ready promo cuts.
 
@@ -31,7 +34,25 @@ To add a project, add an object to the `projects` array using the existing schem
 
 GitHub Actions builds and publishes to GitHub Pages on pushes to `main`. The production URL is https://burry439.github.io/. Source is in the separate `Burry439/burry439.github.io` repository; existing project repos and the older Portfolio repo are unchanged.
 
-The build accepts `SITE_URL` (origin, no trailing slash) and `SITE_BASE_PATH` (for subdirectory hosting). The workflow gets them from GitHub Pages configuration. A future GoDaddy domain can be connected through the repository’s Pages custom-domain setting and its DNS records; no domain has been purchased or configured by this task.
+The build accepts `SITE_URL` (origin, no trailing slash) and `SITE_BASE_PATH` (for subdirectory hosting). The workflow gets them from GitHub Pages configuration. The owner purchased `baruchweinstein.com`; connection status and required records are in `docs/domain-setup.md`.
+
+## Guided demos and verification
+
+The English SimReview sequence takes 43 seconds; its optional Hebrew session is separate. The compass gameplay sequence takes 52 seconds. Both start with stills, load video only after activation, preload the next step, stop offscreen or when the tab is hidden, and use stills under reduced motion. Watch-through runs once; manual mode holds each outcome. Closing or restarting cancels media and transition work. Failed media keeps the still, explanation, and a retry button.
+
+Total demo media including posters: approximately 1.4 MB for SimReview and 4.7 MB for The City Beyond. Exported captures are synthetic app examples and recorded gameplay, not live AI responses. Full promos retain narration.
+
+To regenerate reviewed exports, with ffmpeg/ffprobe installed:
+
+```powershell
+python scripts/prepare-demo-media.py --sim-source 'PATH/TO/SIMREVIEW/promo' --city-source 'PATH/TO/TIME-TRAVEL/promo'
+npm run build
+npm run check
+```
+
+Each original cut is validated against its actual source duration; `provenance.json` records the timestamps, crop, silence and size. Exports require Python 3 and ffmpeg. Site checks validate the schema, files, cut bounds, timing and budgets. Browser checks require an installed Playwright package; set `PLAYWRIGHT_PACKAGE` to its project's package.json and optionally `CHROMIUM_EXECUTABLE` to a Chromium executable, then run `npm run test:demos`. `npm run test:public` checks the live site, media range requests, demo playback and full promos. `QA_URL` selects another URL. QA reports/screenshots remain local in ignored `qa/`.
+
+The five-person comprehension test is prepared in `docs/comprehension-test.md` and has not been conducted. Automated controls/layout checks do not replace that audience test.
 
 ## Evidence and editorial basis
 
