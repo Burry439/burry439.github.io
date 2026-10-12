@@ -1,0 +1,8 @@
+dist/
+research/
+qa/
+node_modules/
+.vercel/
+.openai/
+*.log
+.env*
