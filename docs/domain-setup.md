@@ -5,7 +5,11 @@ The repository's custom domain is `baruchweinstein.com`. DNS changes were saved
 through the owner's signed-in Edge session using native Computer Use.
 Both the GoDaddy editor and its authoritative nameserver confirm the records below;
 Cloudflare's public resolver also returns the four GitHub Pages addresses.
-HTTPS certificate provisioning and public site verification are in progress.
+GitHub approved the certificate for the apex and `www` on 2026-10-13;
+its reported expiry is 2027-01-11. HTTPS enforcement is enabled.
+TLS validation succeeds at the GitHub Pages server for both hosts. HTTP redirects
+to HTTPS, and `www` redirects to the apex while preserving case-study paths.
+Resolvers may retain the previous GoDaddy addresses until their cached TTL expires.
 No credentials belong in this repository or chat.
 
 Saved DNS records, using GoDaddy's existing nameservers:
@@ -22,8 +26,8 @@ The WebsiteBuilder apex record was replaced. Nameservers, SOA, `_domainconnect`
 and `_dmarc` were preserved. The full original zone contained no MX records.
 
 The domain was first claimed in the repository's Pages custom-domain setting,
-before saving DNS changes. After GitHub's certificate is ready, enforce HTTPS and
-verify the apex and www redirects. The Pages workflow's `configure-pages` output
+before saving DNS changes. Certificate approval and HTTPS enforcement were verified
+using GitHub's Pages API and TLS-validating requests. The Pages workflow's `configure-pages` output
 updates canonical URLs and the sitemap to the configured domain automatically.
 GitHub Actions publishing does not require a CNAME file in the build.
 

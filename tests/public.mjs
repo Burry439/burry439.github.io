@@ -9,7 +9,21 @@ const base=process.env.QA_URL||'https://baruchweinstein.com';
 await mkdir('qa/screenshots',{recursive:true});
 const page=await browser.newPage({viewport:{width:1440,height:1000}});
 const errors=[];page.on('pageerror',e=>errors.push(e.message));
+const insecureRequests=[];page.on('request',req=>{if(new URL(base).protocol==='https:'&&req.url().startsWith('http:')&&!req.isNavigationRequest())insecureRequests.push(req.url());});
+const redirects=[];
 try{
+ if(base==='https://baruchweinstein.com'){
+  for(const [from,to] of [
+   ['http://baruchweinstein.com/','/'],
+   ['http://www.baruchweinstein.com/','/'],
+   ['https://www.baruchweinstein.com/','/'],
+   ['https://www.baruchweinstein.com/simreview/','/simreview/'],
+   ['https://burry439.github.io/','/']
+  ]){
+   assert.equal((await page.goto(from,{waitUntil:'networkidle'})).status(),200);
+   assert.equal(page.url(),base+to,from);redirects.push(from);
+  }
+ }
  for(const route of ['/','/simreview/','/the-city-beyond/']){
   const early=[];const listener=req=>{if(/\/demos\/.*\.mp4/.test(req.url()))early.push(req.url());};page.on('request',listener);
   assert.equal((await page.goto(base+route,{waitUntil:'networkidle'})).status(),200);
@@ -42,6 +56,7 @@ try{
  await page.locator('a[href="#demo"]').click();assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
  await page.screenshot({path:'qa/screenshots/live-mobile-demo.png'});
  assert.deepEqual(errors,[]);
- const report={base,routes:3,mediaFiles:media.length,clips:media.filter(m=>m.file.endsWith('.mp4')).length,checks:['Canonical URLs','No early demo video downloads','All demo media available; MP4 range requests succeed','Both dialog demos play','Both full promos play and stop on close','390px mobile layout'],errors};
+ assert.deepEqual(insecureRequests,[]);
+ const report={base,redirects,routes:3,mediaFiles:media.length,clips:media.filter(m=>m.file.endsWith('.mp4')).length,checks:['Canonical URLs','No early demo video downloads','All demo media available; MP4 range requests succeed','Both dialog demos play','Both full promos play and stop on close','390px mobile layout',...(new URL(base).protocol==='https:'?['Valid TLS connections; no insecure subresources']:[])],errors};
  console.log(JSON.stringify(report,null,2));await writeFile('qa/public-report.json',JSON.stringify(report,null,2));
 }finally{await browser.close();}

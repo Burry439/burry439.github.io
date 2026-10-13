@@ -34,7 +34,7 @@ To add a project, add an object to the `projects` array using the existing schem
 
 GitHub Actions builds and publishes to GitHub Pages on pushes to `main`. The production URL is https://baruchweinstein.com/. Source is in the separate `Burry439/burry439.github.io` repository; existing project repos and the older Portfolio repo are unchanged.
 
-The build accepts `SITE_URL` (origin, no trailing slash) and `SITE_BASE_PATH` (for subdirectory hosting). The workflow gets them from GitHub Pages configuration. The owner purchased `baruchweinstein.com`; connection status and required records are in `docs/domain-setup.md`.
+The build accepts `SITE_URL` (origin, no trailing slash) and `SITE_BASE_PATH` (for subdirectory hosting). The workflow gets them from GitHub Pages configuration. HTTPS is enforced; `www` redirects to the apex domain. Connection details and saved DNS records are in `docs/domain-setup.md`.
 
 ## Guided demos and verification
 
