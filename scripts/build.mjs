@@ -2,7 +2,7 @@ import {mkdir,cp,writeFile,rm} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {profile,projects} from '../src/projects.mjs';
 const base=(process.env.SITE_BASE_PATH||'').replace(/\/$/,'');
-const origin=process.env.SITE_URL||'https://burry439.github.io';
+const origin=process.env.SITE_URL||'https://baruchweinstein.com';
 const path=(s='')=>`${base}/${s}`;
 const asset=path('assets/');
 const demos=Object.fromEntries(projects.filter(p=>p.demo).map(p=>[p.id,p.demo]));

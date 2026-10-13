@@ -1,14 +1,14 @@
 # baruchweinstein.com
 
-Purchased by the owner. The site currently uses GitHub Pages in
-`Burry439/burry439.github.io`. Domain activation is pending access to GoDaddy DNS.
+Connected on 2026-10-13 to GitHub Pages in `Burry439/burry439.github.io`.
+The repository's custom domain is `baruchweinstein.com`. DNS changes were saved
+through the owner's signed-in Edge session using native Computer Use.
+Both the GoDaddy editor and its authoritative nameserver confirm the records below;
+Cloudflare's public resolver also returns the four GitHub Pages addresses.
+HTTPS certificate provisioning and public site verification are in progress.
+No credentials belong in this repository or chat.
 
-The installed GoDaddy integration searches available domains; it does not edit
-DNS. Connection is deferred until the owner's signed-in Edge tab is available
-through the browser extension. No DNS or GitHub custom-domain settings have been
-changed. No credentials belong in this repository or chat.
-
-Required DNS changes, using GoDaddy's existing nameservers:
+Saved DNS records, using GoDaddy's existing nameservers:
 
 | Type | Name | Value | TTL |
 |---|---|---|---|
@@ -18,13 +18,12 @@ Required DNS changes, using GoDaddy's existing nameservers:
 | A | @ | 185.199.111.153 | Default |
 | CNAME | www | burry439.github.io | Default |
 
-Replace the parked apex A records. Preserve email, verification, nameserver and
-other unrelated records. Read the full zone before making changes.
+The WebsiteBuilder apex record was replaced. Nameservers, SOA, `_domainconnect`
+and `_dmarc` were preserved. The full original zone contained no MX records.
 
-When account access is available, first claim `baruchweinstein.com` in the
-repository's Pages custom-domain setting, then save these DNS changes. Verify
-authoritative/public DNS, wait for GitHub's certificate, enforce HTTPS, check the
-apex and www redirects, and rerun the Pages workflow. Its `configure-pages` output
+The domain was first claimed in the repository's Pages custom-domain setting,
+before saving DNS changes. After GitHub's certificate is ready, enforce HTTPS and
+verify the apex and www redirects. The Pages workflow's `configure-pages` output
 updates canonical URLs and the sitemap to the configured domain automatically.
 GitHub Actions publishing does not require a CNAME file in the build.
 

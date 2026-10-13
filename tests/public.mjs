@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 const require=createRequire(process.env.PLAYWRIGHT_PACKAGE||new URL('../package.json',import.meta.url));
 const {chromium}=require('@playwright/test');
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE}:{})});
-const base=process.env.QA_URL||'https://burry439.github.io';
+const base=process.env.QA_URL||'https://baruchweinstein.com';
 await mkdir('qa/screenshots',{recursive:true});
 const page=await browser.newPage({viewport:{width:1440,height:1000}});
 const errors=[];page.on('pageerror',e=>errors.push(e.message));
