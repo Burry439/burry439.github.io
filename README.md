@@ -42,7 +42,7 @@ The primary demos are silent 43-second SimReview and 52-second City Beyond films
 
 The player loads only its selected rendition after activation, reuses it across modes, pauses offscreen/when hidden and cancels pending playback on close or restart. Reduced motion opens still exploration; playing film requires a choice. A separate labeled Hebrew recording and both full promos remain available. Source timestamps are in `public/demos/provenance.json`; final films, still frame numbers, actual sizes and verified silent tracks are in `films-provenance.json`.
 
-Selected rendition plus supporting chapter stills (including the Hebrew example for SimReview): approximately 1.64 MB / 1.54 MB for SimReview wide/portrait; 3.97 MB / 3.51 MB for City wide/portrait. Optional original promos are separate.
+Selected rendition plus supporting chapter stills (including the Hebrew example for SimReview): approximately 1.62 MB / 1.51 MB for SimReview wide/portrait; 3.94 MB / 3.47 MB for City wide/portrait. Optional original promos are separate.
 
 To regenerate source cuts, with Python and ffmpeg/ffprobe installed:
 

@@ -18,8 +18,9 @@ const dialog=document.querySelector('#video-dialog');const player=dialog.querySe
 if(matchMedia('(max-width:600px)').matches)document.querySelectorAll('[data-promo-duration]').forEach(el=>{el.textContent=el.dataset.mobileDuration;});
 const promoSource=(desktop,mobile)=>matchMedia('(max-width:600px)').matches&&mobile?mobile:desktop;
 document.querySelectorAll('[data-video]').forEach(b=>b.addEventListener('click',()=>{player.src=promoSource(b.dataset.video,b.dataset.videoMobile);player.poster=b.dataset.poster;document.querySelector('#video-dialog-title').textContent=`${b.dataset.title} · Project promo`;dialog.showModal();document.body.style.overflow='hidden';player.play().catch(()=>{});}));
-function closeVideo(){dialog.close();}
+function closeVideo(){player.pause();dialog.close();}
 dialog.querySelector('.dialog-close').addEventListener('click',closeVideo);
+dialog.addEventListener('cancel',()=>player.pause());
 dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeVideo();}});
 dialog.addEventListener('close',()=>{player.pause();player.removeAttribute('src');player.load();document.body.style.overflow='';});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){document.querySelectorAll('video').forEach(v=>v.pause());}});

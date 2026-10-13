@@ -10,7 +10,7 @@ the projects. Do not use the builder's explanations or brief them on the product
    like live AI. Note the device and whether they explored recorded moments or watched the film.
 5. Repeat for the other project; alternate which project appears first.
 
-Score each project separately. A passing answer describes the core loop and
+Score each project separately. A passing answer describes the core loop,
 ownership and one product decision accurately, in the participant's own words:
 
 - SimReview: a learner interviews a helper playing a fictional patient, records
@@ -18,9 +18,9 @@ ownership and one product decision accurately, in the participant's own words:
   again. Baruch designed and built the app, recording flow and feedback, using Codex
   for implementation and testing. No demonstrated learning impact is claimed.
 - The City Beyond: a player describes an idea, the game judges it with reasons,
-  and a successful invention has consequences in the world. Baruch defined and built the prototype with Claude Code and Codex, reviewing
-  gameplay and evaluations. The portfolio
-  interaction is a guided replay, not a live AI game.
+  and a successful invention has consequences in the world. Baruch defined and
+  built the prototype with Claude Code and Codex, reviewing gameplay and
+  evaluations. The portfolio interaction is a guided replay, not a live AI game.
 
 Target: at least four of five people correctly explain the loop, Baruch's
 contribution and one decision for each project. Record raw answers before assigning scores. Use
