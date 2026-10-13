@@ -5,58 +5,147 @@
       "output": "simreview-desktop.mp4",
       "composition": "simreview-desktop",
       "duration": 43,
-      "bytes": 965583,
+      "bytes": 959209,
       "silent": true,
       "stills": [
         {
           "output": "simreview-desktop-0-before.webp",
           "frame": 0,
-          "bytes": 29494
+          "bytes": 29498
         },
         {
           "output": "simreview-desktop-0-after.webp",
           "frame": 143,
-          "bytes": 31420
+          "bytes": 31350
         },
         {
           "output": "simreview-desktop-1-before.webp",
           "frame": 144,
-          "bytes": 26740
+          "bytes": 26508
         },
         {
           "output": "simreview-desktop-1-after.webp",
           "frame": 431,
-          "bytes": 30012
+          "bytes": 29732
         },
         {
           "output": "simreview-desktop-2-before.webp",
           "frame": 432,
-          "bytes": 32306
+          "bytes": 29136
         },
         {
           "output": "simreview-desktop-2-after.webp",
           "frame": 575,
-          "bytes": 41314
+          "bytes": 38146
         },
         {
           "output": "simreview-desktop-3-before.webp",
           "frame": 576,
-          "bytes": 34490
+          "bytes": 34486
         },
         {
           "output": "simreview-desktop-3-after.webp",
           "frame": 863,
-          "bytes": 36470
+          "bytes": 36236
         },
         {
           "output": "simreview-desktop-4-before.webp",
           "frame": 864,
-          "bytes": 38592
+          "bytes": 36786
         },
         {
           "output": "simreview-desktop-4-after.webp",
           "frame": 1031,
-          "bytes": 43808
+          "bytes": 41904
+        }
+      ],
+      "cuts": [
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-recording.mp4",
+          "start": 0,
+          "end": 11.8,
+          "sourceDuration": 38.4,
+          "crop": null
+        },
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
+          "start": 1.34,
+          "end": 4,
+          "sourceDuration": 27.066667,
+          "crop": null
+        },
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
+          "start": 4,
+          "end": 14.5,
+          "sourceDuration": 27.066667,
+          "crop": null
+        },
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
+          "start": 22,
+          "end": 23.1,
+          "sourceDuration": 27.066667,
+          "crop": null
+        }
+      ]
+    },
+    {
+      "output": "simreview-mobile.mp4",
+      "composition": "simreview-mobile",
+      "duration": 43,
+      "bytes": 869261,
+      "silent": true,
+      "stills": [
+        {
+          "output": "simreview-mobile-0-before.webp",
+          "frame": 0,
+          "bytes": 31872
+        },
+        {
+          "output": "simreview-mobile-0-after.webp",
+          "frame": 143,
+          "bytes": 32334
+        },
+        {
+          "output": "simreview-mobile-1-before.webp",
+          "frame": 144,
+          "bytes": 23504
+        },
+        {
+          "output": "simreview-mobile-1-after.webp",
+          "frame": 431,
+          "bytes": 24730
+        },
+        {
+          "output": "simreview-mobile-2-before.webp",
+          "frame": 432,
+          "bytes": 27012
+        },
+        {
+          "output": "simreview-mobile-2-after.webp",
+          "frame": 575,
+          "bytes": 33160
+        },
+        {
+          "output": "simreview-mobile-3-before.webp",
+          "frame": 576,
+          "bytes": 31374
+        },
+        {
+          "output": "simreview-mobile-3-after.webp",
+          "frame": 863,
+          "bytes": 28904
+        },
+        {
+          "output": "simreview-mobile-4-before.webp",
+          "frame": 864,
+          "bytes": 40846
+        },
+        {
+          "output": "simreview-mobile-4-after.webp",
+          "frame": 1031,
+          "bytes": 39990
         }
       ],
       "cuts": [
@@ -94,68 +183,68 @@
       "output": "the-city-beyond-desktop.mp4",
       "composition": "the-city-beyond-desktop",
       "duration": 52,
-      "bytes": 3184272,
+      "bytes": 3180595,
       "silent": true,
       "stills": [
         {
           "output": "the-city-beyond-desktop-0-before.webp",
           "frame": 0,
-          "bytes": 49272
+          "bytes": 47966
         },
         {
           "output": "the-city-beyond-desktop-0-after.webp",
           "frame": 143,
-          "bytes": 56256
+          "bytes": 55192
         },
         {
           "output": "the-city-beyond-desktop-1-before.webp",
           "frame": 144,
-          "bytes": 63928
+          "bytes": 61930
         },
         {
           "output": "the-city-beyond-desktop-1-after.webp",
           "frame": 311,
-          "bytes": 62424
+          "bytes": 60194
         },
         {
           "output": "the-city-beyond-desktop-2-before.webp",
           "frame": 312,
-          "bytes": 55902
+          "bytes": 55244
         },
         {
           "output": "the-city-beyond-desktop-2-after.webp",
           "frame": 455,
-          "bytes": 60012
+          "bytes": 59392
         },
         {
           "output": "the-city-beyond-desktop-3-before.webp",
           "frame": 456,
-          "bytes": 60650
+          "bytes": 59370
         },
         {
           "output": "the-city-beyond-desktop-3-after.webp",
           "frame": 695,
-          "bytes": 65482
+          "bytes": 64338
         },
         {
           "output": "the-city-beyond-desktop-4-before.webp",
           "frame": 696,
-          "bytes": 80718
+          "bytes": 75826
         },
         {
           "output": "the-city-beyond-desktop-4-after.webp",
           "frame": 935,
-          "bytes": 64534
+          "bytes": 60336
         },
         {
           "output": "the-city-beyond-desktop-5-before.webp",
           "frame": 936,
-          "bytes": 77522
+          "bytes": 76002
         },
         {
           "output": "the-city-beyond-desktop-5-after.webp",
           "frame": 1247,
-          "bytes": 90784
+          "bytes": 88304
         }
       ],
       "cuts": [
@@ -232,160 +321,71 @@
       ]
     },
     {
-      "output": "simreview-mobile.mp4",
-      "composition": "simreview-mobile",
-      "duration": 43,
-      "bytes": 874442,
-      "silent": true,
-      "stills": [
-        {
-          "output": "simreview-mobile-0-before.webp",
-          "frame": 0,
-          "bytes": 31128
-        },
-        {
-          "output": "simreview-mobile-0-after.webp",
-          "frame": 143,
-          "bytes": 31352
-        },
-        {
-          "output": "simreview-mobile-1-before.webp",
-          "frame": 144,
-          "bytes": 24216
-        },
-        {
-          "output": "simreview-mobile-1-after.webp",
-          "frame": 431,
-          "bytes": 25416
-        },
-        {
-          "output": "simreview-mobile-2-before.webp",
-          "frame": 432,
-          "bytes": 33624
-        },
-        {
-          "output": "simreview-mobile-2-after.webp",
-          "frame": 575,
-          "bytes": 39946
-        },
-        {
-          "output": "simreview-mobile-3-before.webp",
-          "frame": 576,
-          "bytes": 32638
-        },
-        {
-          "output": "simreview-mobile-3-after.webp",
-          "frame": 863,
-          "bytes": 29376
-        },
-        {
-          "output": "simreview-mobile-4-before.webp",
-          "frame": 864,
-          "bytes": 43184
-        },
-        {
-          "output": "simreview-mobile-4-after.webp",
-          "frame": 1031,
-          "bytes": 42366
-        }
-      ],
-      "cuts": [
-        {
-          "source": "simreview/promo/public/clips/en-100-chest-pain-recording.mp4",
-          "start": 0,
-          "end": 11.8,
-          "sourceDuration": 38.4,
-          "crop": null
-        },
-        {
-          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
-          "start": 1.34,
-          "end": 4,
-          "sourceDuration": 27.066667,
-          "crop": null
-        },
-        {
-          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
-          "start": 4,
-          "end": 14.5,
-          "sourceDuration": 27.066667,
-          "crop": null
-        },
-        {
-          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
-          "start": 22,
-          "end": 23.1,
-          "sourceDuration": 27.066667,
-          "crop": null
-        }
-      ]
-    },
-    {
       "output": "the-city-beyond-mobile.mp4",
       "composition": "the-city-beyond-mobile",
       "duration": 52,
-      "bytes": 2773360,
+      "bytes": 2758057,
       "silent": true,
       "stills": [
         {
           "output": "the-city-beyond-mobile-0-before.webp",
           "frame": 0,
-          "bytes": 50096
+          "bytes": 44442
         },
         {
           "output": "the-city-beyond-mobile-0-after.webp",
           "frame": 143,
-          "bytes": 55064
+          "bytes": 49430
         },
         {
           "output": "the-city-beyond-mobile-1-before.webp",
           "frame": 144,
-          "bytes": 59944
+          "bytes": 59932
         },
         {
           "output": "the-city-beyond-mobile-1-after.webp",
           "frame": 311,
-          "bytes": 59218
+          "bytes": 59142
         },
         {
           "output": "the-city-beyond-mobile-2-before.webp",
           "frame": 312,
-          "bytes": 54454
+          "bytes": 53640
         },
         {
           "output": "the-city-beyond-mobile-2-after.webp",
           "frame": 455,
-          "bytes": 56888
+          "bytes": 56100
         },
         {
           "output": "the-city-beyond-mobile-3-before.webp",
           "frame": 456,
-          "bytes": 57316
+          "bytes": 55596
         },
         {
           "output": "the-city-beyond-mobile-3-after.webp",
           "frame": 695,
-          "bytes": 61648
+          "bytes": 59702
         },
         {
           "output": "the-city-beyond-mobile-4-before.webp",
           "frame": 696,
-          "bytes": 70676
+          "bytes": 70484
         },
         {
           "output": "the-city-beyond-mobile-4-after.webp",
           "frame": 935,
-          "bytes": 58790
+          "bytes": 58078
         },
         {
           "output": "the-city-beyond-mobile-5-before.webp",
           "frame": 936,
-          "bytes": 71758
+          "bytes": 69988
         },
         {
           "output": "the-city-beyond-mobile-5-after.webp",
           "frame": 1247,
-          "bytes": 81896
+          "bytes": 80108
         }
       ],
       "cuts": [

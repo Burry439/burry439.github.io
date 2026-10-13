@@ -6,7 +6,6 @@ export const demos={
   name:'SimReview',title:'From an interview to one useful improvement',duration:'43 seconds',
   label:'AI-voiced example interview · real app footage',kind:'portrait',
   introduction:'Explore a fictional interview, inspect the source of its feedback, and choose what to practice next.',
-  contribution:'My contribution: original app builder and product owner; practice flow, trust checks, and evidence-linked coaching. Codex supported delivery.',
   steps:[
    {title:'Choose the example',seconds:6,before:'sim-case.webp',after:'sim-record-before.webp',action:'Choose chest-pain example',hotspot:{x:.35,y:.73},
     body:'A fictional chest-pain case. The learner interviews a helper playing the patient; the helper holds the phone and follows the case guide.',
@@ -26,19 +25,18 @@ export const demos={
     outcome:'The coaching points to a specific missed follow-up, with the original interview beside the explanation.'},
    {title:'Choose the next-practice focus',seconds:7,...media('sim-focus'),action:'Select the next-practice focus',hotspot:{x:.409,y:.349},
     body:'This recording selects “Explore the acute complaint before extended demographic questions.” The green “Selected for next time” state confirms the choice; it carries forward into repeat practice.',
-    outcome:'The loop: practice → inspect evidence → choose one improvement → practice again. This demo shows product behavior, not proof of learning impact.'},
+    outcome:'The selected focus is saved for the next practice.'},
   ],
   extra:{title:'A separate Hebrew example',seconds:9,...media('sim-hebrew'),action:'Play Hebrew example',
    body:'A different recorded session: a fictional ectopic-pregnancy case. It demonstrates the same source-linked review in Hebrew.',
    quote:'Opening: inviting the patient to describe the problem in her own words gave her room to present the main complaint.',
    quoteLabel:'English explanation of the Hebrew coaching · Opening, 0:12',
-   outcome:'This is a separate example, with its own interview, score, and coaching. It is not a translation of the English session.'},
+   outcome:'The interview, score and coaching belong to this separate Hebrew session.'},
  },
  'the-city-beyond':{
   name:'The City Beyond',title:'Can your idea get you inside?',duration:'52 seconds',kind:'landscape',
   label:'Guided replay of recorded gameplay',
   introduction:'Try a recorded idea, understand its failure, and see an invention change the world. These are selected examples of a free-form system.',
-  contribution:'My contribution: product vision, scope, priorities, acceptance criteria, and reviews. Claude Code and Codex implemented the game under my direction.',
   steps:[
    {title:'Meet the problem',seconds:6,...media('city-need'),action:'Reveal the watch’s problem',
     body:'You arrive from the future outside a guarded city. The watch needs a reliable way to navigate in fog. Can your knowledge earn you a way in?',
@@ -54,7 +52,7 @@ export const demos={
    {title:'Switch to iron',seconds:10,...media('city-iron'),action:'Try iron and assemble the compass',
     body:'Iron becomes weakly magnetised. The player then assembles the floating needle; the invention receives generated artwork and becomes a usable object.',
     quote:'The iron becomes weakly magnetised.',quoteLabel:'Recorded game response',note:'Selected results; processing time omitted',
-    outcome:'Your idea becomes a persistent object. An illustrated invention is only useful if it changes what happens next.'},
+    outcome:'The floating needle is saved as an inventory object.'},
    {title:'Demonstrate the invention',seconds:10,...media('city-proof'),action:'Show the captain and test the heading',
     body:'Oren brings the invention to Captain Roderic’s attention. The captain asks for evidence; the player demonstrates whether it holds a heading.',
     quote:'Oren says you made a floating needle, stranger. Its direction has not been tested; show me whether it can hold a heading in the fog.',quoteLabel:'Captain Roderic',
@@ -62,7 +60,7 @@ export const demos={
    {title:'Enter the city',seconds:13,...media('city-enter'),action:'See the response and walk through the gate',
     body:'The captain responds to the demonstrated result. Then you walk through the gate: the world has changed because of what you made and proved.',
     quote:'It holds its heading. That could keep the night patrols on course in fog. You may pass, stranger.',quoteLabel:'Captain Roderic',
-    outcome:'The loop: express an idea → get a reasoned result → change the world. This is one recorded route, not a live AI session.'},
+    outcome:'The heading test earns permission to enter. This is recorded gameplay.'},
   ],
  },
 };
@@ -70,25 +68,25 @@ export const demos={
 // Film chapters are also the exploration source. No second set of videos is loaded.
 const editorial={
  simreview:[
-  ['One phone. Two people.','The learner interviews a helper playing the patient. AI reviews the recording afterwards.','Start the example'],
-  ['Listen to the interview.','A short exchange from the fictional chest-pain case.','Play the interview'],
-  ['See what worked. See what to change.','Strengths, improvements and cited moments appear beside the recording.','Show the feedback'],
-  ['Follow the evidence at 2:13.','The patient answers about nausea and sweating. The breathing question is still unanswered.','Replay 2:13'],
-  ['Choose one thing for next time.','Selected: explore the acute complaint before extended demographic questions. This is a different item from the breathing follow-up.','Select the recorded focus']
+  ['Record a practice interview','A helper follows the patient guide. The recording is reviewed by AI afterwards.','View the recording setup'],
+  ['Interview excerpt','A recorded exchange from the fictional chest-pain case.','Play the interview'],
+  ['Review the feedback','Strengths and suggested improvements link to moments in the recording.','Show the feedback'],
+  ['Replay the 2:13 follow-up','The patient answers about nausea and sweating, leaving the breathing question unanswered.','Replay 2:13'],
+  ['Select a practice focus','Selected: explore the acute complaint before extended demographic questions. This differs from the breathing follow-up.','Select the recorded focus']
  ],
  'the-city-beyond':[
-  ['The watch loses its way in fog.','You know how to make a compass. Can that knowledge earn you a way inside?','Hear the problem'],
-  ['Try a bronze needle.','The player describes a method in their own words. This is a recorded attempt.','Try bronze'],
-  ['Bronze does not work.','“Bronze cannot be magnetised this way, so it will not serve as a compass.”','Read the result'],
-  ['Use iron. Make the compass.','The iron becomes weakly magnetised. The assembled floating needle gets its own artwork.','Make the compass'],
-  ['Show that it holds a heading.','The captain asks for proof. The player tests the compass rather than just describing it.','Demonstrate it'],
-  ['The captain lets you through.','“It holds its heading… You may pass, stranger.” Then the player walks through the gate.','Enter the city']
+  ['The navigation problem','The watch needs a way to hold a heading in fog. The player proposes a compass.','Read the watch’s request'],
+  ['The bronze attempt','The player types a method to magnetise a bronze needle.','Replay the bronze attempt'],
+  ['The failed attempt','“Bronze cannot be magnetised this way, so it will not serve as a compass.”','Read the response'],
+  ['The iron compass','The iron becomes weakly magnetised. The assembled floating needle receives generated artwork.','Replay the iron attempt'],
+  ['The heading test','The captain requests proof. The player demonstrates the compass.','Replay the heading test'],
+  ['Permission to enter','“It holds its heading… You may pass, stranger.” The player walks through the gate.','Replay city entry']
  ]
 };
 for(const [id,demo] of Object.entries(demos)){
  let start=0;
- demo.title=id==='simreview'?'An interview, a replay, a next attempt.':'From a bronze needle to an open gate.';
- demo.introduction=id==='simreview'?'A fictional interview in the real app. Watch the review and one focus selection.':'One recorded route: invent a compass, prove it works and earn entry.';
+ demo.title=id==='simreview'?'SimReview: practice and feedback':'The City Beyond: inventing a compass';
+ demo.introduction=id==='simreview'?'A recorded example of the interview, review and next-practice selection.':'A recorded invention attempt, heading test and entry into the city.';
  demo.label=id==='simreview'?'AI-voiced example interview · real app footage':'Guided replay of recorded gameplay';
  demo.steps.forEach((step,i)=>{
   step.start=start;start+=step.seconds;step.end=start;

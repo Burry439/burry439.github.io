@@ -24,9 +24,9 @@ Open http://127.0.0.1:4174. The local server supports video range requests. Outp
 - `public/demos.js` and `demo.css`: one reusable player for inline demos and the homepage dialog.
 - `public/demos/`: silent MP4 segments, before/after WebP frames, and source timestamp provenance.
 - `public/assets/`: approved synthetic UI screenshots, gameplay screenshots, posters, and self-hosted fonts.
-- `public/videos/simreview.mp4` and `city-beyond.mp4`: current browser-ready promo cuts.
+- `public/videos/*-story.mp4` and `*-story-mobile.mp4`: current widescreen and portrait promo exports. `provenance.json` records their original files, sizes, durations and hashes.
 
-To replace a video, overwrite its file in `public/videos/`, update its poster and duration in `src/projects.mjs`, build, and push. The case study and homepage player use the same file. Originals remain in the project workspaces; the site contains the smaller existing preview encodes.
+To replace a promo, add the new wide and portrait exports to `public/videos/` and update `video`, `videoMobile`, `poster`, `duration` and `durationMobile` in `src/projects.mjs`. Update promo provenance, build and push. Homepage dialogs and case-study players select portrait at widths up to 600px; video loading remains deferred. Originals remain in the project workspaces. Current story cuts are 1:40 wide / 1:33 portrait for SimReview and 2:10 in both formats for The City Beyond.
 
 To add a project, add an object to the `projects` array using the existing schema. The homepage, deck, case navigation, individual static page, and sitemap are generated from that array. The next-project link selects another project. Review the homepage composition as the collection grows.
 
@@ -71,9 +71,9 @@ The five-person comprehension test in `docs/comprehension-test.md` remains propo
 - SimReview: local `README.md`, current `docs/product-decisions.md` and backend scoring configuration, `docs/case-study.md`, evaluation appendices, synthetic screenshots, and the current promo workspace. The source repo is private and no private recordings or credentials are included here.
 - The City Beyond: `docs/portfolio/case_study.html`, GDD, evaluation results, `docs/UX_REVIEW_2026-10-12.md`, and current promo workspace in the public `Burry439/time-travel` project.
 - Related local Codex project chats were consulted for ownership and project goals.
-- Role positioning uses the owner’s confirmed interest in AI product builder, prototyper and product management roles. No unverified employment history is included.
+- Career copy uses the owner’s verified current LinkedIn profile: full-stack work at JumboMail and Red Black Tree, a teaching assistant role at Reichman, and HCI/business background. Coursework completion is not presented as a confirmed awarded degree. The thesis, video pipeline and family context are excluded at the owner’s request.
 - Case study writing uses a short overview, personal contribution, decisions and alternatives, artifacts, measured evidence, limits, and next decisions. Guidance: https://www.nngroup.com/articles/ux-design-portfolios/.
 - Visual reference: https://jonzinercohen.com/. The site has original implementation and project content, with similar warm neutrals, floating navigation, project deck, and case-study hierarchy. No reference artwork, personal claims, or analytics identifiers are included.
 - General Sans is distributed by Fontshare: https://www.fontshare.com/fonts/general-sans. Files were obtained through Fontshare’s public font CSS API and are self-hosted for performance.
 
-Technical evaluations are labeled as such. No learner, clinical, business, or player outcome claims are made. The supplied promos remain as-is, including any earlier narration or embedded branding; they can be replaced with the planned improved cuts.
+Technical evaluations are labeled as such. No learner, clinical, business, or player outcome claims are made. The latest supplied story promos replace the earlier cuts; narration and recorded outcomes are preserved. The silent primary films remain separate, with updated editorial captions.

@@ -1,0 +1,45 @@
+{
+  "description": "Latest supplied story promo preview exports. Copies preserve original narration and recorded outcomes. SimReview uses AI-voiced fictional sessions; The City Beyond uses recorded gameplay.",
+  "exports": [
+    {
+      "output": "simreview-story.mp4",
+      "source": "C:/Users/Burry/Desktop/Med OPQRST sim/promo/out/simreview-story-16x9-preview.mp4",
+      "duration": 99.5,
+      "bytes": 9249686,
+      "width": 1920,
+      "height": 1080,
+      "audio": true,
+      "sha256": "0d2a94c60b246d5835dca919316aa4b6f0d05bc080f5c8b20dcbdbd4927bf709"
+    },
+    {
+      "output": "simreview-story-mobile.mp4",
+      "source": "C:/Users/Burry/Desktop/Med OPQRST sim/promo/out/simreview-story-4x5-preview.mp4",
+      "duration": 93.184,
+      "bytes": 6210614,
+      "width": 1080,
+      "height": 1350,
+      "audio": true,
+      "sha256": "e09bfd955e8051159992c81f2de3c920f7395210dac36092de0b4306c38d58d3"
+    },
+    {
+      "output": "city-beyond-story.mp4",
+      "source": "C:/Users/Burry/Documents/time-travel/videos/city-beyond-story-16x9-preview.mp4",
+      "duration": 130.4,
+      "bytes": 30559385,
+      "width": 1920,
+      "height": 1080,
+      "audio": true,
+      "sha256": "3b89333243119eb379098acef2a39af013ab30e6f6b1abdad06a8f443f26e74e"
+    },
+    {
+      "output": "city-beyond-story-mobile.mp4",
+      "source": "C:/Users/Burry/Documents/time-travel/videos/city-beyond-story-4x5-preview.mp4",
+      "duration": 130.4,
+      "bytes": 23939232,
+      "width": 1080,
+      "height": 1350,
+      "audio": true,
+      "sha256": "c861c6cf337ee82c9b4d54125faed2a7145c2324defd3f695cdd1d10f8b69604"
+    }
+  ]
+}

@@ -22,17 +22,17 @@ function Chapter({step,index,demo,mobile}){
  const color=sim?'#234f60':'#d6c79b';
  const heading=step.heading;
  const mobileCaption=(sim?[
-  'Interview a helper playing the patient. AI reviews the recording afterwards.',
+  'A helper follows the patient guide. AI reviews the recording afterwards.',
   'A fictional chest-pain interview.',
-  'Replay the moments behind strengths and improvements.',
-  'The breathing question goes unanswered. Ask it again separately.',
-  'Selected: explore the acute complaint first. A separate item from the breathing follow-up.'
+  'Feedback links to moments in the recording.',
+  'The breathing question is unanswered. Ask it again separately.',
+  'Selected: explore the acute complaint first. Separate from the breathing follow-up.'
  ]:[
-  'The watch needs a way to navigate. Can a compass get you inside?',
+  'The watch needs a way to hold a heading in fog.',
   'The player types a method to magnetise a bronze needle.',
   'Bronze cannot be magnetised this way. Change the material.',
-  'Iron works. The floating needle becomes an illustrated object.',
-  'The captain asks for proof. Test the heading.',
+  'The iron is magnetised. The assembled needle receives artwork.',
+  'The captain requests proof. The player tests the heading.',
   '“It holds its heading… You may pass, stranger.” The player enters.'
  ])[index];
  const style={position:'absolute',width:sourceW*scale,height:sourceH*scale,maxWidth:'none',left:(w-sourceW*scale)/2,top:h/2-sourceH*scale*center};

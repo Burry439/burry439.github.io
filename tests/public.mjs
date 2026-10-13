@@ -52,11 +52,25 @@ try{
   await page.waitForFunction(()=>document.querySelector('#video-dialog video').currentTime>0);
   await page.locator('#video-dialog .dialog-close').click();assert.equal(await page.locator('#video-dialog video').evaluate(v=>v.paused),true);
  }
- await page.setViewportSize({width:390,height:844});await page.goto(base+'/simreview/',{waitUntil:'networkidle'});
+ await page.setViewportSize({width:390,height:844});
+ for(const id of ['simreview','the-city-beyond']){
+  const early=[];const listener=r=>{if(/\/videos\/.*\.mp4/.test(r.url()))early.push(r.url());};page.on('request',listener);
+  await page.goto(base+'/'+id+'/',{waitUntil:'networkidle'});assert.equal(early.length,0,`Promo downloaded before activation: ${early.join(', ')}`);page.off('request',listener);
+  const promo=page.locator('.video-shell video');await promo.scrollIntoViewIfNeeded();
+  await promo.evaluate(async v=>{v.muted=true;await v.play();});await page.waitForFunction(()=>document.querySelector('.video-shell video').currentTime>0);
+  const metadata=await promo.evaluate(v=>({src:v.currentSrc,width:v.videoWidth,height:v.videoHeight,duration:v.duration}));
+  assert.match(metadata.src,/-story-mobile\.mp4$/);assert.ok(metadata.height>metadata.width);assert.ok(metadata.duration>90);
+  await promo.evaluate(v=>v.pause());
+  await page.screenshot({path:`qa/screenshots/live-${id}-portrait-promo.png`});
+  await page.goto(base);await page.locator(`[data-title="${id==='simreview'?'SimReview':'The City Beyond'}"][data-video]`).click();
+  await page.waitForFunction(()=>document.querySelector('#video-dialog video').currentTime>0);assert.match(await page.locator('#video-dialog video').getAttribute('src'),/-story-mobile\.mp4$/);
+  await page.locator('#video-dialog .dialog-close').click();
+ }
+ await page.goto(base+'/simreview/',{waitUntil:'networkidle'});
  await page.locator('a[href="#demo"]').click();assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
  await page.screenshot({path:'qa/screenshots/live-mobile-demo.png'});
  assert.deepEqual(errors,[]);
  assert.deepEqual(insecureRequests,[]);
- const report={base,redirects,routes:3,mediaFiles:media.length,clips:media.filter(m=>m.file.endsWith('.mp4')).length,checks:['Canonical URLs','No early demo video downloads','All demo media available; MP4 range requests succeed','Both dialog demos play','Both full promos play and stop on close','390px mobile layout',...(new URL(base).protocol==='https:'?['Valid TLS connections; no insecure subresources']:[])],errors};
+ const report={base,redirects,routes:3,mediaFiles:media.length,clips:media.filter(m=>m.file.endsWith('.mp4')).length,checks:['Canonical URLs','No early demo video downloads','All demo media available; MP4 range requests succeed','Both dialog demos play','Both full promos play and stop on close','Portrait promos selected and play in case studies and dialogs; no early promo download','390px mobile layout',...(new URL(base).protocol==='https:'?['Valid TLS connections; no insecure subresources']:[])],errors};
  console.log(JSON.stringify(report,null,2));await writeFile('qa/public-report.json',JSON.stringify(report,null,2));
 }finally{await browser.close();}
