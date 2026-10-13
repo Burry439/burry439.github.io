@@ -1,0 +1,465 @@
+{
+  "description": "Remotion product films made from duration-validated capture exports. Chapter sources and source timestamps are retained. No sound; synthetic English session and recorded gameplay.",
+  "exports": [
+    {
+      "output": "simreview-desktop.mp4",
+      "composition": "simreview-desktop",
+      "duration": 43,
+      "bytes": 965583,
+      "silent": true,
+      "stills": [
+        {
+          "output": "simreview-desktop-0-before.webp",
+          "frame": 0,
+          "bytes": 29494
+        },
+        {
+          "output": "simreview-desktop-0-after.webp",
+          "frame": 143,
+          "bytes": 31420
+        },
+        {
+          "output": "simreview-desktop-1-before.webp",
+          "frame": 144,
+          "bytes": 26740
+        },
+        {
+          "output": "simreview-desktop-1-after.webp",
+          "frame": 431,
+          "bytes": 30012
+        },
+        {
+          "output": "simreview-desktop-2-before.webp",
+          "frame": 432,
+          "bytes": 32306
+        },
+        {
+          "output": "simreview-desktop-2-after.webp",
+          "frame": 575,
+          "bytes": 41314
+        },
+        {
+          "output": "simreview-desktop-3-before.webp",
+          "frame": 576,
+          "bytes": 34490
+        },
+        {
+          "output": "simreview-desktop-3-after.webp",
+          "frame": 863,
+          "bytes": 36470
+        },
+        {
+          "output": "simreview-desktop-4-before.webp",
+          "frame": 864,
+          "bytes": 38592
+        },
+        {
+          "output": "simreview-desktop-4-after.webp",
+          "frame": 1031,
+          "bytes": 43808
+        }
+      ],
+      "cuts": [
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-recording.mp4",
+          "start": 0,
+          "end": 11.8,
+          "sourceDuration": 38.4,
+          "crop": null
+        },
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
+          "start": 1.34,
+          "end": 4,
+          "sourceDuration": 27.066667,
+          "crop": null
+        },
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
+          "start": 4,
+          "end": 14.5,
+          "sourceDuration": 27.066667,
+          "crop": null
+        },
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
+          "start": 22,
+          "end": 23.1,
+          "sourceDuration": 27.066667,
+          "crop": null
+        }
+      ]
+    },
+    {
+      "output": "the-city-beyond-desktop.mp4",
+      "composition": "the-city-beyond-desktop",
+      "duration": 52,
+      "bytes": 3184272,
+      "silent": true,
+      "stills": [
+        {
+          "output": "the-city-beyond-desktop-0-before.webp",
+          "frame": 0,
+          "bytes": 49272
+        },
+        {
+          "output": "the-city-beyond-desktop-0-after.webp",
+          "frame": 143,
+          "bytes": 56256
+        },
+        {
+          "output": "the-city-beyond-desktop-1-before.webp",
+          "frame": 144,
+          "bytes": 63928
+        },
+        {
+          "output": "the-city-beyond-desktop-1-after.webp",
+          "frame": 311,
+          "bytes": 62424
+        },
+        {
+          "output": "the-city-beyond-desktop-2-before.webp",
+          "frame": 312,
+          "bytes": 55902
+        },
+        {
+          "output": "the-city-beyond-desktop-2-after.webp",
+          "frame": 455,
+          "bytes": 60012
+        },
+        {
+          "output": "the-city-beyond-desktop-3-before.webp",
+          "frame": 456,
+          "bytes": 60650
+        },
+        {
+          "output": "the-city-beyond-desktop-3-after.webp",
+          "frame": 695,
+          "bytes": 65482
+        },
+        {
+          "output": "the-city-beyond-desktop-4-before.webp",
+          "frame": 696,
+          "bytes": 80718
+        },
+        {
+          "output": "the-city-beyond-desktop-4-after.webp",
+          "frame": 935,
+          "bytes": 64534
+        },
+        {
+          "output": "the-city-beyond-desktop-5-before.webp",
+          "frame": 936,
+          "bytes": 77522
+        },
+        {
+          "output": "the-city-beyond-desktop-5-after.webp",
+          "frame": 1247,
+          "bytes": 90784
+        }
+      ],
+      "cuts": [
+        {
+          "source": "the-city-beyond/promo/public/clips/c_need.mp4",
+          "start": 10.6,
+          "end": 14.2,
+          "sourceDuration": 19.5,
+          "crop": "1280:720:230:360"
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/c_bronze.mp4",
+          "start": 0,
+          "end": 4.8,
+          "sourceDuration": 21.2,
+          "crop": "1280:720:300:360"
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/c_bronze.mp4",
+          "start": 12,
+          "end": 14.2,
+          "sourceDuration": 21.2,
+          "crop": "1280:720:230:360"
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/c_iron.mp4",
+          "start": 17.6,
+          "end": 20.8,
+          "sourceDuration": 26.9,
+          "crop": "1280:720:230:360"
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/c_assembly.mp4",
+          "start": 0,
+          "end": 1.3,
+          "sourceDuration": 27.9,
+          "crop": "1280:720:300:360"
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/c_assembly.mp4",
+          "start": 16.9,
+          "end": 22.2,
+          "sourceDuration": 27.9,
+          "crop": "1152:648:390:50"
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/p_oren.mp4",
+          "start": 8,
+          "end": 12,
+          "sourceDuration": 12.066667,
+          "crop": "1280:720:400:0"
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/c_test.mp4",
+          "start": 25.6,
+          "end": 29.6,
+          "sourceDuration": 39.1,
+          "crop": "1280:720:230:360"
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/p_admit.mp4",
+          "start": 1.8,
+          "end": 7.2,
+          "sourceDuration": 12.066667,
+          "crop": "1280:720:400:0"
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/p_gate.mp4",
+          "start": 0.5,
+          "end": 7.5,
+          "sourceDuration": 20.066667,
+          "crop": "1920:1080:0:0"
+        }
+      ]
+    },
+    {
+      "output": "simreview-mobile.mp4",
+      "composition": "simreview-mobile",
+      "duration": 43,
+      "bytes": 874442,
+      "silent": true,
+      "stills": [
+        {
+          "output": "simreview-mobile-0-before.webp",
+          "frame": 0,
+          "bytes": 31128
+        },
+        {
+          "output": "simreview-mobile-0-after.webp",
+          "frame": 143,
+          "bytes": 31352
+        },
+        {
+          "output": "simreview-mobile-1-before.webp",
+          "frame": 144,
+          "bytes": 24216
+        },
+        {
+          "output": "simreview-mobile-1-after.webp",
+          "frame": 431,
+          "bytes": 25416
+        },
+        {
+          "output": "simreview-mobile-2-before.webp",
+          "frame": 432,
+          "bytes": 33624
+        },
+        {
+          "output": "simreview-mobile-2-after.webp",
+          "frame": 575,
+          "bytes": 39946
+        },
+        {
+          "output": "simreview-mobile-3-before.webp",
+          "frame": 576,
+          "bytes": 32638
+        },
+        {
+          "output": "simreview-mobile-3-after.webp",
+          "frame": 863,
+          "bytes": 29376
+        },
+        {
+          "output": "simreview-mobile-4-before.webp",
+          "frame": 864,
+          "bytes": 43184
+        },
+        {
+          "output": "simreview-mobile-4-after.webp",
+          "frame": 1031,
+          "bytes": 42366
+        }
+      ],
+      "cuts": [
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-recording.mp4",
+          "start": 0,
+          "end": 11.8,
+          "sourceDuration": 38.4,
+          "crop": null
+        },
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
+          "start": 1.34,
+          "end": 4,
+          "sourceDuration": 27.066667,
+          "crop": null
+        },
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
+          "start": 4,
+          "end": 14.5,
+          "sourceDuration": 27.066667,
+          "crop": null
+        },
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
+          "start": 22,
+          "end": 23.1,
+          "sourceDuration": 27.066667,
+          "crop": null
+        }
+      ]
+    },
+    {
+      "output": "the-city-beyond-mobile.mp4",
+      "composition": "the-city-beyond-mobile",
+      "duration": 52,
+      "bytes": 2773360,
+      "silent": true,
+      "stills": [
+        {
+          "output": "the-city-beyond-mobile-0-before.webp",
+          "frame": 0,
+          "bytes": 50096
+        },
+        {
+          "output": "the-city-beyond-mobile-0-after.webp",
+          "frame": 143,
+          "bytes": 55064
+        },
+        {
+          "output": "the-city-beyond-mobile-1-before.webp",
+          "frame": 144,
+          "bytes": 59944
+        },
+        {
+          "output": "the-city-beyond-mobile-1-after.webp",
+          "frame": 311,
+          "bytes": 59218
+        },
+        {
+          "output": "the-city-beyond-mobile-2-before.webp",
+          "frame": 312,
+          "bytes": 54454
+        },
+        {
+          "output": "the-city-beyond-mobile-2-after.webp",
+          "frame": 455,
+          "bytes": 56888
+        },
+        {
+          "output": "the-city-beyond-mobile-3-before.webp",
+          "frame": 456,
+          "bytes": 57316
+        },
+        {
+          "output": "the-city-beyond-mobile-3-after.webp",
+          "frame": 695,
+          "bytes": 61648
+        },
+        {
+          "output": "the-city-beyond-mobile-4-before.webp",
+          "frame": 696,
+          "bytes": 70676
+        },
+        {
+          "output": "the-city-beyond-mobile-4-after.webp",
+          "frame": 935,
+          "bytes": 58790
+        },
+        {
+          "output": "the-city-beyond-mobile-5-before.webp",
+          "frame": 936,
+          "bytes": 71758
+        },
+        {
+          "output": "the-city-beyond-mobile-5-after.webp",
+          "frame": 1247,
+          "bytes": 81896
+        }
+      ],
+      "cuts": [
+        {
+          "source": "the-city-beyond/promo/public/clips/c_need.mp4",
+          "start": 10.6,
+          "end": 14.2,
+          "sourceDuration": 19.5,
+          "crop": "1280:720:230:360"
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/c_bronze.mp4",
+          "start": 0,
+          "end": 4.8,
+          "sourceDuration": 21.2,
+          "crop": "1280:720:300:360"
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/c_bronze.mp4",
+          "start": 12,
+          "end": 14.2,
+          "sourceDuration": 21.2,
+          "crop": "1280:720:230:360"
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/c_iron.mp4",
+          "start": 17.6,
+          "end": 20.8,
+          "sourceDuration": 26.9,
+          "crop": "1280:720:230:360"
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/c_assembly.mp4",
+          "start": 0,
+          "end": 1.3,
+          "sourceDuration": 27.9,
+          "crop": "1280:720:300:360"
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/c_assembly.mp4",
+          "start": 16.9,
+          "end": 22.2,
+          "sourceDuration": 27.9,
+          "crop": "1152:648:390:50"
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/p_oren.mp4",
+          "start": 8,
+          "end": 12,
+          "sourceDuration": 12.066667,
+          "crop": "1280:720:400:0"
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/c_test.mp4",
+          "start": 25.6,
+          "end": 29.6,
+          "sourceDuration": 39.1,
+          "crop": "1280:720:230:360"
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/p_admit.mp4",
+          "start": 1.8,
+          "end": 7.2,
+          "sourceDuration": 12.066667,
+          "crop": "1280:720:400:0"
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/p_gate.mp4",
+          "start": 0.5,
+          "end": 7.5,
+          "sourceDuration": 20.066667,
+          "crop": "1920:1080:0:0"
+        }
+      ]
+    }
+  ]
+}

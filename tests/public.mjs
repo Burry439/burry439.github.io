@@ -27,13 +27,13 @@ try{
  for(const route of ['/','/simreview/','/the-city-beyond/']){
   const early=[];const listener=req=>{if(/\/demos\/.*\.mp4/.test(req.url()))early.push(req.url());};page.on('request',listener);
   assert.equal((await page.goto(base+route,{waitUntil:'networkidle'})).status(),200);
-  assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'),base+route);
+  assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'),(new URL(base).protocol==='https:'?base:'https://baruchweinstein.com')+route);
   assert.equal(early.length,0);page.off('request',listener);
   assert.ok(await page.locator(route==='/'?'[data-demo-open]':'[data-demo-embed] .demo-action').count());
  }
  const media=await page.evaluate(async()=>{
   const {demos}=await import('/demo-data.js');const files=new Set();
-  for(const demo of Object.values(demos))for(const step of [...demo.steps,...(demo.extra?[demo.extra]:[])])for(const key of ['before','after','clip'])if(step[key])files.add(step[key]);
+  for(const demo of Object.values(demos)){for(const film of Object.values(demo.films)){files.add(film.file);files.add(film.poster);}for(const step of demo.steps)for(const posters of Object.values(step.posters)){files.add(posters.before);files.add(posters.after);}if(demo.extra)for(const key of ['before','after','clip'])files.add(demo.extra[key]);}
   return Promise.all([...files].map(async file=>{
    const clip=file.endsWith('.mp4');const res=await fetch('/demos/'+file,clip?{headers:{Range:'bytes=0-1023'}}:{});
    const length=(await res.arrayBuffer()).byteLength;
@@ -44,7 +44,7 @@ try{
  await page.goto(base,{waitUntil:'networkidle'});
  for(const id of ['simreview','the-city-beyond']){
   await page.locator(`[data-demo-open="${id}"]`).click();const root=page.locator('#demo-dialog .guided-demo');
-  await root.locator('[data-step="1"]').click();await root.locator('.demo-action').click();
+  await root.locator('[data-command="explore"]').click();await root.locator('select').selectOption('1');await root.locator('.demo-action').click();
   await page.waitForFunction(()=>document.querySelector('#demo-dialog video').currentTime>0);
   assert.equal(await root.locator('.demo-error').isVisible(),false);
   await page.screenshot({path:`qa/screenshots/live-${id}-demo.png`});await page.keyboard.press('Escape');

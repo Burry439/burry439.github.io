@@ -1,117 +1,62 @@
-// Run with a locally installed Playwright package; the shipped site has no dependencies.
 import {createRequire} from 'node:module';
 import {mkdir,writeFile} from 'node:fs/promises';
 import assert from 'node:assert/strict';
+import {demos} from '../src/demos.mjs';
 const require=createRequire(process.env.PLAYWRIGHT_PACKAGE||new URL('../package.json',import.meta.url));
 const {chromium}=require('@playwright/test');
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE}:{})});
 const base=process.env.QA_URL||'http://127.0.0.1:4174';
-await mkdir('qa/screenshots',{recursive:true});const checks=[];const errors=[];
-const page=await browser.newPage({viewport:{width:1440,height:1050}});
-page.on('pageerror',e=>errors.push(e.message));
-const command=(root,c)=>root.locator(`[data-command="${c}"]`).first();
-const root=page.locator('#demo-dialog .guided-demo');
+await mkdir('qa/screenshots',{recursive:true});const checks=[],errors=[];
+const page=await browser.newPage({viewport:{width:1440,height:1000}});page.on('pageerror',e=>errors.push(e.message));
+const root=page.locator('#demo-dialog .product-demo');const cmd=c=>root.locator(`[data-command="${c}"]`).filter({visible:true}).first();
+const stage=()=>page.evaluate(()=>({y:document.querySelector('#demo-dialog .film-stage').getBoundingClientRect().top,scroll:document.querySelector('#demo-dialog').scrollTop}));
+async function held(i){await root.locator('video').evaluate((v,end)=>{v.currentTime=end-.04;v.dispatchEvent(new Event('timeupdate'));},demos[await root.evaluate(el=>el.closest('dialog').querySelector('h2').textContent==='SimReview'?'simreview':'the-city-beyond')].steps[i].end);await page.waitForFunction(()=>document.querySelector('#demo-dialog .product-demo').dataset.acted==='true');}
 try{
  for(const width of [320,390,768,1440]){
-  await page.setViewportSize({width,height:1000});
+  await page.setViewportSize({width,height:900});
   for(const route of ['/','/simreview/','/the-city-beyond/']){
-   const requests=[];const listener=req=>{if(/\/demos\/.*\.mp4/.test(req.url()))requests.push(req.url());};page.on('request',listener);
-   const response=await page.goto(base+route,{waitUntil:'networkidle'});assert.equal(response.status(),200);
-   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,`Overflow ${width} ${route}`);
-   assert.equal(requests.length,0,`Early demo download ${route}`);page.off('request',listener);
-   if(route!=='/'){await page.locator('a[href="#demo"]').click();await page.waitForTimeout(400);await page.locator('.guided-demo').screenshot({path:`qa/screenshots/demo-${route.split('/')[1]}-${width}.png`});}
+   const early=[];const listener=r=>{if(/\/demos\/.*\.mp4/.test(r.url()))early.push(r.url());};page.on('request',listener);
+   assert.equal((await page.goto(base+route,{waitUntil:'networkidle'})).status(),200);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);assert.equal(early.length,0);page.off('request',listener);
+   if(route!=='/')await page.locator('[data-demo-embed]').screenshot({path:`qa/screenshots/revision-${route.split('/')[1]}-${width}.png`});
   }
  }
- checks.push('Three routes at 320, 390, 768, 1440px; no overflow or early demo MP4 requests');console.log(checks.at(-1));
- await page.setViewportSize({width:1440,height:1050});await page.goto(base,{waitUntil:'networkidle'});
- for(const [id,total] of [['simreview',5],['the-city-beyond',6]]){
-  const opener=page.locator(`[data-demo-open="${id}"]`);await opener.click();
-  assert.equal(await page.locator('#demo-dialog').evaluate(d=>d.open),true);
-  assert.equal(await root.evaluate(r=>r.classList.contains('portrait')),id==='simreview');
-  assert.equal(await page.locator('[data-demo-close]').evaluate(el=>el===document.activeElement),true);
-  await page.keyboard.press('Shift+Tab');assert.equal(await page.evaluate(()=>Boolean(document.activeElement.closest('#demo-dialog'))),true);
-  // Tab must remain inside the native modal, and every screenshot action has a visible equivalent.
-  for(let i=0;i<24;i++){await page.keyboard.press('Tab');assert.equal(await page.evaluate(()=>Boolean(document.activeElement.closest('#demo-dialog'))),true);}
-  for(let step=0;step<total;step++){
-   assert.equal(await root.getAttribute('data-step'),String(step));
-   if(id==='simreview'&&step===3){assert.equal(await root.locator('.demo-dialogue mark').textContent(),'shortness of breath');assert.match(await root.locator('.demo-dialogue').textContent(),/cold sweat/);assert.match(await root.locator('.demo-quote').textContent(),/Ask that part again separately/);}
-   const hotspot=root.locator('.demo-hotspot');if(await hotspot.isVisible())assert.equal(await hotspot.getAttribute('aria-label'),await command(root,'action').filter({hasText:/./}).first().textContent().catch(()=>''));
-   await root.locator('.demo-action').click();
-   await page.waitForFunction(()=>{const r=document.querySelector('#demo-dialog .guided-demo');return !r.classList.contains('has-footage')&&r.querySelector('.demo-error').hidden;},{},{timeout:25000}).catch(async()=>{
-    assert.equal(await root.locator('.demo-error').isVisible(),false);assert.equal(await root.locator('video').evaluate(v=>v.ended),true);
-   });
-   assert.equal(await root.locator('.demo-error').isVisible(),false);
-   assert.equal(await root.evaluate(r=>r.classList.contains('has-outcome')),true);
-   const previous=await root.getAttribute('data-step');await page.waitForTimeout(250);assert.equal(await root.getAttribute('data-step'),previous);
-   if(step===total-1)await page.screenshot({path:`qa/screenshots/demo-${id}-finished.png`});
-   await command(root,'next').click();
+ checks.push('Three pages at 320/390/768/1440; no horizontal overflow or demo video before activation');
+ for(const viewport of [{width:320,height:568},{width:390,height:844},{width:768,height:700},{width:1440,height:900},{width:1024,height:480}]){
+  await page.setViewportSize(viewport);await page.goto(base,{waitUntil:'networkidle'});
+  for(const id of Object.keys(demos)){
+   await page.locator(`[data-demo-open="${id}"]`).click();await page.waitForFunction(()=>document.querySelector('#demo-dialog video').currentTime>0);await cmd('play').click();
+   assert.equal(await root.locator('video').evaluate(v=>v.paused),true);
+   const before=await stage();await cmd('explore').click();await root.locator('select').selectOption('1');const after=await stage();assert.ok(Math.abs(before.y-after.y)<1,'Stage jumped when mode/chapter changed');assert.equal(before.scroll,after.scroll);
+   const bounds=await root.locator('.chapter-control').boundingBox();assert.ok(bounds.y+bounds.height<=viewport.height,`Clipped controls ${id} ${viewport.width}x${viewport.height}`);
+   assert.equal(await page.locator('#demo-dialog').evaluate(d=>d.scrollTop),0);
+   await page.screenshot({path:`qa/screenshots/revision-dialog-${id}-${viewport.width}-${viewport.height}.png`});await page.keyboard.press('Escape');assert.equal(await page.evaluate(id=>document.activeElement.dataset.demoOpen===id,id),true);
   }
-  assert.equal(await root.locator('.demo-complete').isVisible(),true);
-  if(id==='simreview'){
-   await command(root,'extra').click();assert.equal(await root.getAttribute('data-extra'),'true');
-   assert.match(await root.locator('.demo-body').textContent(),/different recorded session/i);
-   assert.match(await root.locator('.demo-quote').textContent(),/Opening.*0:12/s);
-   await root.locator('.demo-action').click();await page.waitForFunction(()=>document.querySelector('#demo-dialog video').ended).catch(async error=>{console.log(await root.evaluate(r=>({status:r.querySelector('.demo-status').textContent,playing:r.dataset.playing,time:r.querySelector('video').currentTime})));throw error;});
-   await root.screenshot({path:'qa/screenshots/demo-hebrew.png'});
-   await command(root,'back').click();assert.equal(await root.getAttribute('data-extra'),'false');
+ }
+ checks.push('Both dialogs fit 320x568, 390x844, tablet, desktop and 1024x480; zero playback scroll jump; Escape restores focus');
+ await page.setViewportSize({width:1440,height:1000});await page.goto(base);
+ for(const [id,d] of Object.entries(demos)){
+  await page.locator(`[data-demo-open="${id}"]`).click();await page.waitForFunction(()=>document.querySelector('#demo-dialog video').currentTime>0);await cmd('explore').click();
+  for(let i=0;i<d.steps.length;i++){
+   if(i)await cmd('next').click();assert.equal(await root.getAttribute('data-step'),String(i));assert.equal(await root.getAttribute('data-acted'),'false');
+   const pos=await stage();await cmd('action').click();await page.waitForFunction(()=>!document.querySelector('#demo-dialog video').paused);await held(i);assert.equal(await root.locator('video').evaluate(v=>v.paused),true);assert.deepEqual(await stage(),pos,`${id} chapter ${i}: ${await root.evaluate(r=>JSON.stringify([...r.children].map(e=>[e.className,e.getBoundingClientRect().height])))}`);
+   await cmd('replay').click();await page.waitForFunction(()=>!document.querySelector('#demo-dialog video').paused);await held(i);
+   if(i){await cmd('back').click();assert.equal(await root.getAttribute('data-step'),String(i-1));await cmd('next').click();}
   }
-  await command(root,'back').click();assert.equal(await root.getAttribute('data-step'),String(total-2));
-  await command(root,'replay').click();await page.waitForFunction(()=>document.querySelector('#demo-dialog video').currentTime>0);
-  await command(root,'play').click();assert.equal(await root.locator('video').evaluate(v=>v.paused),true);
-  await command(root,'restart').click();assert.equal(await root.getAttribute('data-step'),'0');assert.equal(await root.locator('video').getAttribute('src'),null);
-  await page.keyboard.press('Escape');assert.equal(await page.locator('#demo-dialog').evaluate(d=>d.open),false);assert.equal(await opener.evaluate(el=>document.activeElement===el),true);
-  checks.push(`${id}: complete manual journey, hold outcomes, Back, Replay, Pause, Restart, Escape and focus return`);console.log(checks.at(-1));
+  const loaded=await root.locator('video').getAttribute('src');await cmd('film').click();assert.equal(await root.locator('video').getAttribute('src'),loaded);await page.waitForFunction(()=>!document.querySelector('#demo-dialog video').paused);
+  await root.locator('video').evaluate(v=>{v.currentTime=v.duration-.15;});await page.waitForFunction(()=>document.querySelector('#demo-dialog video').ended);assert.equal(await root.locator('video').evaluate(v=>v.loop),false);
+  await root.locator('.demo-secondary summary').click();await cmd('restart').click();assert.equal(await root.locator('video').getAttribute('src'),null);assert.equal(await root.getAttribute('data-step'),'0');
+  if(d.extra){await cmd('extra').click();await page.waitForFunction(()=>document.querySelector('#demo-dialog video').currentTime>0);assert.match(await root.locator('.extra-explanation').textContent(),/separate Hebrew session/);assert.match(await root.locator('.demo-label').textContent(),/Separate Hebrew/);await cmd('main').click();assert.equal(await root.getAttribute('data-extra'),'false');}
+  for(let i=0;i<12;i++){await page.keyboard.press('Tab');assert.equal(await page.evaluate(()=>Boolean(document.activeElement.closest('#demo-dialog'))),true);}
+  await page.keyboard.press('Escape');await page.locator('#demo-dialog video').waitFor({state:'detached'});assert.equal(await page.locator('#demo-dialog video').count(),0);
  }
- // Reusing the modal must tear down old handlers, media, and project styling.
- for(let cycle=0;cycle<2;cycle++)for(const id of ['simreview','the-city-beyond']){
-  await page.locator(`[data-demo-open="${id}"]`).click();
-  assert.equal(await root.evaluate(r=>r.classList.contains('portrait')),id==='simreview');
-  await root.locator('[data-step="1"]').click();await root.locator('.demo-action').click();
-  await page.waitForFunction(()=>document.querySelector('#demo-dialog video').currentTime>0);
-  assert.match(await root.locator('video').getAttribute('src'),id==='simreview'?/sim-record\.mp4$/:/city-bronze\.mp4$/);
-  await command(root,'play').click();assert.equal(await root.getAttribute('data-playing'),'false');
-  await page.keyboard.press('Escape');
-  await page.waitForFunction(()=>!document.querySelector('#demo-dialog video'));
-  assert.equal(await page.locator('#demo-dialog video').count(),0);
- }
- checks.push('Repeated dialog openings keep the right project and remove previous playback handlers');
- const touch=await browser.newContext({viewport:{width:390,height:844},hasTouch:true,isMobile:true});const phone=await touch.newPage();
- phone.on('pageerror',e=>errors.push(e.message));await phone.goto(base,{waitUntil:'networkidle'});
- for(const id of ['simreview','the-city-beyond']){
-  await phone.locator(`[data-demo-open="${id}"]`).tap();const demo=phone.locator('#demo-dialog .guided-demo');
-  await command(demo,'watch').tap();await phone.waitForFunction(()=>document.querySelector('#demo-dialog video').currentTime>0);
-  await command(demo,'play').tap();assert.equal(await demo.getAttribute('data-playing'),'false');
-  await phone.locator('[data-demo-close]').tap();await phone.waitForFunction(()=>!document.querySelector('#demo-dialog video'));
- }
- await touch.close();checks.push('Touch activation, playback, pause and close work at 390px');
- // Media failure stays usable and retry recovers.
- await page.route('**/demos/sim-record.mp4',route=>route.abort());await page.locator('[data-demo-open="simreview"]').click();
- await root.locator('[data-step="1"]').click();await root.locator('.demo-action').click();await root.locator('.demo-error').waitFor({state:'visible'});
- await page.waitForFunction(()=>{const img=document.querySelector('#demo-dialog .demo-still');return img.complete&&img.naturalWidth>0;});
- await page.unroute('**/demos/sim-record.mp4');await command(root,'retry').click();await page.waitForFunction(()=>document.querySelector('#demo-dialog video').currentTime>0);
- await page.keyboard.press('Escape');checks.push('Failed media shows recorded still, explanation and working retry');
- // Closing immediately while a play promise is pending cancels the request and future playback.
- await page.locator('[data-demo-open="the-city-beyond"]').click();await command(root,'watch').click();await page.keyboard.press('Escape');await page.waitForTimeout(300);
- assert.equal(await page.locator('#demo-dialog video').count(),0);checks.push('Closing during activation cancels playback');
- await page.emulateMedia({reducedMotion:'reduce'});await page.goto(base+'/simreview/',{waitUntil:'networkidle'});
- const embedded=page.locator('[data-demo-embed]');await embedded.scrollIntoViewIfNeeded();const reducedRequests=[];page.on('request',req=>{if(/\/demos\/.*\.mp4/.test(req.url()))reducedRequests.push(req.url());});
- await command(embedded,'watch').click();await page.waitForTimeout(600);assert.equal(reducedRequests.length,0);assert.equal(await embedded.locator('video').getAttribute('src'),null);
- await command(embedded,'play').click();await embedded.locator('[data-step="3"]').click();await embedded.locator('.demo-action').click();assert.equal(await embedded.evaluate(r=>r.classList.contains('has-outcome')),true);
- checks.push('Reduced motion uses the same interactive steps and stills, without video requests');
- await page.emulateMedia({reducedMotion:'no-preference'});await page.goto(base+'/the-city-beyond/',{waitUntil:'networkidle'});const inline=page.locator('[data-demo-embed]');await inline.scrollIntoViewIfNeeded();
- await command(inline,'watch').click();await page.waitForFunction(()=>document.querySelector('[data-demo-embed]').dataset.playing==='true');
- await page.locator('footer').scrollIntoViewIfNeeded();await page.waitForFunction(()=>document.querySelector('[data-demo-embed]').dataset.playing==='false',{},{timeout:3000});assert.equal(await inline.locator('video').evaluate(v=>v.paused),true);
- await inline.scrollIntoViewIfNeeded();await command(inline,'play').click();
- await page.evaluate(()=>{Object.defineProperty(document,'hidden',{value:true,configurable:true});document.dispatchEvent(new Event('visibilitychange'));});assert.equal(await inline.getAttribute('data-playing'),'false');
- await page.evaluate(()=>{delete document.hidden;});checks.push('Offscreen pause and simulated hidden-tab pause stop video and sequence timer');
- // Two real-time, one-shot watch-throughs in independent browser pages.
- for(const id of ['simreview','the-city-beyond']){
-  const p=await browser.newPage({viewport:{width:1440,height:1050}});p.on('pageerror',e=>errors.push(e.message));await p.goto(base+'/'+id+'/',{waitUntil:'networkidle'});
-  const demo=p.locator('[data-demo-embed]');await demo.scrollIntoViewIfNeeded();const begin=Date.now();await command(demo,'watch').click();
-  await demo.locator('.demo-complete').waitFor({state:'visible',timeout:65000});const elapsed=(Date.now()-begin)/1000;
-  assert.ok(elapsed>=(id==='simreview'?35:45)&&elapsed<=(id==='simreview'?45:60),`${id} duration ${elapsed}`);
-  const step=await demo.getAttribute('data-step');await p.waitForTimeout(350);assert.equal(await demo.getAttribute('data-step'),step);assert.equal(await demo.locator('video').evaluate(v=>v.paused),true);
-  checks.push(`${id}: watch-through ${elapsed.toFixed(1)}s, stops once at completion`);await p.close();
- }
- assert.deepEqual(errors,[]);console.log(JSON.stringify({checks,errors},null,2));await writeFile('qa/demo-report.json',JSON.stringify({checks,errors},null,2));
+ checks.push('All chapters: action, held result, replay, back/next; film reuse; end stops; restart unloads; Hebrew consistency; keyboard modal containment');
+ await page.emulateMedia({reducedMotion:'reduce'});await page.goto(base);const early=[];page.on('request',r=>{if(/\/demos\/.*\.mp4/.test(r.url()))early.push(r.url());});await page.locator('[data-demo-open="simreview"]').click();assert.equal(await root.getAttribute('data-mode'),'explore');assert.equal(await root.locator('video').getAttribute('src'),null);assert.equal(early.length,0);await cmd('film').click();await page.waitForFunction(()=>document.querySelector('#demo-dialog video').currentTime>0);await page.keyboard.press('Escape');await page.emulateMedia({reducedMotion:'no-preference'});
+ checks.push('Reduced motion opens still exploration, with explicit film opt-in');
+ await page.route('**/demos/*-desktop.mp4',r=>r.abort());await page.goto(base);await page.locator('[data-demo-open="simreview"]').click();await root.locator('.demo-error').waitFor({state:'visible'});assert.equal(await root.locator('.demo-still').isVisible(),true);await page.unroute('**/demos/*-desktop.mp4');await cmd('retry').click();await page.waitForFunction(()=>document.querySelector('#demo-dialog video').currentTime>0);await page.keyboard.press('Escape');
+ checks.push('Failed media falls back to still and transcript; retry recovers');
+ let release;const gate=new Promise(resolve=>release=resolve);await page.route('**/demos/simreview-desktop.mp4',async route=>{await gate;await route.continue().catch(()=>{});});await page.goto(base);await page.locator('[data-demo-open="simreview"]').click();await page.keyboard.press('Escape');await page.locator('#demo-dialog video').waitFor({state:'detached'});release();await page.waitForTimeout(250);assert.equal(await page.evaluate(()=>[...document.querySelectorAll('video')].filter(v=>!v.paused).length),0);await page.unroute('**/demos/simreview-desktop.mp4');
+ checks.push('Closing while media is pending cancels playback');
+ await page.goto(base+'/simreview/');const embed=page.locator('[data-demo-embed]');await embed.scrollIntoViewIfNeeded();await embed.locator('.film-controls [data-command="play"]').click();await page.waitForFunction(()=>document.querySelector('[data-demo-embed] video').currentTime>0);await page.evaluate(async()=>{const full=document.querySelector('.video-shell video');full.muted=true;await full.play();});assert.equal(await embed.locator('video').evaluate(v=>v.paused),true);assert.equal(await page.evaluate(()=>[...document.querySelectorAll('video')].filter(v=>!v.paused).length),1);await embed.locator('.film-controls [data-command="play"]').click();await page.waitForFunction(()=>!document.querySelector('[data-demo-embed] video').paused);await page.evaluate(()=>scrollTo(0,document.body.scrollHeight));await page.waitForFunction(()=>document.querySelector('[data-demo-embed] video').paused);await embed.scrollIntoViewIfNeeded();await embed.locator('.film-controls [data-command="play"]').click();await page.waitForFunction(()=>!document.querySelector('[data-demo-embed] video').paused);await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,get:()=>true});document.dispatchEvent(new Event('visibilitychange'));});assert.equal(await embed.locator('video').evaluate(v=>v.paused),true);
+ checks.push('Only one active media source; offscreen and hidden-tab playback stops');
+ assert.deepEqual(errors,[]);await writeFile('qa/demo-report.json',JSON.stringify({base,checks,errors},null,2));console.log(checks.join('\n'));
 }finally{await browser.close();}

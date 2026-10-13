@@ -1,0 +1,1 @@
+{"name":"portfolio-product-films","private":true,"type":"module","scripts":{"render":"node render.mjs"},"dependencies":{"@remotion/cli":"4.0.529","@remotion/renderer":"4.0.529","@remotion/bundler":"4.0.529","remotion":"4.0.529","react":"19.3.0","react-dom":"19.3.0"}}

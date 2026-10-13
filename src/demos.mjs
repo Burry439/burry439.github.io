@@ -66,3 +66,39 @@ export const demos={
   ],
  },
 };
+
+// Film chapters are also the exploration source. No second set of videos is loaded.
+const editorial={
+ simreview:[
+  ['One phone. Two people.','The learner interviews a helper playing the patient. AI reviews the recording afterwards.','Start the example'],
+  ['Listen to the interview.','A short exchange from the fictional chest-pain case.','Play the interview'],
+  ['See what worked. See what to change.','Strengths, improvements and cited moments appear beside the recording.','Show the feedback'],
+  ['Follow the evidence at 2:13.','The patient answers about nausea and sweating. The breathing question is still unanswered.','Replay 2:13'],
+  ['Choose one thing for next time.','Selected: explore the acute complaint before extended demographic questions. This is a different item from the breathing follow-up.','Select the recorded focus']
+ ],
+ 'the-city-beyond':[
+  ['The watch loses its way in fog.','You know how to make a compass. Can that knowledge earn you a way inside?','Hear the problem'],
+  ['Try a bronze needle.','The player describes a method in their own words. This is a recorded attempt.','Try bronze'],
+  ['Bronze does not work.','“Bronze cannot be magnetised this way, so it will not serve as a compass.”','Read the result'],
+  ['Use iron. Make the compass.','The iron becomes weakly magnetised. The assembled floating needle gets its own artwork.','Make the compass'],
+  ['Show that it holds a heading.','The captain asks for proof. The player tests the compass rather than just describing it.','Demonstrate it'],
+  ['The captain lets you through.','“It holds its heading… You may pass, stranger.” Then the player walks through the gate.','Enter the city']
+ ]
+};
+for(const [id,demo] of Object.entries(demos)){
+ let start=0;
+ demo.title=id==='simreview'?'An interview, a replay, a next attempt.':'From a bronze needle to an open gate.';
+ demo.introduction=id==='simreview'?'A fictional interview in the real app. Watch the review and one focus selection.':'One recorded route: invent a compass, prove it works and earn entry.';
+ demo.label=id==='simreview'?'AI-voiced example interview · real app footage':'Guided replay of recorded gameplay';
+ demo.steps.forEach((step,i)=>{
+  step.start=start;start+=step.seconds;step.end=start;
+  [step.heading,step.caption,step.action]=editorial[id][i];
+  step.title=['Setup','Interview','Feedback','2:13 follow-up','Next focus'][i]||step.title;
+  if(id!=='simreview')step.title=['Fog problem','Bronze attempt','Why it fails','Iron compass','Heading test','City entry'][i];
+  step.posters=Object.fromEntries(['desktop','mobile'].map(format=>[format,{before:`${id}-${format}-${i}-before.webp`,after:`${id}-${format}-${i}-after.webp`}]));
+  step.hotspots={desktop:null,mobile:null};
+ });
+ demo.films=Object.fromEntries(['desktop','mobile'].map(format=>[format,{file:`${id}-${format}.mp4`,poster:demo.steps[0].posters[format].before,width:format==='desktop'?1280:720,height:format==='desktop'?720:960}]));
+ demo.transcript=demo.steps.map(s=>({start:s.start,end:s.end,title:s.heading,text:[s.caption,...(s.dialogue||[]).map(l=>`${l.who}: ${l.text}`),s.quote,s.note].filter(Boolean).join('\n')}));
+ demo.totalSeconds=start;
+}

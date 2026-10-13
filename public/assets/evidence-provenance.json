@@ -1,0 +1,35 @@
+{
+  "description": "Real product captures. SimReview examples are synthetic; historical development text cites source records. No fabricated before screens.",
+  "exports": [
+    {
+      "output": "sim-moment-evidence.webp",
+      "source": "demos/sim-moment-before.webp",
+      "crop": {
+        "x": 0,
+        "y": 150,
+        "width": 624,
+        "height": 700
+      }
+    },
+    {
+      "output": "sim-focus-evidence.webp",
+      "source": "demos/sim-focus-after.webp",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 624,
+        "height": 610
+      }
+    },
+    {
+      "output": "city-compass-evidence.webp",
+      "source": "demos/city-iron-after.webp",
+      "crop": null
+    },
+    {
+      "output": "simreview-case.png",
+      "source": "simreview/docs/screenshots/evidence-case-correction-en-light-390.png",
+      "crop": null
+    }
+  ]
+}

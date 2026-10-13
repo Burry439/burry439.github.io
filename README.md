@@ -36,30 +36,42 @@ GitHub Actions builds and publishes to GitHub Pages on pushes to `main`. The pro
 
 The build accepts `SITE_URL` (origin, no trailing slash) and `SITE_BASE_PATH` (for subdirectory hosting). The workflow gets them from GitHub Pages configuration. HTTPS is enforced; `www` redirects to the apex domain. Connection details and saved DNS records are in `docs/domain-setup.md`.
 
-## Guided demos and verification
+## Product films and verification
 
-The English SimReview sequence takes 43 seconds; its optional Hebrew session is separate. The compass gameplay sequence takes 52 seconds. Both start with stills, load video only after activation, preload the next step, stop offscreen or when the tab is hidden, and use stills under reduced motion. Watch-through runs once; manual mode holds each outcome. Closing or restarting cancels media and transition work. Failed media keeps the still, explanation, and a retry button.
+The primary demos are silent 43-second SimReview and 52-second City Beyond films. Each has a separately composed wide (1280×720) and portrait (720×960) export with real screens, controlled close-ups and readable captions. “Explore moments” seeks the same film and holds each recorded result. No React or Remotion code ships to the browser.
 
-Total demo media including posters: approximately 1.4 MB for SimReview and 4.7 MB for The City Beyond. Exported captures are synthetic app examples and recorded gameplay, not live AI responses. Full promos retain narration.
+The player loads only its selected rendition after activation, reuses it across modes, pauses offscreen/when hidden and cancels pending playback on close or restart. Reduced motion opens still exploration; playing film requires a choice. A separate labeled Hebrew recording and both full promos remain available. Source timestamps are in `public/demos/provenance.json`; final films, still frame numbers, actual sizes and verified silent tracks are in `films-provenance.json`.
 
-To regenerate reviewed exports, with ffmpeg/ffprobe installed:
+Selected rendition plus supporting chapter stills (including the Hebrew example for SimReview): approximately 1.64 MB / 1.54 MB for SimReview wide/portrait; 3.97 MB / 3.51 MB for City wide/portrait. Optional original promos are separate.
+
+To regenerate source cuts, with Python and ffmpeg/ffprobe installed:
 
 ```powershell
 python scripts/prepare-demo-media.py --sim-source 'PATH/TO/SIMREVIEW/promo' --city-source 'PATH/TO/TIME-TRAVEL/promo'
+```
+
+The isolated build-time renderer has its own pinned dependencies:
+
+```powershell
+cd motion
+npm ci
+npm run render
+# Or: node render.mjs simreview-mobile the-city-beyond-mobile
+cd ..
 npm run build
 npm run check
 ```
 
-Each original cut is validated against its actual source duration; `provenance.json` records the timestamps, crop, silence and size. Exports require Python 3 and ffmpeg. Site checks validate the schema, files, cut bounds, timing and budgets. Browser checks require an installed Playwright package; set `PLAYWRIGHT_PACKAGE` to its project's package.json and optionally `CHROMIUM_EXECUTABLE` to a Chromium executable, then run `npm run test:demos`. `npm run test:public` checks the live site, media range requests, demo playback and full promos. `QA_URL` selects another URL. QA reports/screenshots remain local in ignored `qa/`.
+Exported assets are committed. The Pages workflow only builds the static site and checks source bounds, continuous chapter timings, stills, provenance and media budgets. Browser tests need an installed Playwright package: set `PLAYWRIGHT_PACKAGE` to its package.json and optionally `CHROMIUM_EXECUTABLE`, then run `npm run test:demos`. `npm run test:public` checks published routes, HTTPS redirects, media range requests and both promos. `QA_URL` can select a local preview. Reports/screenshots remain ignored in `qa/`.
 
-The five-person comprehension test is prepared in `docs/comprehension-test.md` and has not been conducted. Automated controls/layout checks do not replace that audience test.
+The five-person comprehension test in `docs/comprehension-test.md` remains proposed, not conducted. Automated controls/layout checks do not establish audience comprehension.
 
 ## Evidence and editorial basis
 
-- SimReview: local `README.md`, `docs/case-study.md`, evaluation appendices, synthetic screenshots, and the current promo workspace. The source repo is private and no private recordings or credentials are included here.
+- SimReview: local `README.md`, current `docs/product-decisions.md` and backend scoring configuration, `docs/case-study.md`, evaluation appendices, synthetic screenshots, and the current promo workspace. The source repo is private and no private recordings or credentials are included here.
 - The City Beyond: `docs/portfolio/case_study.html`, GDD, evaluation results, `docs/UX_REVIEW_2026-10-12.md`, and current promo workspace in the public `Burry439/time-travel` project.
 - Related local Codex project chats were consulted for ownership and project goals.
-- Role positioning follows the owner’s stated interest in AI product builder, prototyper, and product management roles. LinkedIn’s public index was stale and direct access was blocked; the LinkedIn plugin tools were not available in the chat. No current LinkedIn work history is invented.
+- Role positioning uses the owner’s confirmed interest in AI product builder, prototyper and product management roles. No unverified employment history is included.
 - Case study writing uses a short overview, personal contribution, decisions and alternatives, artifacts, measured evidence, limits, and next decisions. Guidance: https://www.nngroup.com/articles/ux-design-portfolios/.
 - Visual reference: https://jonzinercohen.com/. The site has original implementation and project content, with similar warm neutrals, floating navigation, project deck, and case-study hierarchy. No reference artwork, personal claims, or analytics identifiers are included.
 - General Sans is distributed by Fontshare: https://www.fontshare.com/fonts/general-sans. Files were obtained through Fontshare’s public font CSS API and are self-hosted for performance.

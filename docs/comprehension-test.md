@@ -7,7 +7,7 @@ the projects. Do not use the builder's explanations or brief them on the product
 2. Hide the page and ask: “What does this product let someone do?”
 3. Ask: “What happens after their first action?” and “What did Baruch contribute?”
 4. Ask what was unclear, whether text was readable, and whether any replay felt
-   like live AI. Note the device and whether they clicked through or watched.
+   like live AI. Note the device and whether they explored recorded moments or watched the film.
 5. Repeat for the other project; alternate which project appears first.
 
 Score each project separately. A passing answer describes the core loop and
