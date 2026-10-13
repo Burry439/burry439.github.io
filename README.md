@@ -40,9 +40,9 @@ The build accepts `SITE_URL` (origin, no trailing slash) and `SITE_BASE_PATH` (f
 
 The primary demos are silent 43-second SimReview and 52-second City Beyond films. Each has a separately composed wide (1280×720) and portrait (720×960) export with real screens, controlled close-ups and readable captions. “Explore moments” seeks the same film and holds each recorded result. No React or Remotion code ships to the browser.
 
-The player loads only its selected rendition after activation, reuses it across modes, pauses offscreen/when hidden and cancels pending playback on close or restart. Reduced motion opens still exploration; playing film requires a choice. A separate labeled Hebrew recording and both full promos remain available. Source timestamps are in `public/demos/provenance.json`; final films, still frame numbers, actual sizes and verified silent tracks are in `films-provenance.json`.
+The player loads only its selected rendition after activation, reuses it across modes, pauses offscreen/when hidden and cancels pending playback on close or restart. Reduced motion opens still exploration; playing film requires a choice. A separate labeled Hebrew recording and both full promos remain available. Source timestamps are in `public/demos/provenance.json`; final films, still frame numbers, actual sizes, camera paths, reading holds and verified silent tracks are in `films-provenance.json`. Caption text in `motion/src/direction.mjs` also supplies the website transcript. The renderer checks that captions stay inside their reading area.
 
-Selected rendition plus supporting chapter stills (including the Hebrew example for SimReview): approximately 1.62 MB / 1.51 MB for SimReview wide/portrait; 3.94 MB / 3.47 MB for City wide/portrait. Optional original promos are separate.
+Selected rendition plus supporting chapter stills (including the Hebrew example for SimReview): approximately 1.28 MB / 1.34 MB for SimReview wide/portrait; 3.68 MB / 3.23 MB for City wide/portrait. Optional original promos are separate.
 
 To regenerate source cuts, with Python and ffmpeg/ffprobe installed:
 

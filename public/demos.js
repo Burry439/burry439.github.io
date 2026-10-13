@@ -28,6 +28,8 @@ class ProductDemo{
  showStill(state){const file=this.extra?this.step[state]:this.step.posters[this.format][state];this.image.src=mediaURL(file);this.image.alt=`${this.data.name}: ${this.extra?this.step.title:this.step.heading} · ${state==='after'?'recorded result':'chapter preview'}`;this.root.classList.remove('has-footage');}
  update(){
   if(this.destroyed)return;this.root.dataset.mode=this.mode;this.root.dataset.extra=String(this.extra);this.root.querySelector('.extra-explanation').hidden=!this.extra;this.root.querySelector('.demo-label').textContent=this.extra?'Separate Hebrew session · AI-voiced example · real app footage':this.data.label;this.root.dataset.step=String(this.index);this.root.dataset.acted=String(this.acted);
+  const dialogLabel=this.root.closest('#demo-dialog')?.querySelector('.demo-dialog-label');
+  if(dialogLabel)dialogLabel.textContent=this.extra?'Separate Hebrew · AI-voiced':this.data.name==='SimReview'?'AI-voiced example · real app':'Recorded gameplay · guided replay';
   const playing=!this.video.paused;this.root.querySelectorAll('[data-command="play"]').forEach(b=>{if(!b.classList.contains('film-start'))b.textContent=playing?'Pause':this.video.ended?'Replay film':'Play';});
   this.root.querySelector('.film-start').hidden=this.mode==='explore'||playing||this.loaded;
   this.root.querySelector('[data-command="action"]').textContent=playing?'Pause moment':this.resumeAt!==null?'Continue moment':this.format==='mobile'?'Play moment':this.step.action;

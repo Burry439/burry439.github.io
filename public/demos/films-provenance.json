@@ -2,68 +2,467 @@
   "description": "Remotion product films made from duration-validated capture exports. Chapter sources and source timestamps are retained. No sound; synthetic English session and recorded gameplay.",
   "exports": [
     {
+      "output": "the-city-beyond-desktop.mp4",
+      "composition": "the-city-beyond-desktop",
+      "duration": 52,
+      "bytes": 2872276,
+      "silent": true,
+      "stills": [
+        {
+          "output": "the-city-beyond-desktop-0-before.webp",
+          "frame": 0,
+          "bytes": 74430
+        },
+        {
+          "output": "the-city-beyond-desktop-0-after.webp",
+          "frame": 143,
+          "bytes": 52944
+        },
+        {
+          "output": "the-city-beyond-desktop-1-before.webp",
+          "frame": 144,
+          "bytes": 88550
+        },
+        {
+          "output": "the-city-beyond-desktop-1-after.webp",
+          "frame": 311,
+          "bytes": 60692
+        },
+        {
+          "output": "the-city-beyond-desktop-2-before.webp",
+          "frame": 312,
+          "bytes": 62898
+        },
+        {
+          "output": "the-city-beyond-desktop-2-after.webp",
+          "frame": 455,
+          "bytes": 62958
+        },
+        {
+          "output": "the-city-beyond-desktop-3-before.webp",
+          "frame": 456,
+          "bytes": 53434
+        },
+        {
+          "output": "the-city-beyond-desktop-3-after.webp",
+          "frame": 695,
+          "bytes": 60806
+        },
+        {
+          "output": "the-city-beyond-desktop-4-before.webp",
+          "frame": 696,
+          "bytes": 78596
+        },
+        {
+          "output": "the-city-beyond-desktop-4-after.webp",
+          "frame": 935,
+          "bytes": 63958
+        },
+        {
+          "output": "the-city-beyond-desktop-5-before.webp",
+          "frame": 936,
+          "bytes": 97554
+        },
+        {
+          "output": "the-city-beyond-desktop-5-after.webp",
+          "frame": 1247,
+          "bytes": 46216
+        }
+      ],
+      "cuts": [
+        {
+          "source": "the-city-beyond/promo/public/clips/c_need.mp4",
+          "start": 10.6,
+          "end": 14.2,
+          "sourceDuration": 19.5,
+          "crop": null
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/c_bronze.mp4",
+          "start": 0,
+          "end": 4.8,
+          "sourceDuration": 21.2,
+          "crop": null
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/c_bronze.mp4",
+          "start": 12,
+          "end": 14.2,
+          "sourceDuration": 21.2,
+          "crop": null
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/c_iron.mp4",
+          "start": 17.6,
+          "end": 20.8,
+          "sourceDuration": 26.9,
+          "crop": null
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/c_assembly.mp4",
+          "start": 0,
+          "end": 1.3,
+          "sourceDuration": 27.9,
+          "crop": null
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/c_assembly.mp4",
+          "start": 16.9,
+          "end": 22.2,
+          "sourceDuration": 27.9,
+          "crop": null
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/p_oren.mp4",
+          "start": 8,
+          "end": 12,
+          "sourceDuration": 12.066667,
+          "crop": null
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/c_test.mp4",
+          "start": 25.6,
+          "end": 29.6,
+          "sourceDuration": 39.1,
+          "crop": null
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/p_admit.mp4",
+          "start": 1.8,
+          "end": 5.8,
+          "sourceDuration": 12.066667,
+          "crop": null
+        },
+        {
+          "source": "the-city-beyond/promo/public/clips/p_gate.mp4",
+          "start": 4.5,
+          "end": 12.5,
+          "sourceDuration": 20.066667,
+          "crop": null
+        }
+      ],
+      "direction": [
+        {
+          "camera": [
+            [
+              0,
+              0.5,
+              0.5,
+              "fit"
+            ],
+            [
+              1,
+              0.5,
+              0.5,
+              "fit"
+            ],
+            [
+              1.6,
+              0.455,
+              0.79,
+              0.7
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "The watch needs a way to navigate in fog."
+            ],
+            [
+              2,
+              "“We have no reliable way to hold a heading.”"
+            ]
+          ],
+          "speaker": 2
+        },
+        {
+          "media": [
+            [
+              0,
+              0
+            ],
+            [
+              2.6,
+              2.6
+            ],
+            [
+              4,
+              2.6
+            ],
+            [
+              6.2,
+              4.8
+            ],
+            [
+              7,
+              4.8
+            ]
+          ],
+          "camera": [
+            [
+              0,
+              0.5,
+              0.5,
+              "fit"
+            ],
+            [
+              0.6,
+              0.5,
+              0.5,
+              "fit"
+            ],
+            [
+              1.2,
+              0.455,
+              0.8,
+              0.7
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "Try a bronze needle."
+            ],
+            [
+              1.6,
+              "The player types a method using a lodestone."
+            ],
+            [
+              6,
+              "The attempt is submitted."
+            ]
+          ]
+        },
+        {
+          "camera": [
+            [
+              0,
+              0.455,
+              0.8,
+              0.7
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "“Bronze cannot be magnetised this way, so it will not serve as a compass.”"
+            ]
+          ],
+          "speaker": 0
+        },
+        {
+          "camera": [
+            [
+              0,
+              0.455,
+              0.8,
+              0.7
+            ],
+            [
+              4.4,
+              0.455,
+              0.8,
+              0.7
+            ],
+            [
+              4.5,
+              0.51,
+              0.395,
+              0.58
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "Use iron instead."
+            ],
+            [
+              1.6,
+              "“The iron becomes weakly magnetised.”"
+            ],
+            [
+              4.5,
+              "Assemble the needle. The game creates an inventory object."
+            ]
+          ]
+        },
+        {
+          "media": [
+            [
+              0,
+              0
+            ],
+            [
+              3.5,
+              3.5
+            ],
+            [
+              4.5,
+              3.5
+            ],
+            [
+              5,
+              4.8
+            ],
+            [
+              8,
+              4.8
+            ],
+            [
+              8.5,
+              5.2
+            ],
+            [
+              10,
+              5.2
+            ]
+          ],
+          "camera": [
+            [
+              0,
+              0.59,
+              0.37,
+              0.62
+            ],
+            [
+              4.5,
+              0.59,
+              0.37,
+              0.62
+            ],
+            [
+              5,
+              0.46,
+              0.8,
+              0.7
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "The captain asks for a heading test."
+            ],
+            [
+              5,
+              "The needle returns to the same north–south heading."
+            ]
+          ],
+          "note": "The test is repeated with the lodestone several paces away.",
+          "noteFrom": 5
+        },
+        {
+          "camera": [
+            [
+              0,
+              0.5,
+              0.5,
+              "fit"
+            ],
+            [
+              4,
+              0.5,
+              0.5,
+              "fit"
+            ],
+            [
+              5,
+              0.5,
+              0.48,
+              0.83
+            ],
+            [
+              10.5,
+              0.5,
+              0.48,
+              0.83
+            ],
+            [
+              11.1,
+              0.5,
+              0.5,
+              0.75
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "The captain permits entry."
+            ],
+            [
+              4,
+              "Walk through the gate."
+            ],
+            [
+              11,
+              "Beyond the gate: the end of this playable area."
+            ]
+          ]
+        }
+      ]
+    },
+    {
       "output": "simreview-desktop.mp4",
       "composition": "simreview-desktop",
       "duration": 43,
-      "bytes": 959209,
+      "bytes": 636979,
       "silent": true,
       "stills": [
         {
           "output": "simreview-desktop-0-before.webp",
           "frame": 0,
-          "bytes": 29498
+          "bytes": 21796
         },
         {
           "output": "simreview-desktop-0-after.webp",
           "frame": 143,
-          "bytes": 31350
+          "bytes": 31418
         },
         {
           "output": "simreview-desktop-1-before.webp",
           "frame": 144,
-          "bytes": 26508
+          "bytes": 30774
         },
         {
           "output": "simreview-desktop-1-after.webp",
-          "frame": 431,
-          "bytes": 29732
+          "frame": 335,
+          "bytes": 31292
         },
         {
           "output": "simreview-desktop-2-before.webp",
-          "frame": 432,
-          "bytes": 29136
+          "frame": 336,
+          "bytes": 28502
         },
         {
           "output": "simreview-desktop-2-after.webp",
-          "frame": 575,
-          "bytes": 38146
+          "frame": 455,
+          "bytes": 35066
         },
         {
           "output": "simreview-desktop-3-before.webp",
-          "frame": 576,
-          "bytes": 34486
+          "frame": 456,
+          "bytes": 31330
         },
         {
           "output": "simreview-desktop-3-after.webp",
-          "frame": 863,
-          "bytes": 36236
+          "frame": 839,
+          "bytes": 30778
         },
         {
           "output": "simreview-desktop-4-before.webp",
-          "frame": 864,
-          "bytes": 36786
+          "frame": 840,
+          "bytes": 37062
         },
         {
           "output": "simreview-desktop-4-after.webp",
           "frame": 1031,
-          "bytes": 41904
+          "bytes": 36464
         }
       ],
       "cuts": [
         {
           "source": "simreview/promo/public/clips/en-100-chest-pain-recording.mp4",
           "start": 0,
-          "end": 11.8,
+          "end": 5.8,
           "sourceDuration": 38.4,
           "crop": null
         },
@@ -87,6 +486,208 @@
           "end": 23.1,
           "sourceDuration": 27.066667,
           "crop": null
+        }
+      ],
+      "direction": [
+        {
+          "camera": [
+            [
+              0,
+              0.5,
+              0.5,
+              "fit"
+            ],
+            [
+              1.4,
+              0.5,
+              0.5,
+              "fit"
+            ],
+            [
+              2,
+              0.5,
+              0.48,
+              1.08
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "A student interviews a helper."
+            ],
+            [
+              3,
+              "The helper reads the patient guide. AI reviews the recording afterwards."
+            ]
+          ]
+        },
+        {
+          "media": [
+            [
+              0,
+              0
+            ],
+            [
+              5.8,
+              5.8
+            ],
+            [
+              8,
+              5.8
+            ]
+          ],
+          "camera": [
+            [
+              0,
+              0.5,
+              0.36,
+              1.08
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "The practice is recorded on one phone."
+            ],
+            [
+              6,
+              "The recording becomes the source for the review."
+            ]
+          ]
+        },
+        {
+          "camera": [
+            [
+              0,
+              0.5,
+              0.35,
+              1.08
+            ],
+            [
+              1.2,
+              0.5,
+              0.35,
+              1.08
+            ],
+            [
+              2.8,
+              0.5,
+              0.43,
+              1.08
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "Review strengths and suggested improvements."
+            ],
+            [
+              3,
+              "Each timestamp links back to the interview."
+            ]
+          ]
+        },
+        {
+          "media": [
+            [
+              0,
+              0
+            ],
+            [
+              1.5,
+              0
+            ],
+            [
+              12,
+              10.5
+            ],
+            [
+              16,
+              10.5
+            ]
+          ],
+          "camera": [
+            [
+              0,
+              0.5,
+              0.43,
+              1.08
+            ],
+            [
+              1.5,
+              0.5,
+              0.43,
+              1.08
+            ],
+            [
+              1.9,
+              0.5,
+              0.3,
+              1.08
+            ],
+            [
+              12,
+              0.5,
+              0.3,
+              1.08
+            ],
+            [
+              12.01,
+              0.5,
+              0.43,
+              0.96
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "Select the feedback at 2:13."
+            ],
+            [
+              12,
+              "Ask about breathing separately."
+            ]
+          ],
+          "returnToFeedback": 12
+        },
+        {
+          "media": [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3.125,
+              1.125
+            ],
+            [
+              8,
+              1.125
+            ]
+          ],
+          "camera": [
+            [
+              0,
+              0.5,
+              0.2,
+              1.08
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "Choose one focus for the next practice."
+            ],
+            [
+              3.2,
+              "Saved: explore the acute complaint first."
+            ]
+          ],
+          "note": "A separate recommendation about interview order."
         }
       ]
     },
@@ -94,65 +695,65 @@
       "output": "simreview-mobile.mp4",
       "composition": "simreview-mobile",
       "duration": 43,
-      "bytes": 869261,
+      "bytes": 665519,
       "silent": true,
       "stills": [
         {
           "output": "simreview-mobile-0-before.webp",
           "frame": 0,
-          "bytes": 31872
+          "bytes": 24852
         },
         {
           "output": "simreview-mobile-0-after.webp",
           "frame": 143,
-          "bytes": 32334
+          "bytes": 37420
         },
         {
           "output": "simreview-mobile-1-before.webp",
           "frame": 144,
-          "bytes": 23504
+          "bytes": 33304
         },
         {
           "output": "simreview-mobile-1-after.webp",
-          "frame": 431,
-          "bytes": 24730
+          "frame": 335,
+          "bytes": 33482
         },
         {
           "output": "simreview-mobile-2-before.webp",
-          "frame": 432,
-          "bytes": 27012
+          "frame": 336,
+          "bytes": 32032
         },
         {
           "output": "simreview-mobile-2-after.webp",
-          "frame": 575,
-          "bytes": 33160
+          "frame": 455,
+          "bytes": 36054
         },
         {
           "output": "simreview-mobile-3-before.webp",
-          "frame": 576,
-          "bytes": 31374
+          "frame": 456,
+          "bytes": 31148
         },
         {
           "output": "simreview-mobile-3-after.webp",
-          "frame": 863,
-          "bytes": 28904
+          "frame": 839,
+          "bytes": 32656
         },
         {
           "output": "simreview-mobile-4-before.webp",
-          "frame": 864,
-          "bytes": 40846
+          "frame": 840,
+          "bytes": 40338
         },
         {
           "output": "simreview-mobile-4-after.webp",
           "frame": 1031,
-          "bytes": 39990
+          "bytes": 40104
         }
       ],
       "cuts": [
         {
           "source": "simreview/promo/public/clips/en-100-chest-pain-recording.mp4",
           "start": 0,
-          "end": 11.8,
+          "end": 5.8,
           "sourceDuration": 38.4,
           "crop": null
         },
@@ -177,146 +778,207 @@
           "sourceDuration": 27.066667,
           "crop": null
         }
-      ]
-    },
-    {
-      "output": "the-city-beyond-desktop.mp4",
-      "composition": "the-city-beyond-desktop",
-      "duration": 52,
-      "bytes": 3180595,
-      "silent": true,
-      "stills": [
-        {
-          "output": "the-city-beyond-desktop-0-before.webp",
-          "frame": 0,
-          "bytes": 47966
-        },
-        {
-          "output": "the-city-beyond-desktop-0-after.webp",
-          "frame": 143,
-          "bytes": 55192
-        },
-        {
-          "output": "the-city-beyond-desktop-1-before.webp",
-          "frame": 144,
-          "bytes": 61930
-        },
-        {
-          "output": "the-city-beyond-desktop-1-after.webp",
-          "frame": 311,
-          "bytes": 60194
-        },
-        {
-          "output": "the-city-beyond-desktop-2-before.webp",
-          "frame": 312,
-          "bytes": 55244
-        },
-        {
-          "output": "the-city-beyond-desktop-2-after.webp",
-          "frame": 455,
-          "bytes": 59392
-        },
-        {
-          "output": "the-city-beyond-desktop-3-before.webp",
-          "frame": 456,
-          "bytes": 59370
-        },
-        {
-          "output": "the-city-beyond-desktop-3-after.webp",
-          "frame": 695,
-          "bytes": 64338
-        },
-        {
-          "output": "the-city-beyond-desktop-4-before.webp",
-          "frame": 696,
-          "bytes": 75826
-        },
-        {
-          "output": "the-city-beyond-desktop-4-after.webp",
-          "frame": 935,
-          "bytes": 60336
-        },
-        {
-          "output": "the-city-beyond-desktop-5-before.webp",
-          "frame": 936,
-          "bytes": 76002
-        },
-        {
-          "output": "the-city-beyond-desktop-5-after.webp",
-          "frame": 1247,
-          "bytes": 88304
-        }
       ],
-      "cuts": [
+      "direction": [
         {
-          "source": "the-city-beyond/promo/public/clips/c_need.mp4",
-          "start": 10.6,
-          "end": 14.2,
-          "sourceDuration": 19.5,
-          "crop": "1280:720:230:360"
+          "camera": [
+            [
+              0,
+              0.5,
+              0.5,
+              "fit"
+            ],
+            [
+              1.4,
+              0.5,
+              0.5,
+              "fit"
+            ],
+            [
+              2,
+              0.5,
+              0.48,
+              1.08
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "A student interviews a helper."
+            ],
+            [
+              3,
+              "The helper reads the patient guide. AI reviews the recording afterwards."
+            ]
+          ]
         },
         {
-          "source": "the-city-beyond/promo/public/clips/c_bronze.mp4",
-          "start": 0,
-          "end": 4.8,
-          "sourceDuration": 21.2,
-          "crop": "1280:720:300:360"
+          "media": [
+            [
+              0,
+              0
+            ],
+            [
+              5.8,
+              5.8
+            ],
+            [
+              8,
+              5.8
+            ]
+          ],
+          "camera": [
+            [
+              0,
+              0.5,
+              0.36,
+              1.08
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "The practice is recorded on one phone."
+            ],
+            [
+              6,
+              "The recording becomes the source for the review."
+            ]
+          ]
         },
         {
-          "source": "the-city-beyond/promo/public/clips/c_bronze.mp4",
-          "start": 12,
-          "end": 14.2,
-          "sourceDuration": 21.2,
-          "crop": "1280:720:230:360"
+          "camera": [
+            [
+              0,
+              0.5,
+              0.35,
+              1.08
+            ],
+            [
+              1.2,
+              0.5,
+              0.35,
+              1.08
+            ],
+            [
+              2.8,
+              0.5,
+              0.43,
+              1.08
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "Review strengths and suggested improvements."
+            ],
+            [
+              3,
+              "Each timestamp links back to the interview."
+            ]
+          ]
         },
         {
-          "source": "the-city-beyond/promo/public/clips/c_iron.mp4",
-          "start": 17.6,
-          "end": 20.8,
-          "sourceDuration": 26.9,
-          "crop": "1280:720:230:360"
+          "media": [
+            [
+              0,
+              0
+            ],
+            [
+              1.5,
+              0
+            ],
+            [
+              12,
+              10.5
+            ],
+            [
+              16,
+              10.5
+            ]
+          ],
+          "camera": [
+            [
+              0,
+              0.5,
+              0.43,
+              1.08
+            ],
+            [
+              1.5,
+              0.5,
+              0.43,
+              1.08
+            ],
+            [
+              1.9,
+              0.5,
+              0.3,
+              1.08
+            ],
+            [
+              12,
+              0.5,
+              0.3,
+              1.08
+            ],
+            [
+              12.01,
+              0.5,
+              0.43,
+              0.96
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "Select the feedback at 2:13."
+            ],
+            [
+              12,
+              "Ask about breathing separately."
+            ]
+          ],
+          "returnToFeedback": 12
         },
         {
-          "source": "the-city-beyond/promo/public/clips/c_assembly.mp4",
-          "start": 0,
-          "end": 1.3,
-          "sourceDuration": 27.9,
-          "crop": "1280:720:300:360"
-        },
-        {
-          "source": "the-city-beyond/promo/public/clips/c_assembly.mp4",
-          "start": 16.9,
-          "end": 22.2,
-          "sourceDuration": 27.9,
-          "crop": "1152:648:390:50"
-        },
-        {
-          "source": "the-city-beyond/promo/public/clips/p_oren.mp4",
-          "start": 8,
-          "end": 12,
-          "sourceDuration": 12.066667,
-          "crop": "1280:720:400:0"
-        },
-        {
-          "source": "the-city-beyond/promo/public/clips/c_test.mp4",
-          "start": 25.6,
-          "end": 29.6,
-          "sourceDuration": 39.1,
-          "crop": "1280:720:230:360"
-        },
-        {
-          "source": "the-city-beyond/promo/public/clips/p_admit.mp4",
-          "start": 1.8,
-          "end": 7.2,
-          "sourceDuration": 12.066667,
-          "crop": "1280:720:400:0"
-        },
-        {
-          "source": "the-city-beyond/promo/public/clips/p_gate.mp4",
-          "start": 0.5,
-          "end": 7.5,
-          "sourceDuration": 20.066667,
-          "crop": "1920:1080:0:0"
+          "media": [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3.125,
+              1.125
+            ],
+            [
+              8,
+              1.125
+            ]
+          ],
+          "camera": [
+            [
+              0,
+              0.5,
+              0.2,
+              1.08
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "Choose one focus for the next practice."
+            ],
+            [
+              3.2,
+              "Saved: explore the acute complaint first."
+            ]
+          ],
+          "note": "A separate recommendation about interview order."
         }
       ]
     },
@@ -324,68 +986,68 @@
       "output": "the-city-beyond-mobile.mp4",
       "composition": "the-city-beyond-mobile",
       "duration": 52,
-      "bytes": 2758057,
+      "bytes": 2410659,
       "silent": true,
       "stills": [
         {
           "output": "the-city-beyond-mobile-0-before.webp",
           "frame": 0,
-          "bytes": 44442
+          "bytes": 61160
         },
         {
           "output": "the-city-beyond-mobile-0-after.webp",
           "frame": 143,
-          "bytes": 49430
+          "bytes": 64986
         },
         {
           "output": "the-city-beyond-mobile-1-before.webp",
           "frame": 144,
-          "bytes": 59932
+          "bytes": 65536
         },
         {
           "output": "the-city-beyond-mobile-1-after.webp",
           "frame": 311,
-          "bytes": 59142
+          "bytes": 67272
         },
         {
           "output": "the-city-beyond-mobile-2-before.webp",
           "frame": 312,
-          "bytes": 53640
+          "bytes": 74830
         },
         {
           "output": "the-city-beyond-mobile-2-after.webp",
           "frame": 455,
-          "bytes": 56100
+          "bytes": 74960
         },
         {
           "output": "the-city-beyond-mobile-3-before.webp",
           "frame": 456,
-          "bytes": 55596
+          "bytes": 60094
         },
         {
           "output": "the-city-beyond-mobile-3-after.webp",
           "frame": 695,
-          "bytes": 59702
+          "bytes": 66528
         },
         {
           "output": "the-city-beyond-mobile-4-before.webp",
           "frame": 696,
-          "bytes": 70484
+          "bytes": 77304
         },
         {
           "output": "the-city-beyond-mobile-4-after.webp",
           "frame": 935,
-          "bytes": 58078
+          "bytes": 80652
         },
         {
           "output": "the-city-beyond-mobile-5-before.webp",
           "frame": 936,
-          "bytes": 69988
+          "bytes": 73436
         },
         {
           "output": "the-city-beyond-mobile-5-after.webp",
           "frame": 1247,
-          "bytes": 80108
+          "bytes": 51312
         }
       ],
       "cuts": [
@@ -394,70 +1056,328 @@
           "start": 10.6,
           "end": 14.2,
           "sourceDuration": 19.5,
-          "crop": "1280:720:230:360"
+          "crop": null
         },
         {
           "source": "the-city-beyond/promo/public/clips/c_bronze.mp4",
           "start": 0,
           "end": 4.8,
           "sourceDuration": 21.2,
-          "crop": "1280:720:300:360"
+          "crop": null
         },
         {
           "source": "the-city-beyond/promo/public/clips/c_bronze.mp4",
           "start": 12,
           "end": 14.2,
           "sourceDuration": 21.2,
-          "crop": "1280:720:230:360"
+          "crop": null
         },
         {
           "source": "the-city-beyond/promo/public/clips/c_iron.mp4",
           "start": 17.6,
           "end": 20.8,
           "sourceDuration": 26.9,
-          "crop": "1280:720:230:360"
+          "crop": null
         },
         {
           "source": "the-city-beyond/promo/public/clips/c_assembly.mp4",
           "start": 0,
           "end": 1.3,
           "sourceDuration": 27.9,
-          "crop": "1280:720:300:360"
+          "crop": null
         },
         {
           "source": "the-city-beyond/promo/public/clips/c_assembly.mp4",
           "start": 16.9,
           "end": 22.2,
           "sourceDuration": 27.9,
-          "crop": "1152:648:390:50"
+          "crop": null
         },
         {
           "source": "the-city-beyond/promo/public/clips/p_oren.mp4",
           "start": 8,
           "end": 12,
           "sourceDuration": 12.066667,
-          "crop": "1280:720:400:0"
+          "crop": null
         },
         {
           "source": "the-city-beyond/promo/public/clips/c_test.mp4",
           "start": 25.6,
           "end": 29.6,
           "sourceDuration": 39.1,
-          "crop": "1280:720:230:360"
+          "crop": null
         },
         {
           "source": "the-city-beyond/promo/public/clips/p_admit.mp4",
           "start": 1.8,
-          "end": 7.2,
+          "end": 5.8,
           "sourceDuration": 12.066667,
-          "crop": "1280:720:400:0"
+          "crop": null
         },
         {
           "source": "the-city-beyond/promo/public/clips/p_gate.mp4",
-          "start": 0.5,
-          "end": 7.5,
+          "start": 4.5,
+          "end": 12.5,
           "sourceDuration": 20.066667,
-          "crop": "1920:1080:0:0"
+          "crop": null
+        }
+      ],
+      "direction": [
+        {
+          "camera": [
+            [
+              0,
+              0.5,
+              0.5,
+              "fit"
+            ],
+            [
+              1,
+              0.5,
+              0.5,
+              "fit"
+            ],
+            [
+              1.6,
+              0.455,
+              0.79,
+              0.7
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "The watch needs a way to navigate in fog."
+            ],
+            [
+              2,
+              "“We have no reliable way to hold a heading.”"
+            ]
+          ],
+          "speaker": 2
+        },
+        {
+          "media": [
+            [
+              0,
+              0
+            ],
+            [
+              2.6,
+              2.6
+            ],
+            [
+              4,
+              2.6
+            ],
+            [
+              6.2,
+              4.8
+            ],
+            [
+              7,
+              4.8
+            ]
+          ],
+          "camera": [
+            [
+              0,
+              0.5,
+              0.5,
+              "fit"
+            ],
+            [
+              0.6,
+              0.5,
+              0.5,
+              "fit"
+            ],
+            [
+              1.2,
+              0.455,
+              0.8,
+              0.7
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "Try a bronze needle."
+            ],
+            [
+              1.6,
+              "The player types a method using a lodestone."
+            ],
+            [
+              6,
+              "The attempt is submitted."
+            ]
+          ]
+        },
+        {
+          "camera": [
+            [
+              0,
+              0.455,
+              0.8,
+              0.7
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "“Bronze cannot be magnetised this way, so it will not serve as a compass.”"
+            ]
+          ],
+          "speaker": 0
+        },
+        {
+          "camera": [
+            [
+              0,
+              0.455,
+              0.8,
+              0.7
+            ],
+            [
+              4.4,
+              0.455,
+              0.8,
+              0.7
+            ],
+            [
+              4.5,
+              0.51,
+              0.395,
+              0.58
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "Use iron instead."
+            ],
+            [
+              1.6,
+              "“The iron becomes weakly magnetised.”"
+            ],
+            [
+              4.5,
+              "Assemble the needle. The game creates an inventory object."
+            ]
+          ]
+        },
+        {
+          "media": [
+            [
+              0,
+              0
+            ],
+            [
+              3.5,
+              3.5
+            ],
+            [
+              4.5,
+              3.5
+            ],
+            [
+              5,
+              4.8
+            ],
+            [
+              8,
+              4.8
+            ],
+            [
+              8.5,
+              5.2
+            ],
+            [
+              10,
+              5.2
+            ]
+          ],
+          "camera": [
+            [
+              0,
+              0.59,
+              0.37,
+              0.62
+            ],
+            [
+              4.5,
+              0.59,
+              0.37,
+              0.62
+            ],
+            [
+              5,
+              0.46,
+              0.8,
+              0.7
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "The captain asks for a heading test."
+            ],
+            [
+              5,
+              "The needle returns to the same north–south heading."
+            ]
+          ],
+          "note": "The test is repeated with the lodestone several paces away.",
+          "noteFrom": 5
+        },
+        {
+          "camera": [
+            [
+              0,
+              0.5,
+              0.5,
+              "fit"
+            ],
+            [
+              4,
+              0.5,
+              0.5,
+              "fit"
+            ],
+            [
+              5,
+              0.5,
+              0.48,
+              0.83
+            ],
+            [
+              10.5,
+              0.5,
+              0.48,
+              0.83
+            ],
+            [
+              11.1,
+              0.5,
+              0.5,
+              0.75
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "The captain permits entry."
+            ],
+            [
+              4,
+              "Walk through the gate."
+            ],
+            [
+              11,
+              "Beyond the gate: the end of this playable area."
+            ]
+          ]
         }
       ]
     }

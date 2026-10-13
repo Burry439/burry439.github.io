@@ -1,45 +1,58 @@
 # Revision review — 13 October 2026
 
-Editorial and usability rating after the copy revision: **88/100**.
-The earlier 86/100 placed too much weight on implementation and too little on
-professional positioning and writing. This is an editorial assessment, not
-hiring-manager feedback or a measured audience result.
+My editorial assessment after this revision: **84/100 for content and wording**,
+**78/100 for the primary demos’ motion**. These are separate judgments, not an
+overall portfolio score or audience results. The previous 88/100 overall score
+was too generous about writing and motion. The immediately preceding review
+rated those areas 76/100 and 65/100.
 
-| Area | Score | Basis |
-|---|---:|---|
-| Visual design | 18/20 | Original identity retained; footage, close-ups and source excerpts give cases different rhythms |
-| Career positioning | 14/15 | Verified full-stack work, HCI background and Reichman teaching support AI product builder positioning |
-| Case studies | 18/20 | 463/462-word narratives connect problems, changes and observed results; concise formal voice |
-| Motion and demos | 16/20 | Updated captions in all four 43s/52s film exports; source footage, framing and chapter timing retained |
-| Evidence | 14/15 | Separate 12-interview/24-transcript evaluations; retired game decision service labeled historical |
-| Usability | 8/10 | Existing accessible controls verified; portrait promos selected without requests before activation |
-| Total | **88/100** | Audience comprehension and hiring relevance still require people |
+The homepage names the two products and the professional background behind them.
+About now states the previous development jobs, current teaching role, studies and
+roles of interest. It no longer repeats a broad list of personal capabilities.
+The case studies lead with specific events: the unanswered breathing question,
+a plausible review of the wrong case, accepted actions without saved effects,
+and logs that contradicted the first explanation for arrests. Contribution and
+AI coding assistance are stated once per case. The game’s 2022 origin and
+September 2026 development start remain. No HCI degree award is asserted.
 
-Local verification passed: three routes at 320/390/768/1440; dialogs at 320×568,
-390×844, 768×700, 1440×900 and 1024×480; chapter action/back/next/replay;
-film seeking, pause, single-run ending and media reuse; keyboard containment and
-Escape/focus return; Hebrew-session labels; reduced motion and explicit film
-opt-in; failed media/retry; close during pending media; restart; only one active
-video; offscreen and hidden-tab pause; no early demo video requests.
+The SimReview film establishes the setup, plays one complete question and answer,
+reveals feedback, follows 2:13, holds the coaching, and shows a separately selected
+focus. Its chapters are 6/8/5/16/8 seconds, totaling 43. The game film remains 52
+seconds: 6/7/6/10/10/13. Full game captures replace pre-cropped sources. Each
+chapter has its own camera path and reading holds. The ending now shows the gate
+crossing and the actual end-of-playable-area screen. An unsupported captain quote
+was removed. Dialogue holds through pauses instead of flashing back to an
+introductory caption. Portrait captions are larger; context and relevant controls
+remain visible. The films still depend on recorded interfaces, including static
+recording screens and the game’s own overlapping speech bubbles. They are not yet
+as polished as a deliberately staged capture of the products could be.
 
-Source checks passed: all source cut bounds, continuous chapter ranges, still
-frame bounds and byte sizes, silent tracks and selected-rendition budgets.
-SimReview wide/portrait totals: 1.62/1.51 MB. City wide/portrait: 3.94/3.47 MB.
-Exported frame review covered all eleven chapters in both formats.
+All four films and their chapter posters were exported and reviewed. Original
+capture timestamps, full-frame cuts and reading holds are recorded. The transcript
+uses the same narration source. Both full story promos and the separate Hebrew
+session remain available. The 12-interview calibration and 24-transcript benchmark
+remain separate; authored tests are distinguished from student or player outcomes.
+Historical game measurements and the retired decision service remain labeled.
 
-Both full promos now use the latest supplied story exports, with separate wide
-and portrait media. SimReview is 99.5 seconds wide and 93.184 seconds portrait;
-City Beyond is 130.4 seconds in both shapes. File copies preserve the supplied
-audio and footage. Promo provenance records exact durations, dimensions, bytes
-and SHA-256 hashes. The City's earlier decision-service benchmark is qualified
-beside the promo as well as in the case study.
+Local build and content/media checks passed. Selected film plus supporting stills:
+SimReview 1.28 MB wide / 1.34 MB portrait; City 3.68 MB / 3.23 MB. Source bounds,
+chapter continuity, hold ordering, silent tracks, asset sizes and the 8 MB budget
+passed. Caption bounds are checked during rendering. Review frames cover each
+chapter’s action and outcome in both formats; decoded final MP4 samples confirm
+the encoded question, rejection and heading test.
 
-Local promo checks passed: both portrait clips play in inline case studies and
-homepage dialogs; both desktop promos play and stop on close; no promo requests
-occur before activation. Mobile source selection uses native video media queries
-to preserve deferred loading. No runtime dependency was added.
+Browser checks passed at 320/390/768/1440 widths and dialogs at 320×568,
+390×844, 768×700, 1440×900 and 1024×480. They cover all chapter actions, held
+results, back/next/replay, film reuse and ending, restart, Hebrew consistency,
+keyboard containment, Escape/focus return, reduced motion and explicit film opt-in,
+failed media/retry, pending playback cancellation, one active source, offscreen
+and hidden-tab pause, stable layouts and deferred demo loading. A visible dialog-header label preserves
+the AI-voiced/recorded provenance on short phones, where baked-in film credits
+become small. The label also describes the dialog for screen readers. Publication uses
+the existing Pages workflow; live HTTPS, content and media checks complete the
+release verification.
 
-The five-person comprehension test remains unrun. Its target now includes the
-product loop, Baruch's contribution and one decision per project. Real participant
-answers are needed to assess this; automated checks cannot substitute for them.
-The thesis, video pipeline and family context are excluded at the owner's request.
+The five-person comprehension test remains **unrun**. Its target is four of five
+people explaining each product’s loop, Baruch’s contribution and one decision
+after one minute. Actual answers and confusing phrases should guide the next edit.
+No learning, enjoyment, adoption or hiring result is claimed.

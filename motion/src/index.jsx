@@ -1,60 +1,75 @@
-import React from 'react';
-import {registerRoot,Composition,AbsoluteFill,Sequence,Freeze,OffthreadVideo,Img,staticFile,useCurrentFrame,interpolate,delayRender,continueRender} from 'remotion';
+import React,{useLayoutEffect,useRef} from 'react';
+import {registerRoot,Composition,AbsoluteFill,Sequence,Freeze,OffthreadVideo,Img,staticFile,useCurrentFrame,interpolate,Easing,delayRender,continueRender} from 'remotion';
 import {demos} from '../../src/demos.mjs';
 import provenance from '../../public/demos/provenance.json';
+import {direction} from './direction.mjs';
 const fps=24;
 const fontReady=delayRender('General Sans');
 const face=new FontFace('General Sans',`url(${staticFile('assets/general-sans-500.woff2')})`);
 face.load().then(f=>{document.fonts.add(f);continueRender(fontReady);}).catch(()=>continueRender(fontReady));
 const clamp={extrapolateLeft:'clamp',extrapolateRight:'clamp'};
-function Chapter({step,index,demo,mobile}){
- const frame=useCurrentFrame();const sim=demo.name==='SimReview';
- const w=mobile?640:740,h=mobile?410:548;
+const ease=Easing.bezier(.22,1,.36,1);
+function value(keys,time,column,easing){
+ if(keys.length===1)return keys[0][column];
+ return interpolate(time,keys.map(k=>k[0]),keys.map(k=>k[column]),{...clamp,...(easing?{easing}: {})});
+}
+function current(keys,time){return [...keys].reverse().find(k=>time>=k[0])||keys[0];}
+function Emphasis({text,highlight}){
+ if(!highlight||!text.includes(highlight))return text;
+ const [a,b]=text.split(highlight);return <>{a}<span style={{background:'#d1e8ee',borderRadius:4,padding:'0 3px'}}>{highlight}</span>{b}</>;
+}
+function Chapter({step,index,demo,mobile,id}){
+ const frame=useCurrentFrame(),seconds=frame/fps,sim=id==='simreview',shot=direction[id][index];
+ const stage=mobile?{x:32,y:82,w:656,h:520}:sim?{x:48,y:82,w:600,h:562}:{x:32,y:76,w:1216,h:514};
  const sourceW=sim?624:1280,sourceH=sim?1350:720;
- const fit=Math.min(w/sourceW,h/sourceH);
- const zoom=sim?(index===4?2.2:index===2||index===3?2.0:1.3):(index===3?1.16:1.08);
- const scale=fit*interpolate(frame,mobile?[12,48]:[24,60],[mobile&&sim&&index===4?1.75:1,zoom],clamp);
- const cy=sim?(index===4?.25:index===2||index===3?.38:.49):.5;
- const center=interpolate(frame,[24,60],[.5,cy],clamp);
+ const fitWidth=Math.max(1,stage.w/sourceW/(stage.h/sourceH));
+ const camera=shot.camera.map(k=>[k[0],k[1],k[2],k[3]==='fit'?fitWidth:k[3]]);
+ const scale=stage.w/(sourceW*value(camera,seconds,3,ease));
+ // Keep the source edges in frame: moving towards the lower log must not
+ // reveal an empty strip below the game or crop the first word of a line.
+ const bounded=(center,pixels,extent)=>pixels<=extent?.5:Math.max(extent/(2*pixels),Math.min(1-extent/(2*pixels),center));
+ const left=stage.w/2-sourceW*scale*bounded(value(camera,seconds,1,ease),sourceW*scale,stage.w);
+ const top=stage.h/2-sourceH*scale*bounded(value(camera,seconds,2,ease),sourceH*scale,stage.h);
  const clipDuration=provenance.exports.find(e=>e.output===step.clip)?.duration||0;
- const videoFrame=Math.min(frame,Math.max(0,Math.floor(clipDuration*fps)-1));
- const line=(step.dialogue||[]).find(l=>frame/fps>=l.s&&frame/fps<l.e);
- const color=sim?'#234f60':'#d6c79b';
- const heading=step.heading;
- const mobileCaption=(sim?[
-  'A helper follows the patient guide. AI reviews the recording afterwards.',
-  'A fictional chest-pain interview.',
-  'Feedback links to moments in the recording.',
-  'The breathing question is unanswered. Ask it again separately.',
-  'Selected: explore the acute complaint first. Separate from the breathing follow-up.'
- ]:[
-  'The watch needs a way to hold a heading in fog.',
-  'The player types a method to magnetise a bronze needle.',
-  'Bronze cannot be magnetised this way. Change the material.',
-  'The iron is magnetised. The assembled needle receives artwork.',
-  'The captain requests proof. The player tests the heading.',
-  '“It holds its heading… You may pass, stranger.” The player enters.'
- ])[index];
- const style={position:'absolute',width:sourceW*scale,height:sourceH*scale,maxWidth:'none',left:(w-sourceW*scale)/2,top:h/2-sourceH*scale*center};
- const fullframe=frame/fps;
- // Keep one quoted exchange readable, without replacing any recorded outcome.
- const quote=line?`${line.who}: ${line.text}`:index===3&&sim&&fullframe>10.15?'Coach: Ask the breathing question again separately.':null;
- return <AbsoluteFill style={{background:sim?'#ecf1f3':'#22291f',color:sim?'#173543':'#f8f2e2',fontFamily:'General Sans',padding:mobile?40:48}}>
-  <div style={{display:'flex',justifyContent:'space-between',fontSize:mobile?23:21,alignItems:'center'}}><span>{demo.name}</span><span style={{opacity:.7}}>{String(index+1).padStart(2,'0')} / {demo.steps.length}</span></div>
-  <div style={{position:'absolute',left:mobile?40:48,top:mobile?98:110,width:w,height:h,overflow:'hidden',borderRadius:18,background:sim?'#dfe7eb':'#151a12',boxShadow:'0 12px 35px #0002'}}>
-   {step.clip?<Freeze frame={videoFrame}><OffthreadVideo muted src={staticFile('demos/'+step.clip)} style={style}/></Freeze>:<Img src={staticFile('demos/'+step.before)} style={style}/>}
+ const mediaTime=shot.media?value(shot.media,seconds,1):seconds;
+ const videoFrame=Math.min(Math.round(mediaTime*fps),Math.max(0,Math.floor(clipDuration*fps)-1));
+ const returning=shot.returnToFeedback!==undefined&&seconds>=shot.returnToFeedback;
+ const dialogue=step.dialogue||[],dialogueUntil=shot.returnToFeedback??shot.caption.at(-1)[0];
+ // Hold a spoken line through the gap before the next speaker. Returning to
+ // the chapter introduction in those gaps would create a distracting flash.
+ const spoken=[...dialogue].reverse().find(l=>seconds>=l.s)||(index===1?dialogue[0]:null);
+ const line=seconds<dialogueUntil?spoken:null;
+ const caption=current(shot.caption,seconds)[1];
+ const style={position:'absolute',width:sourceW*scale,height:sourceH*scale,maxWidth:'none',left,top};
+ // The final coaching shot is an editorial cut to the recorded feedback screen,
+ // rather than an invented navigation interaction.
+ const still=returning?'sim-moment-before.webp':step.before;
+ const focus=sim&&index===3&&(seconds<1.5||returning)?{x:.106,y:.327,w:.784,h:.205}:sim&&index===4?{x:.18,y:.328,w:.66,h:.05}:null;
+ const focusOpacity=interpolate(seconds,[0,.2],[0,1],clamp);
+ const note=line?null:(shot.note&&seconds>=(shot.noteFrom||0)?shot.note:null)||(step.note&&seconds>1?step.note:null);
+ const captionRef=useRef(null);
+ useLayoutEffect(()=>{
+  // Offset measurements are in composition pixels, independent of the
+  // preview scale and the temporary zero-height root used in discovery.
+  const text=captionRef.current;
+  if(text.offsetTop+text.offsetHeight>(mobile?960-42:720-3))throw new Error(`${id}/${mobile?'mobile':'desktop'} chapter ${index+1} at ${seconds}s: caption extends beyond its reading area`);
+ },[frame,id,index,mobile,seconds]);
+ return <AbsoluteFill style={{background:sim?'#ecf1f3':'#20271e',color:sim?'#173543':'#f8f2e2',fontFamily:'General Sans'}}>
+  <div style={{position:'absolute',top:26,left:mobile?32:48,right:mobile?32:48,display:'flex',justifyContent:'space-between',fontSize:mobile?24:20}}><span>{demo.name}</span><span style={{opacity:.7}}>{index+1} / {demo.steps.length} · {step.title}</span></div>
+  <div data-review="stage" style={{position:'absolute',left:stage.x,top:stage.y,width:stage.w,height:stage.h,overflow:'hidden',borderRadius:14,background:sim?'#dfe7eb':'#141911'}}>
+   {step.clip&&!returning?<Freeze frame={videoFrame}><OffthreadVideo muted src={staticFile('demos/'+step.clip)} style={style}/></Freeze>:<Img src={staticFile('demos/'+still)} style={style}/>}
+   {focus&&<div style={{position:'absolute',pointerEvents:'none',left:left+focus.x*sourceW*scale,top:top+focus.y*sourceH*scale,width:focus.w*sourceW*scale,height:focus.h*sourceH*scale,border:'3px solid #35809a',borderRadius:10,opacity:focusOpacity,boxShadow:'0 0 0 999px #17354320'}}/>}
   </div>
-  <div style={{position:'absolute',left:mobile?40:836,top:mobile?548:125,width:mobile?640:394}}>
-   <div style={{fontSize:mobile?44:38,lineHeight:1.15,letterSpacing:'-.025em',marginBottom:mobile?18:24}}>{heading}</div>
-   {(!mobile||!quote)&&<div style={{fontSize:mobile?42:25,lineHeight:1.4,opacity:.88}}>{mobile?mobileCaption:step.caption}</div>}
-   {quote&&<div style={{fontSize:mobile?40:24,lineHeight:1.4,marginTop:mobile?16:28,paddingTop:14,borderTop:`2px solid ${color}`}}>{quote}</div>}
-   {step.note&&!quote&&<div style={{fontSize:mobile?21:19,lineHeight:1.3,marginTop:20,opacity:.7}}>{step.note}</div>}
+  <div ref={captionRef} data-review="caption" style={{position:'absolute',left:mobile?32:sim?704:48,top:mobile?630:sim?180:616,width:mobile?656:sim?528:1184}}>
+   <div style={{fontSize:mobile?22:sim?19:17,marginBottom:mobile?14:sim?18:10,opacity:.7}}>{line?`${line.who} · recorded interview`:returning?'Feedback at 2:13':sim&&index===4&&seconds>=3.2?'Selected for next time':!sim&&shot.speaker!==undefined&&seconds>=shot.speaker?'Recorded game response':step.heading}</div>
+   <div style={{fontSize:mobile?48:sim?42:26,lineHeight:1.28,letterSpacing:'-.025em'}}><Emphasis text={line?line.text:caption} highlight={line?.highlight}/></div>
+   {note&&<div style={{fontSize:mobile?22:sim?18:17,lineHeight:1.4,marginTop:mobile?14:sim?20:10,opacity:.7}}>{note}</div>}
   </div>
-  <div style={{position:'absolute',bottom:mobile?18:24,left:mobile?40:48,right:40,fontSize:mobile?18:17,opacity:.7}}>{demo.label}</div>
+  {mobile&&<div style={{position:'absolute',bottom:20,left:32,right:32,fontSize:17,opacity:.7}}>{demo.label}</div>}
  </AbsoluteFill>;
 }
 function Film({id,mobile}){
- const demo=demos[id];return <AbsoluteFill>{demo.steps.map((step,i)=><Sequence key={i} from={step.start*fps} durationInFrames={step.seconds*fps}><Chapter step={step} index={i} demo={demo} mobile={mobile}/></Sequence>)}</AbsoluteFill>;
+ const demo=demos[id];return <AbsoluteFill>{demo.steps.map((step,i)=><Sequence key={i} from={step.start*fps} durationInFrames={step.seconds*fps}><Chapter step={step} index={i} demo={demo} mobile={mobile} id={id}/></Sequence>)}</AbsoluteFill>;
 }
 function Root(){return <>{Object.entries(demos).flatMap(([id,d])=>['desktop','mobile'].map(format=><Composition key={id+format} id={`${id}-${format}`} component={Film} defaultProps={{id,mobile:format==='mobile'}} width={d.films[format].width} height={d.films[format].height} fps={fps} durationInFrames={d.totalSeconds*fps}/>))}</>;}
 registerRoot(Root);

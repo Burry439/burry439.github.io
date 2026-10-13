@@ -11,6 +11,8 @@ npm ci
 npm run render
 # Render only selected exports:
 node render.mjs simreview-mobile the-city-beyond-mobile
+# Review the important action/outcome frames without exporting videos:
+node render.mjs --review
 ```
 
 The input library lives in ../public/demos. Regenerate source cuts using
@@ -20,8 +22,15 @@ absence of an audio stream and records every still's frame and exported byte siz
 in films-provenance.json. Run the root build/check after rendering. Final files
 are exported once; there is no runtime rendering or live AI in these demos.
 
-The wide composition keeps footage beside explanations. Portrait captions are
-rewritten for the available width. Screens establish context, move toward the
-relevant result, then hold. Caption dialogue keeps the actual exchange. English
+SimReview places the app beside the recorded exchange on desktop. The game uses
+a wide stage with a short caption below it. Portrait exports place media above
+the caption. Each chapter has its own camera path and reading holds in
+src/direction.mjs; these are recorded in the film manifest. The website transcript
+uses the same caption source. Caption bounds are checked during rendering.
+Screens establish context, move toward the relevant control or result, then hold.
+Capture time maps remain in order; omitted waits stay labeled. English
 feedback and the separately selected practice focus must never be conflated.
 The optional Hebrew capture is a different session, not a translated rendition.
+The game ending now includes the gate crossing and the actual end-of-playable-area
+screen. The original game captures are exported without cropping; the renderer
+frames each shot so it can preserve complete response lines.
