@@ -2,71 +2,677 @@
   "description": "Remotion product films made from duration-validated capture exports. Chapter sources and source timestamps are retained. No sound; synthetic English session and recorded gameplay.",
   "exports": [
     {
+      "output": "simreview-desktop.mp4",
+      "composition": "simreview-desktop",
+      "duration": 43,
+      "bytes": 676383,
+      "silent": true,
+      "stills": [
+        {
+          "output": "simreview-desktop-0-before.webp",
+          "frame": 0,
+          "bytes": 20658
+        },
+        {
+          "output": "simreview-desktop-0-after.webp",
+          "frame": 143,
+          "bytes": 32964
+        },
+        {
+          "output": "simreview-desktop-1-before.webp",
+          "frame": 144,
+          "bytes": 30774
+        },
+        {
+          "output": "simreview-desktop-1-after.webp",
+          "frame": 311,
+          "bytes": 28462
+        },
+        {
+          "output": "simreview-desktop-2-before.webp",
+          "frame": 312,
+          "bytes": 22722
+        },
+        {
+          "output": "simreview-desktop-2-after.webp",
+          "frame": 455,
+          "bytes": 28812
+        },
+        {
+          "output": "simreview-desktop-3-before.webp",
+          "frame": 456,
+          "bytes": 26584
+        },
+        {
+          "output": "simreview-desktop-3-after.webp",
+          "frame": 839,
+          "bytes": 29082
+        },
+        {
+          "output": "simreview-desktop-4-before.webp",
+          "frame": 840,
+          "bytes": 33286
+        },
+        {
+          "output": "simreview-desktop-4-after.webp",
+          "frame": 1031,
+          "bytes": 33122
+        }
+      ],
+      "cuts": [
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-recording.mp4",
+          "start": 0,
+          "end": 5.8,
+          "sourceDuration": 38.4,
+          "crop": null
+        },
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
+          "start": 1.34,
+          "end": 4,
+          "sourceDuration": 27.066667,
+          "crop": null
+        },
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
+          "start": 4,
+          "end": 14.5,
+          "sourceDuration": 27.066667,
+          "crop": null
+        },
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
+          "start": 22,
+          "end": 23.1,
+          "sourceDuration": 27.066667,
+          "crop": null
+        }
+      ],
+      "sourceStills": [
+        {
+          "file": "assets/sim-recording-guide.webp",
+          "from": 2,
+          "output": "sim-recording-guide.webp",
+          "source": "simreview/promo/public/shots/phone-recording-guide.png",
+          "sourceSha256": "7be5938e719885928ee75e1cbb40f1f71ecd74e23eeaff6845c6fcdfc4510b84",
+          "sourceDimensions": {
+            "width": 780,
+            "height": 1688
+          },
+          "crop": null,
+          "bytes": 77792,
+          "description": "Real audio recording screen with the fictional chest-pain patient guide open."
+        }
+      ],
+      "direction": [
+        {
+          "camera": [
+            [
+              0,
+              0.5,
+              0.5,
+              "fit"
+            ],
+            [
+              2,
+              0.5,
+              0.5,
+              "fit"
+            ],
+            [
+              2.6,
+              0.5,
+              0.64,
+              1.02
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "Choose a fictional patient case."
+            ],
+            [
+              2,
+              "Interview a helper following this guide."
+            ]
+          ],
+          "still": {
+            "file": "assets/sim-recording-guide.webp",
+            "from": 2
+          }
+        },
+        {
+          "media": [
+            [
+              0,
+              0
+            ],
+            [
+              5.8,
+              5.8
+            ],
+            [
+              7,
+              5.8
+            ]
+          ],
+          "camera": [
+            [
+              0,
+              0.5,
+              0.36,
+              1.08
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "Record the interview on one phone."
+            ]
+          ]
+        },
+        {
+          "camera": [
+            [
+              0,
+              0.5,
+              0.35,
+              0.98
+            ],
+            [
+              1.2,
+              0.5,
+              0.35,
+              0.98
+            ],
+            [
+              2.8,
+              0.5,
+              0.43,
+              0.86
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "AI feedback links to the recording."
+            ]
+          ]
+        },
+        {
+          "media": [
+            [
+              0,
+              0
+            ],
+            [
+              1.5,
+              0
+            ],
+            [
+              12,
+              10.5
+            ],
+            [
+              16,
+              10.5
+            ]
+          ],
+          "camera": [
+            [
+              0,
+              0.5,
+              0.43,
+              0.86
+            ],
+            [
+              1.5,
+              0.5,
+              0.43,
+              0.86
+            ],
+            [
+              1.9,
+              0.5,
+              0.3,
+              1.08
+            ],
+            [
+              12,
+              0.5,
+              0.3,
+              1.08
+            ],
+            [
+              12.01,
+              0.5,
+              0.43,
+              0.86
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "Select the feedback at 2:13."
+            ],
+            [
+              12,
+              "Ask about breathing separately."
+            ]
+          ],
+          "returnToFeedback": 12
+        },
+        {
+          "media": [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3.125,
+              1.125
+            ],
+            [
+              8,
+              1.125
+            ]
+          ],
+          "camera": [
+            [
+              0,
+              0.5,
+              0.21,
+              0.94
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "Choose one focus for the next practice."
+            ],
+            [
+              3.2,
+              "Saved: explore the main complaint first."
+            ]
+          ],
+          "note": "Different feedback from the breathing follow-up."
+        }
+      ]
+    },
+    {
+      "output": "simreview-mobile.mp4",
+      "composition": "simreview-mobile",
+      "duration": 43,
+      "bytes": 690925,
+      "silent": true,
+      "stills": [
+        {
+          "output": "simreview-mobile-0-before.webp",
+          "frame": 0,
+          "bytes": 23614
+        },
+        {
+          "output": "simreview-mobile-0-after.webp",
+          "frame": 143,
+          "bytes": 35306
+        },
+        {
+          "output": "simreview-mobile-1-before.webp",
+          "frame": 144,
+          "bytes": 33304
+        },
+        {
+          "output": "simreview-mobile-1-after.webp",
+          "frame": 311,
+          "bytes": 30904
+        },
+        {
+          "output": "simreview-mobile-2-before.webp",
+          "frame": 312,
+          "bytes": 26412
+        },
+        {
+          "output": "simreview-mobile-2-after.webp",
+          "frame": 455,
+          "bytes": 30556
+        },
+        {
+          "output": "simreview-mobile-3-before.webp",
+          "frame": 456,
+          "bytes": 27650
+        },
+        {
+          "output": "simreview-mobile-3-after.webp",
+          "frame": 839,
+          "bytes": 31230
+        },
+        {
+          "output": "simreview-mobile-4-before.webp",
+          "frame": 840,
+          "bytes": 38302
+        },
+        {
+          "output": "simreview-mobile-4-after.webp",
+          "frame": 1031,
+          "bytes": 37726
+        }
+      ],
+      "cuts": [
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-recording.mp4",
+          "start": 0,
+          "end": 5.8,
+          "sourceDuration": 38.4,
+          "crop": null
+        },
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
+          "start": 1.34,
+          "end": 4,
+          "sourceDuration": 27.066667,
+          "crop": null
+        },
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
+          "start": 4,
+          "end": 14.5,
+          "sourceDuration": 27.066667,
+          "crop": null
+        },
+        {
+          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
+          "start": 22,
+          "end": 23.1,
+          "sourceDuration": 27.066667,
+          "crop": null
+        }
+      ],
+      "sourceStills": [
+        {
+          "file": "assets/sim-recording-guide.webp",
+          "from": 2,
+          "output": "sim-recording-guide.webp",
+          "source": "simreview/promo/public/shots/phone-recording-guide.png",
+          "sourceSha256": "7be5938e719885928ee75e1cbb40f1f71ecd74e23eeaff6845c6fcdfc4510b84",
+          "sourceDimensions": {
+            "width": 780,
+            "height": 1688
+          },
+          "crop": null,
+          "bytes": 77792,
+          "description": "Real audio recording screen with the fictional chest-pain patient guide open."
+        }
+      ],
+      "direction": [
+        {
+          "camera": [
+            [
+              0,
+              0.5,
+              0.5,
+              "fit"
+            ],
+            [
+              2,
+              0.5,
+              0.5,
+              "fit"
+            ],
+            [
+              2.6,
+              0.5,
+              0.64,
+              1.02
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "Choose a fictional patient case."
+            ],
+            [
+              2,
+              "Interview a helper following this guide."
+            ]
+          ],
+          "still": {
+            "file": "assets/sim-recording-guide.webp",
+            "from": 2
+          }
+        },
+        {
+          "media": [
+            [
+              0,
+              0
+            ],
+            [
+              5.8,
+              5.8
+            ],
+            [
+              7,
+              5.8
+            ]
+          ],
+          "camera": [
+            [
+              0,
+              0.5,
+              0.36,
+              1.08
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "Record the interview on one phone."
+            ]
+          ]
+        },
+        {
+          "camera": [
+            [
+              0,
+              0.5,
+              0.35,
+              0.98
+            ],
+            [
+              1.2,
+              0.5,
+              0.35,
+              0.98
+            ],
+            [
+              2.8,
+              0.5,
+              0.43,
+              0.86
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "AI feedback links to the recording."
+            ]
+          ]
+        },
+        {
+          "media": [
+            [
+              0,
+              0
+            ],
+            [
+              1.5,
+              0
+            ],
+            [
+              12,
+              10.5
+            ],
+            [
+              16,
+              10.5
+            ]
+          ],
+          "camera": [
+            [
+              0,
+              0.5,
+              0.43,
+              0.86
+            ],
+            [
+              1.5,
+              0.5,
+              0.43,
+              0.86
+            ],
+            [
+              1.9,
+              0.5,
+              0.3,
+              1.08
+            ],
+            [
+              12,
+              0.5,
+              0.3,
+              1.08
+            ],
+            [
+              12.01,
+              0.5,
+              0.43,
+              0.86
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "Select the feedback at 2:13."
+            ],
+            [
+              12,
+              "Ask about breathing separately."
+            ]
+          ],
+          "returnToFeedback": 12
+        },
+        {
+          "media": [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3.125,
+              1.125
+            ],
+            [
+              8,
+              1.125
+            ]
+          ],
+          "camera": [
+            [
+              0,
+              0.5,
+              0.21,
+              0.94
+            ]
+          ],
+          "caption": [
+            [
+              0,
+              "Choose one focus for the next practice."
+            ],
+            [
+              3.2,
+              "Saved: explore the main complaint first."
+            ]
+          ],
+          "note": "Different feedback from the breathing follow-up."
+        }
+      ]
+    },
+    {
       "output": "the-city-beyond-desktop.mp4",
       "composition": "the-city-beyond-desktop",
       "duration": 52,
-      "bytes": 2872276,
+      "bytes": 2901926,
       "silent": true,
       "stills": [
         {
           "output": "the-city-beyond-desktop-0-before.webp",
           "frame": 0,
-          "bytes": 74430
+          "bytes": 75654
         },
         {
           "output": "the-city-beyond-desktop-0-after.webp",
           "frame": 143,
-          "bytes": 52944
+          "bytes": 55160
         },
         {
           "output": "the-city-beyond-desktop-1-before.webp",
           "frame": 144,
-          "bytes": 88550
+          "bytes": 92954
         },
         {
           "output": "the-city-beyond-desktop-1-after.webp",
-          "frame": 311,
-          "bytes": 60692
+          "frame": 287,
+          "bytes": 63778
         },
         {
           "output": "the-city-beyond-desktop-2-before.webp",
-          "frame": 312,
-          "bytes": 62898
+          "frame": 288,
+          "bytes": 66048
         },
         {
           "output": "the-city-beyond-desktop-2-after.webp",
-          "frame": 455,
-          "bytes": 62958
+          "frame": 431,
+          "bytes": 65984
         },
         {
           "output": "the-city-beyond-desktop-3-before.webp",
-          "frame": 456,
-          "bytes": 53434
+          "frame": 432,
+          "bytes": 55716
         },
         {
           "output": "the-city-beyond-desktop-3-after.webp",
-          "frame": 695,
-          "bytes": 60806
+          "frame": 671,
+          "bytes": 57008
         },
         {
           "output": "the-city-beyond-desktop-4-before.webp",
-          "frame": 696,
-          "bytes": 78596
+          "frame": 672,
+          "bytes": 79832
         },
         {
           "output": "the-city-beyond-desktop-4-after.webp",
           "frame": 935,
-          "bytes": 63958
+          "bytes": 64622
         },
         {
           "output": "the-city-beyond-desktop-5-before.webp",
           "frame": 936,
-          "bytes": 97554
+          "bytes": 97212
         },
         {
           "output": "the-city-beyond-desktop-5-after.webp",
           "frame": 1247,
-          "bytes": 46216
+          "bytes": 48416
         }
       ],
       "cuts": [
@@ -141,6 +747,7 @@
           "crop": null
         }
       ],
+      "sourceStills": [],
       "direction": [
         {
           "camera": [
@@ -186,15 +793,15 @@
               2.6
             ],
             [
-              4,
+              3.5,
               2.6
             ],
             [
-              6.2,
+              5.7,
               4.8
             ],
             [
-              7,
+              6,
               4.8
             ]
           ],
@@ -221,15 +828,7 @@
           "caption": [
             [
               0,
-              "Try a bronze needle."
-            ],
-            [
-              1.6,
-              "The player types a method using a lodestone."
-            ],
-            [
-              6,
-              "The attempt is submitted."
+              "Try to magnetise bronze with a lodestone."
             ]
           ]
         },
@@ -268,21 +867,17 @@
               4.5,
               0.51,
               0.395,
-              0.58
+              0.5
             ]
           ],
           "caption": [
             [
               0,
-              "Use iron instead."
-            ],
-            [
-              1.6,
-              "“The iron becomes weakly magnetised.”"
+              "Iron works where bronze failed."
             ],
             [
               4.5,
-              "Assemble the needle. The game creates an inventory object."
+              "The assembled needle becomes an inventory object."
             ]
           ]
         },
@@ -305,15 +900,15 @@
               4.8
             ],
             [
-              8,
+              9,
               4.8
             ],
             [
-              8.5,
+              9.5,
               5.2
             ],
             [
-              10,
+              11,
               5.2
             ]
           ],
@@ -401,598 +996,16 @@
       ]
     },
     {
-      "output": "simreview-desktop.mp4",
-      "composition": "simreview-desktop",
-      "duration": 43,
-      "bytes": 636979,
-      "silent": true,
-      "stills": [
-        {
-          "output": "simreview-desktop-0-before.webp",
-          "frame": 0,
-          "bytes": 21796
-        },
-        {
-          "output": "simreview-desktop-0-after.webp",
-          "frame": 143,
-          "bytes": 31418
-        },
-        {
-          "output": "simreview-desktop-1-before.webp",
-          "frame": 144,
-          "bytes": 30774
-        },
-        {
-          "output": "simreview-desktop-1-after.webp",
-          "frame": 335,
-          "bytes": 31292
-        },
-        {
-          "output": "simreview-desktop-2-before.webp",
-          "frame": 336,
-          "bytes": 28502
-        },
-        {
-          "output": "simreview-desktop-2-after.webp",
-          "frame": 455,
-          "bytes": 35066
-        },
-        {
-          "output": "simreview-desktop-3-before.webp",
-          "frame": 456,
-          "bytes": 31330
-        },
-        {
-          "output": "simreview-desktop-3-after.webp",
-          "frame": 839,
-          "bytes": 30778
-        },
-        {
-          "output": "simreview-desktop-4-before.webp",
-          "frame": 840,
-          "bytes": 37062
-        },
-        {
-          "output": "simreview-desktop-4-after.webp",
-          "frame": 1031,
-          "bytes": 36464
-        }
-      ],
-      "cuts": [
-        {
-          "source": "simreview/promo/public/clips/en-100-chest-pain-recording.mp4",
-          "start": 0,
-          "end": 5.8,
-          "sourceDuration": 38.4,
-          "crop": null
-        },
-        {
-          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
-          "start": 1.34,
-          "end": 4,
-          "sourceDuration": 27.066667,
-          "crop": null
-        },
-        {
-          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
-          "start": 4,
-          "end": 14.5,
-          "sourceDuration": 27.066667,
-          "crop": null
-        },
-        {
-          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
-          "start": 22,
-          "end": 23.1,
-          "sourceDuration": 27.066667,
-          "crop": null
-        }
-      ],
-      "direction": [
-        {
-          "camera": [
-            [
-              0,
-              0.5,
-              0.5,
-              "fit"
-            ],
-            [
-              1.4,
-              0.5,
-              0.5,
-              "fit"
-            ],
-            [
-              2,
-              0.5,
-              0.48,
-              1.08
-            ]
-          ],
-          "caption": [
-            [
-              0,
-              "A student interviews a helper."
-            ],
-            [
-              3,
-              "The helper reads the patient guide. AI reviews the recording afterwards."
-            ]
-          ]
-        },
-        {
-          "media": [
-            [
-              0,
-              0
-            ],
-            [
-              5.8,
-              5.8
-            ],
-            [
-              8,
-              5.8
-            ]
-          ],
-          "camera": [
-            [
-              0,
-              0.5,
-              0.36,
-              1.08
-            ]
-          ],
-          "caption": [
-            [
-              0,
-              "The practice is recorded on one phone."
-            ],
-            [
-              6,
-              "The recording becomes the source for the review."
-            ]
-          ]
-        },
-        {
-          "camera": [
-            [
-              0,
-              0.5,
-              0.35,
-              1.08
-            ],
-            [
-              1.2,
-              0.5,
-              0.35,
-              1.08
-            ],
-            [
-              2.8,
-              0.5,
-              0.43,
-              1.08
-            ]
-          ],
-          "caption": [
-            [
-              0,
-              "Review strengths and suggested improvements."
-            ],
-            [
-              3,
-              "Each timestamp links back to the interview."
-            ]
-          ]
-        },
-        {
-          "media": [
-            [
-              0,
-              0
-            ],
-            [
-              1.5,
-              0
-            ],
-            [
-              12,
-              10.5
-            ],
-            [
-              16,
-              10.5
-            ]
-          ],
-          "camera": [
-            [
-              0,
-              0.5,
-              0.43,
-              1.08
-            ],
-            [
-              1.5,
-              0.5,
-              0.43,
-              1.08
-            ],
-            [
-              1.9,
-              0.5,
-              0.3,
-              1.08
-            ],
-            [
-              12,
-              0.5,
-              0.3,
-              1.08
-            ],
-            [
-              12.01,
-              0.5,
-              0.43,
-              0.96
-            ]
-          ],
-          "caption": [
-            [
-              0,
-              "Select the feedback at 2:13."
-            ],
-            [
-              12,
-              "Ask about breathing separately."
-            ]
-          ],
-          "returnToFeedback": 12
-        },
-        {
-          "media": [
-            [
-              0,
-              0
-            ],
-            [
-              2,
-              0
-            ],
-            [
-              3.125,
-              1.125
-            ],
-            [
-              8,
-              1.125
-            ]
-          ],
-          "camera": [
-            [
-              0,
-              0.5,
-              0.2,
-              1.08
-            ]
-          ],
-          "caption": [
-            [
-              0,
-              "Choose one focus for the next practice."
-            ],
-            [
-              3.2,
-              "Saved: explore the acute complaint first."
-            ]
-          ],
-          "note": "A separate recommendation about interview order."
-        }
-      ]
-    },
-    {
-      "output": "simreview-mobile.mp4",
-      "composition": "simreview-mobile",
-      "duration": 43,
-      "bytes": 665519,
-      "silent": true,
-      "stills": [
-        {
-          "output": "simreview-mobile-0-before.webp",
-          "frame": 0,
-          "bytes": 24852
-        },
-        {
-          "output": "simreview-mobile-0-after.webp",
-          "frame": 143,
-          "bytes": 37420
-        },
-        {
-          "output": "simreview-mobile-1-before.webp",
-          "frame": 144,
-          "bytes": 33304
-        },
-        {
-          "output": "simreview-mobile-1-after.webp",
-          "frame": 335,
-          "bytes": 33482
-        },
-        {
-          "output": "simreview-mobile-2-before.webp",
-          "frame": 336,
-          "bytes": 32032
-        },
-        {
-          "output": "simreview-mobile-2-after.webp",
-          "frame": 455,
-          "bytes": 36054
-        },
-        {
-          "output": "simreview-mobile-3-before.webp",
-          "frame": 456,
-          "bytes": 31148
-        },
-        {
-          "output": "simreview-mobile-3-after.webp",
-          "frame": 839,
-          "bytes": 32656
-        },
-        {
-          "output": "simreview-mobile-4-before.webp",
-          "frame": 840,
-          "bytes": 40338
-        },
-        {
-          "output": "simreview-mobile-4-after.webp",
-          "frame": 1031,
-          "bytes": 40104
-        }
-      ],
-      "cuts": [
-        {
-          "source": "simreview/promo/public/clips/en-100-chest-pain-recording.mp4",
-          "start": 0,
-          "end": 5.8,
-          "sourceDuration": 38.4,
-          "crop": null
-        },
-        {
-          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
-          "start": 1.34,
-          "end": 4,
-          "sourceDuration": 27.066667,
-          "crop": null
-        },
-        {
-          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
-          "start": 4,
-          "end": 14.5,
-          "sourceDuration": 27.066667,
-          "crop": null
-        },
-        {
-          "source": "simreview/promo/public/clips/en-100-chest-pain-flow.mp4",
-          "start": 22,
-          "end": 23.1,
-          "sourceDuration": 27.066667,
-          "crop": null
-        }
-      ],
-      "direction": [
-        {
-          "camera": [
-            [
-              0,
-              0.5,
-              0.5,
-              "fit"
-            ],
-            [
-              1.4,
-              0.5,
-              0.5,
-              "fit"
-            ],
-            [
-              2,
-              0.5,
-              0.48,
-              1.08
-            ]
-          ],
-          "caption": [
-            [
-              0,
-              "A student interviews a helper."
-            ],
-            [
-              3,
-              "The helper reads the patient guide. AI reviews the recording afterwards."
-            ]
-          ]
-        },
-        {
-          "media": [
-            [
-              0,
-              0
-            ],
-            [
-              5.8,
-              5.8
-            ],
-            [
-              8,
-              5.8
-            ]
-          ],
-          "camera": [
-            [
-              0,
-              0.5,
-              0.36,
-              1.08
-            ]
-          ],
-          "caption": [
-            [
-              0,
-              "The practice is recorded on one phone."
-            ],
-            [
-              6,
-              "The recording becomes the source for the review."
-            ]
-          ]
-        },
-        {
-          "camera": [
-            [
-              0,
-              0.5,
-              0.35,
-              1.08
-            ],
-            [
-              1.2,
-              0.5,
-              0.35,
-              1.08
-            ],
-            [
-              2.8,
-              0.5,
-              0.43,
-              1.08
-            ]
-          ],
-          "caption": [
-            [
-              0,
-              "Review strengths and suggested improvements."
-            ],
-            [
-              3,
-              "Each timestamp links back to the interview."
-            ]
-          ]
-        },
-        {
-          "media": [
-            [
-              0,
-              0
-            ],
-            [
-              1.5,
-              0
-            ],
-            [
-              12,
-              10.5
-            ],
-            [
-              16,
-              10.5
-            ]
-          ],
-          "camera": [
-            [
-              0,
-              0.5,
-              0.43,
-              1.08
-            ],
-            [
-              1.5,
-              0.5,
-              0.43,
-              1.08
-            ],
-            [
-              1.9,
-              0.5,
-              0.3,
-              1.08
-            ],
-            [
-              12,
-              0.5,
-              0.3,
-              1.08
-            ],
-            [
-              12.01,
-              0.5,
-              0.43,
-              0.96
-            ]
-          ],
-          "caption": [
-            [
-              0,
-              "Select the feedback at 2:13."
-            ],
-            [
-              12,
-              "Ask about breathing separately."
-            ]
-          ],
-          "returnToFeedback": 12
-        },
-        {
-          "media": [
-            [
-              0,
-              0
-            ],
-            [
-              2,
-              0
-            ],
-            [
-              3.125,
-              1.125
-            ],
-            [
-              8,
-              1.125
-            ]
-          ],
-          "camera": [
-            [
-              0,
-              0.5,
-              0.2,
-              1.08
-            ]
-          ],
-          "caption": [
-            [
-              0,
-              "Choose one focus for the next practice."
-            ],
-            [
-              3.2,
-              "Saved: explore the acute complaint first."
-            ]
-          ],
-          "note": "A separate recommendation about interview order."
-        }
-      ]
-    },
-    {
       "output": "the-city-beyond-mobile.mp4",
       "composition": "the-city-beyond-mobile",
       "duration": 52,
-      "bytes": 2410659,
+      "bytes": 2361128,
       "silent": true,
       "stills": [
         {
           "output": "the-city-beyond-mobile-0-before.webp",
           "frame": 0,
-          "bytes": 61160
+          "bytes": 58550
         },
         {
           "output": "the-city-beyond-mobile-0-after.webp",
@@ -1002,52 +1015,52 @@
         {
           "output": "the-city-beyond-mobile-1-before.webp",
           "frame": 144,
-          "bytes": 65536
+          "bytes": 70140
         },
         {
           "output": "the-city-beyond-mobile-1-after.webp",
-          "frame": 311,
-          "bytes": 67272
+          "frame": 287,
+          "bytes": 70338
         },
         {
           "output": "the-city-beyond-mobile-2-before.webp",
-          "frame": 312,
+          "frame": 288,
           "bytes": 74830
         },
         {
           "output": "the-city-beyond-mobile-2-after.webp",
-          "frame": 455,
+          "frame": 431,
           "bytes": 74960
         },
         {
           "output": "the-city-beyond-mobile-3-before.webp",
-          "frame": 456,
-          "bytes": 60094
+          "frame": 432,
+          "bytes": 61542
         },
         {
           "output": "the-city-beyond-mobile-3-after.webp",
-          "frame": 695,
-          "bytes": 66528
+          "frame": 671,
+          "bytes": 59586
         },
         {
           "output": "the-city-beyond-mobile-4-before.webp",
-          "frame": 696,
-          "bytes": 77304
+          "frame": 672,
+          "bytes": 75176
         },
         {
           "output": "the-city-beyond-mobile-4-after.webp",
           "frame": 935,
-          "bytes": 80652
+          "bytes": 80036
         },
         {
           "output": "the-city-beyond-mobile-5-before.webp",
           "frame": 936,
-          "bytes": 73436
+          "bytes": 71790
         },
         {
           "output": "the-city-beyond-mobile-5-after.webp",
           "frame": 1247,
-          "bytes": 51312
+          "bytes": 49926
         }
       ],
       "cuts": [
@@ -1122,6 +1135,7 @@
           "crop": null
         }
       ],
+      "sourceStills": [],
       "direction": [
         {
           "camera": [
@@ -1167,15 +1181,15 @@
               2.6
             ],
             [
-              4,
+              3.5,
               2.6
             ],
             [
-              6.2,
+              5.7,
               4.8
             ],
             [
-              7,
+              6,
               4.8
             ]
           ],
@@ -1202,15 +1216,7 @@
           "caption": [
             [
               0,
-              "Try a bronze needle."
-            ],
-            [
-              1.6,
-              "The player types a method using a lodestone."
-            ],
-            [
-              6,
-              "The attempt is submitted."
+              "Try to magnetise bronze with a lodestone."
             ]
           ]
         },
@@ -1249,21 +1255,17 @@
               4.5,
               0.51,
               0.395,
-              0.58
+              0.5
             ]
           ],
           "caption": [
             [
               0,
-              "Use iron instead."
-            ],
-            [
-              1.6,
-              "“The iron becomes weakly magnetised.”"
+              "Iron works where bronze failed."
             ],
             [
               4.5,
-              "Assemble the needle. The game creates an inventory object."
+              "The assembled needle becomes an inventory object."
             ]
           ]
         },
@@ -1286,15 +1288,15 @@
               4.8
             ],
             [
-              8,
+              9,
               4.8
             ],
             [
-              8.5,
+              9.5,
               5.2
             ],
             [
-              10,
+              11,
               5.2
             ]
           ],

@@ -10,6 +10,7 @@ const review=process.argv.includes('--review');
 const selected=process.argv.slice(2).filter(arg=>arg!=='--review');
 const url=await bundle({entryPoint:resolve('src/index.jsx'),publicDir:resolve('../public')});
 const source=JSON.parse(await readFile('../public/demos/provenance.json','utf8'));
+const evidence=JSON.parse(await readFile('../public/assets/evidence-provenance.json','utf8'));
 const records=[];
 for(const [id,d] of Object.entries(demos))for(const format of ['desktop','mobile']){
  const name=`${id}-${format}`;if(selected.length&&!selected.includes(name))continue;
@@ -40,7 +41,12 @@ for(const [id,d] of Object.entries(demos))for(const format of ['desktop','mobile
   stills.push({output:s.posters[format][state],frame,bytes:(await stat(poster)).size});
  }
  const cuts=d.steps.flatMap(s=>source.exports.find(e=>e.output===s.clip)?.cuts||[]);
- const record={output:d.films[format].file,composition:name,duration:Number(probe.format.duration),bytes:(await stat(file)).size,silent:!probe.streams.some(s=>s.codec_type==='audio'),stills,cuts,direction:direction[id]};records.push(record);
+ const sourceStills=direction[id].filter(shot=>shot.still).map(shot=>{
+  const asset=evidence.exports.find(r=>'assets/'+r.output===shot.still.file);
+  if(!asset)throw new Error('Missing source provenance: '+shot.still.file);
+  return {file:shot.still.file,from:shot.still.from,...asset};
+ });
+ const record={output:d.films[format].file,composition:name,duration:Number(probe.format.duration),bytes:(await stat(file)).size,silent:!probe.streams.some(s=>s.codec_type==='audio'),stills,cuts,sourceStills,direction:direction[id]};records.push(record);
  console.log(`\n${name}: ${(record.bytes/1e6).toFixed(2)}MB, ${record.duration}s`);
  const manifestPath='../public/demos/films-provenance.json';
  let existing=[];try{existing=JSON.parse(await readFile(manifestPath,'utf8')).exports;}catch{}

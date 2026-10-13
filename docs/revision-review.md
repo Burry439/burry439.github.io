@@ -1,6 +1,6 @@
 # Revision review — 13 October 2026
 
-My editorial assessment after this revision: **84/100 for content and wording**,
+My editorial assessment after the preceding revision: **84/100 for content and wording**,
 **78/100 for the primary demos’ motion**. These are separate judgments, not an
 overall portfolio score or audience results. The previous 88/100 overall score
 was too generous about writing and motion. The immediately preceding review
@@ -56,3 +56,37 @@ The five-person comprehension test remains **unrun**. Its target is four of five
 people explaining each product’s loop, Baruch’s contribution and one decision
 after one minute. Actual answers and confusing phrases should guide the next edit.
 No learning, enjoyment, adoption or hiring result is claimed.
+
+## Follow-up revision before audience testing
+
+About is now a single introduction connecting the verified full-stack jobs,
+current Reichman teaching role, education background and roles of interest.
+SimReview no longer interrupts the product story with an explanation of video
+caption editing. Its one-phone section now shows the open patient guide beneath
+the visible recording control, followed by the separate saved practice focus.
+The guide comes from the original fictional chest-pain recording capture; the
+case-study crop and original image checksum are in evidence-provenance.json.
+
+The main results sections lead with working product behavior. SimReview keeps
+its 12-interview calibration separate from the 24-transcript benchmark and
+states that these authored checks do not measure learning. The game's retired
+180/189 benchmark remains in the optional historical methods section and the
+qualification beside the unchanged full promo, rather than the main results.
+
+The primary films remove repeated caption headings and reduce caption changes.
+SimReview's setup now cuts to the actual open patient guide. Feedback and focus
+controls are enlarged, with an extra second to inspect the feedback. Its
+chapters are 6/7/6/16/8 seconds, still totaling 43. The game's result captions are
+larger; the heading-test result gains a second, moved from the bronze attempt.
+Its chapters are 6/6/6/10/11/13 seconds, still totaling 52. The compass object is
+framed closer. Recorded dialogue, the omitted-processing notices and the
+separate breathing/interview-order recommendations remain intact. The renderer
+records the added source still alongside the existing source timestamps.
+
+Both film formats and chapter posters are re-exported. The new full promos,
+static site, player controls, domain and HTTPS configuration are retained.
+The proposed five-person comprehension test is still unrun. No audience outcome
+or new score is inferred from this editing pass.
+
+Follow-up rendition budgets, including chapter stills and the optional Hebrew
+example: SimReview 1.29 MB wide / 1.34 MB portrait; City 3.72 MB / 3.17 MB.

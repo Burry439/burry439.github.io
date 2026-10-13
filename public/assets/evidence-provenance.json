@@ -30,6 +30,35 @@
       "output": "simreview-case.png",
       "source": "simreview/docs/screenshots/evidence-case-correction-en-light-390.png",
       "crop": null
+    },
+    {
+      "output": "sim-recording-guide.webp",
+      "source": "simreview/promo/public/shots/phone-recording-guide.png",
+      "sourceSha256": "7be5938e719885928ee75e1cbb40f1f71ecd74e23eeaff6845c6fcdfc4510b84",
+      "sourceDimensions": {
+        "width": 780,
+        "height": 1688
+      },
+      "crop": null,
+      "bytes": 77792,
+      "description": "Real audio recording screen with the fictional chest-pain patient guide open."
+    },
+    {
+      "output": "sim-recording-guide-evidence.webp",
+      "source": "simreview/promo/public/shots/phone-recording-guide.png",
+      "sourceSha256": "7be5938e719885928ee75e1cbb40f1f71ecd74e23eeaff6845c6fcdfc4510b84",
+      "sourceDimensions": {
+        "width": 780,
+        "height": 1688
+      },
+      "crop": {
+        "x": 24,
+        "y": 842,
+        "width": 732,
+        "height": 702
+      },
+      "bytes": 36680,
+      "description": "Real audio recording screen with the fictional chest-pain patient guide open."
     }
   ]
 }
