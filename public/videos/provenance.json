@@ -1,5 +1,5 @@
 {
-  "description": "Latest supplied story promo preview exports. Copies preserve original narration and recorded outcomes. SimReview uses AI-voiced fictional sessions; The City Beyond uses recorded gameplay.",
+  "description": "Latest story promo preview exports (City Beyond v5: full story for wide screens, 1:18 short cut for phones). Copies preserve original narration and recorded outcomes. SimReview uses AI-voiced fictional sessions; The City Beyond uses recorded gameplay.",
   "exports": [
     {
       "output": "simreview-story.mp4",
@@ -13,33 +13,33 @@
     },
     {
       "output": "simreview-story-mobile.mp4",
-      "source": "C:/Users/Burry/Desktop/Med OPQRST sim/promo/out/simreview-story-4x5-preview.mp4",
-      "duration": 93.184,
-      "bytes": 6210614,
+      "source": "C:/Users/Burry/Desktop/Med OPQRST sim/videos/simreview-story-4x5-preview.mp4",
+      "duration": 99.5,
+      "bytes": 6777209,
       "width": 1080,
       "height": 1350,
       "audio": true,
-      "sha256": "e09bfd955e8051159992c81f2de3c920f7395210dac36092de0b4306c38d58d3"
+      "sha256": "38e8356e9826dd3ea2b061fe775da0da344c1008d29ac06d9bd4b755d9d8edbd"
     },
     {
       "output": "city-beyond-story.mp4",
       "source": "C:/Users/Burry/Documents/time-travel/videos/city-beyond-story-16x9-preview.mp4",
-      "duration": 130.4,
-      "bytes": 30559385,
+      "duration": 134.0,
+      "bytes": 31399129,
       "width": 1920,
       "height": 1080,
       "audio": true,
-      "sha256": "3b89333243119eb379098acef2a39af013ab30e6f6b1abdad06a8f443f26e74e"
+      "sha256": "bd3d0ea57b192e7047054c7481006dc61b41bcc66c2b238d767887e6f7b2b13a"
     },
     {
       "output": "city-beyond-story-mobile.mp4",
-      "source": "C:/Users/Burry/Documents/time-travel/videos/city-beyond-story-4x5-preview.mp4",
-      "duration": 130.4,
-      "bytes": 23939232,
+      "source": "C:/Users/Burry/Documents/time-travel/videos/city-beyond-short-4x5-preview.mp4",
+      "duration": 78.2,
+      "bytes": 14359351,
       "width": 1080,
       "height": 1350,
       "audio": true,
-      "sha256": "c861c6cf337ee82c9b4d54125faed2a7145c2324defd3f695cdd1d10f8b69604"
+      "sha256": "371df0aa94ac570b444da94250929727cff5bc4483b4258bd164732aabb4f709"
     }
   ]
 }

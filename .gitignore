@@ -6,3 +6,9 @@ node_modules/
 .openai/
 *.log
 .env*
+
+# Private application documents (cover letters, previews)
+output/
+tmp/
+/*.pdf
+career/

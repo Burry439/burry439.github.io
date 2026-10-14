@@ -31,6 +31,14 @@ Screens establish context, move toward the relevant control or result, then hold
 Capture time maps remain in order; omitted waits stay labeled. English
 feedback and the separately selected practice focus must never be conflated.
 The optional Hebrew capture is a different session, not a translated rendition.
+
+Motion layer (src/index.jsx): chapters keep their published start times, and each
+later chapter cross-fades in over the held last frame of the previous one, so the
+website's chapter timings and stills stay valid. Captions rise in word by word,
+recorded-dialogue highlights sweep in, a segmented progress bar replaces the
+chapter counter, and a `tap` time in direction.mjs plays a press ripple at the
+chapter's hotspot (from src/demos.mjs). Before-stills are taken just after the
+entrance or cross-fade. Render with concurrency 1 on low-memory machines.
 The game ending now includes the gate crossing and the actual end-of-playable-area
 screen. The original game captures are exported without cropping; the renderer
 frames each shot so it can preserve complete response lines.

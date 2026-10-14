@@ -5,58 +5,58 @@
       "output": "simreview-desktop.mp4",
       "composition": "simreview-desktop",
       "duration": 43,
-      "bytes": 676383,
+      "bytes": 1424848,
       "silent": true,
       "stills": [
         {
           "output": "simreview-desktop-0-before.webp",
-          "frame": 0,
-          "bytes": 20658
+          "frame": 24,
+          "bytes": 21752
         },
         {
           "output": "simreview-desktop-0-after.webp",
           "frame": 143,
-          "bytes": 32964
+          "bytes": 33604
         },
         {
           "output": "simreview-desktop-1-before.webp",
-          "frame": 144,
-          "bytes": 30774
+          "frame": 158,
+          "bytes": 31140
         },
         {
           "output": "simreview-desktop-1-after.webp",
           "frame": 311,
-          "bytes": 28462
+          "bytes": 29380
         },
         {
           "output": "simreview-desktop-2-before.webp",
-          "frame": 312,
-          "bytes": 22722
+          "frame": 326,
+          "bytes": 23662
         },
         {
           "output": "simreview-desktop-2-after.webp",
           "frame": 455,
-          "bytes": 28812
+          "bytes": 29974
         },
         {
           "output": "simreview-desktop-3-before.webp",
-          "frame": 456,
-          "bytes": 26584
+          "frame": 470,
+          "bytes": 27684
         },
         {
           "output": "simreview-desktop-3-after.webp",
           "frame": 839,
-          "bytes": 29082
+          "bytes": 30012
         },
         {
           "output": "simreview-desktop-4-before.webp",
-          "frame": 840,
-          "bytes": 33286
+          "frame": 854,
+          "bytes": 30954
         },
         {
           "output": "simreview-desktop-4-after.webp",
           "frame": 1031,
-          "bytes": 33122
+          "bytes": 35170
         }
       ],
       "cuts": [
@@ -140,7 +140,8 @@
           "still": {
             "file": "assets/sim-recording-guide.webp",
             "from": 2
-          }
+          },
+          "tap": 1.2
         },
         {
           "media": [
@@ -261,7 +262,8 @@
               "Ask about breathing separately."
             ]
           ],
-          "returnToFeedback": 12
+          "returnToFeedback": 12,
+          "tap": 0.9
         },
         {
           "media": [
@@ -300,7 +302,8 @@
               "Saved: explore the main complaint first."
             ]
           ],
-          "note": "Different feedback from the breathing follow-up."
+          "note": "Different feedback from the breathing follow-up.",
+          "tap": 1.7
         }
       ]
     },
@@ -308,58 +311,58 @@
       "output": "simreview-mobile.mp4",
       "composition": "simreview-mobile",
       "duration": 43,
-      "bytes": 690925,
+      "bytes": 1434501,
       "silent": true,
       "stills": [
         {
           "output": "simreview-mobile-0-before.webp",
-          "frame": 0,
-          "bytes": 23614
+          "frame": 24,
+          "bytes": 23058
         },
         {
           "output": "simreview-mobile-0-after.webp",
           "frame": 143,
-          "bytes": 35306
+          "bytes": 31106
         },
         {
           "output": "simreview-mobile-1-before.webp",
-          "frame": 144,
-          "bytes": 33304
+          "frame": 158,
+          "bytes": 32232
         },
         {
           "output": "simreview-mobile-1-after.webp",
           "frame": 311,
-          "bytes": 30904
+          "bytes": 30272
         },
         {
           "output": "simreview-mobile-2-before.webp",
-          "frame": 312,
-          "bytes": 26412
+          "frame": 326,
+          "bytes": 24926
         },
         {
           "output": "simreview-mobile-2-after.webp",
           "frame": 455,
-          "bytes": 30556
+          "bytes": 30130
         },
         {
           "output": "simreview-mobile-3-before.webp",
-          "frame": 456,
-          "bytes": 27650
+          "frame": 470,
+          "bytes": 27330
         },
         {
           "output": "simreview-mobile-3-after.webp",
           "frame": 839,
-          "bytes": 31230
+          "bytes": 30540
         },
         {
           "output": "simreview-mobile-4-before.webp",
-          "frame": 840,
-          "bytes": 38302
+          "frame": 854,
+          "bytes": 33846
         },
         {
           "output": "simreview-mobile-4-after.webp",
           "frame": 1031,
-          "bytes": 37726
+          "bytes": 39218
         }
       ],
       "cuts": [
@@ -443,7 +446,8 @@
           "still": {
             "file": "assets/sim-recording-guide.webp",
             "from": 2
-          }
+          },
+          "tap": 1.2
         },
         {
           "media": [
@@ -564,7 +568,8 @@
               "Ask about breathing separately."
             ]
           ],
-          "returnToFeedback": 12
+          "returnToFeedback": 12,
+          "tap": 0.9
         },
         {
           "media": [
@@ -603,7 +608,8 @@
               "Saved: explore the main complaint first."
             ]
           ],
-          "note": "Different feedback from the breathing follow-up."
+          "note": "Different feedback from the breathing follow-up.",
+          "tap": 1.7
         }
       ]
     },
@@ -611,68 +617,68 @@
       "output": "the-city-beyond-desktop.mp4",
       "composition": "the-city-beyond-desktop",
       "duration": 52,
-      "bytes": 2901926,
+      "bytes": 4928432,
       "silent": true,
       "stills": [
         {
           "output": "the-city-beyond-desktop-0-before.webp",
-          "frame": 0,
-          "bytes": 75654
+          "frame": 24,
+          "bytes": 75418
         },
         {
           "output": "the-city-beyond-desktop-0-after.webp",
           "frame": 143,
-          "bytes": 55160
+          "bytes": 52996
         },
         {
           "output": "the-city-beyond-desktop-1-before.webp",
-          "frame": 144,
-          "bytes": 92954
+          "frame": 158,
+          "bytes": 78840
         },
         {
           "output": "the-city-beyond-desktop-1-after.webp",
           "frame": 287,
-          "bytes": 63778
+          "bytes": 61670
         },
         {
           "output": "the-city-beyond-desktop-2-before.webp",
-          "frame": 288,
-          "bytes": 66048
+          "frame": 302,
+          "bytes": 64416
         },
         {
           "output": "the-city-beyond-desktop-2-after.webp",
           "frame": 431,
-          "bytes": 65984
+          "bytes": 64564
         },
         {
           "output": "the-city-beyond-desktop-3-before.webp",
-          "frame": 432,
-          "bytes": 55716
+          "frame": 446,
+          "bytes": 54106
         },
         {
           "output": "the-city-beyond-desktop-3-after.webp",
           "frame": 671,
-          "bytes": 57008
+          "bytes": 56600
         },
         {
           "output": "the-city-beyond-desktop-4-before.webp",
-          "frame": 672,
-          "bytes": 79832
+          "frame": 686,
+          "bytes": 78100
         },
         {
           "output": "the-city-beyond-desktop-4-after.webp",
           "frame": 935,
-          "bytes": 64622
+          "bytes": 62484
         },
         {
           "output": "the-city-beyond-desktop-5-before.webp",
-          "frame": 936,
-          "bytes": 97212
+          "frame": 950,
+          "bytes": 95012
         },
         {
           "output": "the-city-beyond-desktop-5-after.webp",
           "frame": 1247,
-          "bytes": 48416
+          "bytes": 50158
         }
       ],
       "cuts": [
@@ -830,7 +836,8 @@
               0,
               "Try to magnetise bronze with a lodestone."
             ]
-          ]
+          ],
+          "tap": 2.3
         },
         {
           "camera": [
@@ -999,68 +1006,68 @@
       "output": "the-city-beyond-mobile.mp4",
       "composition": "the-city-beyond-mobile",
       "duration": 52,
-      "bytes": 2361128,
+      "bytes": 4065236,
       "silent": true,
       "stills": [
         {
           "output": "the-city-beyond-mobile-0-before.webp",
-          "frame": 0,
-          "bytes": 58550
+          "frame": 24,
+          "bytes": 60992
         },
         {
           "output": "the-city-beyond-mobile-0-after.webp",
           "frame": 143,
-          "bytes": 64986
+          "bytes": 61336
         },
         {
           "output": "the-city-beyond-mobile-1-before.webp",
-          "frame": 144,
-          "bytes": 70140
+          "frame": 158,
+          "bytes": 62952
         },
         {
           "output": "the-city-beyond-mobile-1-after.webp",
           "frame": 287,
-          "bytes": 70338
+          "bytes": 66336
         },
         {
           "output": "the-city-beyond-mobile-2-before.webp",
-          "frame": 288,
-          "bytes": 74830
+          "frame": 302,
+          "bytes": 70518
         },
         {
           "output": "the-city-beyond-mobile-2-after.webp",
           "frame": 431,
-          "bytes": 74960
+          "bytes": 71206
         },
         {
           "output": "the-city-beyond-mobile-3-before.webp",
-          "frame": 432,
-          "bytes": 61542
+          "frame": 446,
+          "bytes": 60898
         },
         {
           "output": "the-city-beyond-mobile-3-after.webp",
           "frame": 671,
-          "bytes": 59586
+          "bytes": 57952
         },
         {
           "output": "the-city-beyond-mobile-4-before.webp",
-          "frame": 672,
-          "bytes": 75176
+          "frame": 686,
+          "bytes": 72438
         },
         {
           "output": "the-city-beyond-mobile-4-after.webp",
           "frame": 935,
-          "bytes": 80036
+          "bytes": 75898
         },
         {
           "output": "the-city-beyond-mobile-5-before.webp",
-          "frame": 936,
-          "bytes": 71790
+          "frame": 950,
+          "bytes": 72044
         },
         {
           "output": "the-city-beyond-mobile-5-after.webp",
           "frame": 1247,
-          "bytes": 49926
+          "bytes": 53894
         }
       ],
       "cuts": [
@@ -1218,7 +1225,8 @@
               0,
               "Try to magnetise bronze with a lodestone."
             ]
-          ]
+          ],
+          "tap": 2.3
         },
         {
           "camera": [

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Baruch Weinstein, AI Product Builder, Résumé</title>
+<style>
+@font-face{font-family:'General Sans';src:url('../public/assets/general-sans-400.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'General Sans';src:url('../public/assets/general-sans-500.woff2') format('woff2');font-weight:500}
+@font-face{font-family:'General Sans';src:url('../public/assets/general-sans-600.woff2') format('woff2');font-weight:600}
+@page{size:A4;margin:11mm 14mm 10mm}
+*{box-sizing:border-box}
+body{margin:0;font:9.1pt/1.37 'General Sans',Arial,sans-serif;color:#1c1b19}
+a{color:inherit;text-decoration:none}
+h1{font-size:21pt;font-weight:600;letter-spacing:-.02em;margin:0;line-height:1.1}
+.title{font-size:11.5pt;font-weight:500;margin:2px 0 5px;color:#2f6f57}
+.contact{font-size:8.3pt;color:#4a4843}
+.contact span+span::before{content:" · ";color:#a5a096}
+h2{font-size:8.6pt;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#2f6f57;margin:10px 0 4px;padding-bottom:2px;border-bottom:1px solid #dcd8d1}
+p{margin:0}
+.entry{margin-top:6px}
+.entry:first-of-type{margin-top:0}
+.head{display:flex;justify-content:space-between;gap:12px;font-weight:600;font-size:9.8pt}
+.head .when{font-weight:400;color:#4a4843;white-space:nowrap;font-size:9pt}
+.sub{color:#4a4843;font-size:8.8pt;margin:1px 0 2px}
+ul{margin:2px 0 0;padding-left:14px}
+li{margin:1px 0}
+.skills p{margin:2px 0}
+.skills b{font-weight:600}
+</style>
+</head>
+<body>
+<header>
+<h1>Baruch Weinstein</h1>
+<p class="title">AI Product Builder</p>
+<p class="contact"><span>Herzliya, Israel</span><span>+972 52 648 7274</span><span><a href="mailto:burry439@gmail.com">burry439@gmail.com</a></span><span><a href="https://baruchweinstein.com">baruchweinstein.com</a></span><span><a href="https://www.linkedin.com/in/baruch-weinstein/">linkedin.com/in/baruch-weinstein</a></span><span><a href="https://github.com/Burry439">github.com/Burry439</a></span></p>
+</header>
+
+<h2>Summary</h2>
+<p>AI product builder with full-stack development experience and an MA in Human–Computer Interaction. I take a real user problem, design the AI workflow and the evaluations that check it, and ship a working product by directing AI coding agents (Claude Code, Codex). I teach AI app prototyping as a teaching assistant at Reichman University.</p>
+
+<h2>AI Projects</h2>
+<div class="entry">
+<div class="head"><span>SimReview: AI coaching for paramedic interview practice · <a href="https://simreview.vercel.app">simreview.vercel.app</a></span><span class="when">2026 · Live</span></div>
+<p class="sub">Solo build · Python, FastAPI, React, TypeScript, Postgres (Neon), Vercel, Render, OpenAI transcription and LLM APIs, FFmpeg</p>
+<ul>
+<li>Built a Hebrew–English pipeline that turns a phone recording of a practice interview into a speaker-separated transcript, OPQRST rubric feedback linked to the exact moment in the recording, a written report and a coaching video.</li>
+<li>Designed a case check that stops grading when the recording doesn’t match the selected patient case: 8/8 wrong or unverifiable cases blocked in a 24-transcript benchmark.</li>
+<li>Raised grader agreement with authored rubric labels from 24/40 to 40/40 on a frozen benchmark (8/8 on held-out cases). Calibrated with 12 scripted AI-voiced interviews; 10 landed in their target score band on the first run.</li>
+<li>Compared models per pipeline stage for feedback quality, latency and cost, and kept the rubric arithmetic in code rather than the model. 130+ backend and 50+ browser tests; read-only demo account for reviewers.</li>
+</ul>
+</div>
+<div class="entry">
+<div class="head"><span>The City Beyond: AI-judged time-travel game · <a href="https://github.com/Burry439/time-travel">github.com/Burry439/time-travel</a></span><span class="when">2026 · Playable prototype</span></div>
+<p class="sub">Solo build · Godot 4, Python, SQLite, OpenAI APIs for judging, character dialogue and image generation</p>
+<ul>
+<li>Designed an “AI proposes, code decides” architecture: a model judges each typed invention or action, game code checks the materials and saves the effect, and characters respond from their own memory and knowledge.</li>
+<li>Built replayable evaluation suites: 13/13 initial invention cases passed, including attempts to override the rules; typed intents were understood correctly in 180/189 runs at a 0.29s median, versus 1.7s on the previous route.</li>
+<li>Reviewed 601 logged player attempts to find actions that “succeeded” without changing the game, then added reusable effects for objects, permissions and relationships. Text costs of $0.02–0.07 per session; 500+ automated tests.</li>
+</ul>
+</div>
+
+<h2>Experience</h2>
+<div class="entry">
+<div class="head"><span>Teaching Assistant, Reichman University · Herzliya</span><span class="when">Oct 2025 – Present</span></div>
+<ul>
+<li><b>Rapid AI Prototyping: Apps &amp; Analytics.</b> Guide students building AI apps with LLMs, Lovable and Supabase; explain client, server and database concepts and debug their implementations.</li>
+<li><b>Rapid Visual Prototyping.</b> Support Unity setup, C# interaction scripting, and XR, 2D and Arduino prototypes.</li>
+<li><b>Seminar: VR Research and Prototyping.</b> Support students building Unity VR experiences and evaluating them with qualitative and quantitative UX methods.</li>
+</ul>
+</div>
+<div class="entry">
+<div class="head"><span>Full Stack Developer, JumboMail · Tel Aviv</span><span class="when">Jun 2019 – Mar 2020</span></div>
+<ul><li>Built features end to end on production web applications (React front end, Node.js and .NET services), fixed user-reported production issues and modernized legacy code.</li></ul>
+</div>
+<div class="entry">
+<div class="head"><span>Full Stack Developer, Red Black Tree · Tel Aviv</span><span class="when">Oct 2018 – Jun 2019</span></div>
+<ul><li>Built front-end and back-end features for web applications (React, Node.js, .NET), resolved production bugs and updated legacy code to current practices.</li></ul>
+</div>
+
+<h2>Education</h2>
+<div class="entry">
+<div class="head"><span>MA, Human–Computer Interaction · Reichman University</span><span class="when">2024 – 2026</span></div>
+<p class="sub">All required coursework and credits completed.</p>
+</div>
+<div class="entry">
+<div class="head"><span>BA, Business and Entrepreneurship · Reichman University</span><span class="when">2022 – 2024</span></div>
+</div>
+<div class="entry">
+<div class="head"><span>Full-Stack Web Development Bootcamp · Elevation Academy</span><span class="when">2017</span></div>
+</div>
+
+<h2>Skills</h2>
+<div class="skills">
+<p><b>AI:</b> LLM applications, AI workflows and agents, prompt design, LLM evaluation and benchmarking, structured outputs, <span style="white-space:nowrap">speech-to-text</span> and diarization, OpenAI API</p>
+<p><b>Build:</b> Python, FastAPI, React, TypeScript, JavaScript, Node.js, Postgres, SQLite, Git, Vercel, FFmpeg</p>
+<p><b>AI-assisted development:</b> Claude Code, Codex, Lovable, Supabase</p>
+<p><b>Also:</b> Godot, Unity C#, user research, experimental design, rapid prototyping</p>
+</div>
+</body>
+</html>

@@ -66,6 +66,14 @@ Exported assets are committed. The Pages workflow only builds the static site an
 
 The five-person comprehension test in `docs/comprehension-test.md` remains proposed, not conducted. Automated controls/layout checks do not establish audience comprehension.
 
+## Résumé
+
+`resume/resume.html` is the source for `public/Baruch_Weinstein_Resume.pdf` (linked from the hero, About and footer). Re-render after editing; the script fails unless the PDF is exactly one page:
+
+```bash
+PLAYWRIGHT_PACKAGE=<package.json beside a node_modules with @playwright/test> CHROMIUM_EXECUTABLE=<chrome.exe> node resume/render.mjs --preview
+```
+
 ## Evidence and editorial basis
 
 - SimReview: local `README.md`, current `docs/product-decisions.md` and backend scoring configuration, `docs/case-study.md`, evaluation appendices, synthetic screenshots, and the current promo workspace. The source repo is private and no private recordings or credentials are included here.

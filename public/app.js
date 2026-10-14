@@ -6,7 +6,7 @@ themeButton.addEventListener('click',()=>{document.documentElement.dataset.theme
 
 if('IntersectionObserver' in window&&!reduced.matches){
  document.documentElement.classList.add('js-motion');
- const revealObserver=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObserver.unobserve(e.target);}})},{threshold:.07});
+ const revealObserver=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObserver.unobserve(e.target);}})},{threshold:0,rootMargin:'0px 0px 12% 0px'});
  document.querySelectorAll('.reveal').forEach(e=>revealObserver.observe(e));
 }
 

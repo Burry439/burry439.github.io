@@ -22,11 +22,12 @@ for(const [id,d] of Object.entries(demos))for(const format of ['desktop','mobile
   console.log(`${name}: action and outcome review frames exported`);continue;
  }
  const file=resolve('../public/demos/'+d.films[format].file);
- await renderMedia({serveUrl:url,composition,outputLocation:file,codec:'h264',crf:26,pixelFormat:'yuv420p',concurrency:2,muted:true,onProgress:({progress})=>{if(Math.floor(progress*100)%20===0)process.stdout.write('.');}});
+ await renderMedia({serveUrl:url,composition,outputLocation:file,codec:'h264',crf:23,pixelFormat:'yuv420p',concurrency:1,muted:true,onProgress:({progress})=>{if(Math.floor(progress*100)%20===0)process.stdout.write('.');}});
  const probe=JSON.parse(execFileSync('ffprobe',['-v','error','-show_format','-show_streams','-of','json',file],{encoding:'utf8'}));
  const stills=[];
  for(const [i,s] of d.steps.entries())for(const state of ['before','after']){
-  const frame=state==='before'?Math.round(s.start*24):Math.round(s.end*24)-1;
+  // Before-stills skip the opening entrance or the cross-fade from the previous chapter.
+  const frame=state==='before'?Math.round((s.start+(i===0?1:.6))*24):Math.round(s.end*24)-1;
   const poster=resolve('../public/demos/'+s.posters[format][state]);
   // PNG render then WebP conversion preserves readable UI and minimizes transfers.
   const temp=poster+'.png';await renderStill({serveUrl:url,composition,output:temp,frame,imageFormat:'png'});
